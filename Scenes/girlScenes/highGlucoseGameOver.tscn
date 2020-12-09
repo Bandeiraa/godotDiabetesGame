@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Sprites/girlGameOverSprites/GO1- FRASE GAME OVER POR EXERCÍCIO COM GLICOSE ALTA.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/girlScenes/girlGameOverSample.tscn" type="PackedScene" id=2]
+
+[node name="gameOverScreen" instance=ExtResource( 2 )]
+
+[node name="gameOverMessage" parent="." index="8"]
+texture = ExtResource( 1 )

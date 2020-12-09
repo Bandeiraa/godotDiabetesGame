@@ -1,0 +1,255 @@
+{
+  "perguntas": [
+    {
+      "questao": {
+        "enunciado": "Existe algum tipo de doce para diabéticos?
+",
+        "respostas": [
+          "Não!",
+          "Sim os doces diet/ zero açúcar",
+          "Diabético pode comer qualquer doce!",
+          "Sim, os doces lights"
+        ],
+        "correta": "Sim os doces diet/ zero açúcar"
+      }
+    },
+    {
+      "questao": {
+        "enunciado": "Quais alimentos são ruins para a glicose?",
+        "respostas": [
+          "Nenhum",
+          "Pão, macarrão, bolo",
+          "Salada, frutas, arroz integral.",
+          "Todos!"
+        ],
+        "correta": "Pão, macarrão, bolo"
+      }
+    },
+
+    {
+      "questao": {
+        "enunciado": "O que é HIPOglicemia?",
+        "respostas": [
+          "Quando a glicose está acima de 200 mg/dL",
+          "Quando a glicose está normal",
+          "Quando a glicose está menos que 70 mg/dL",
+          "Quando a glicose está 150 mg/dL"
+        ],
+        "correta": "Quando a glicose está menos que 70 mg/dL"
+      }
+    },
+
+    {
+      "questao": {
+        "enunciado": "O que é HIPERglicemia?",
+        "respostas": [
+          "Quando a glicose está acima de 200 mg/dL",
+          "Quando a glicose está normal",
+          "Quando a glicose está 150 mg/dL",
+          "Quando a glicose está menos que 70 mg/dL"
+        ],
+        "correta": "Quando a glicose está acima de 200 mg/dL"
+      }
+    },
+
+    {
+      "questao": {
+        "enunciado": "Quando você deve tomar a insulina rápida?",
+        "respostas": [
+          "Antes de dormir",
+          "Quando a glicose está alta e antes de comer",
+          "Quando estiver com hipoglicemia",
+          "Antes de fazer exercício físico."
+        ],
+        "correta": "Quando a glicose está alta e antes de comer"
+      }
+    },
+
+    {
+      "questao": {
+        "enunciado": "Quando você não deve tomar insulina?",
+        "respostas": [
+          "Quando estiver com hipoglicemia",
+          "Quando a glicose está alta",
+          "Antes de comer",
+          "Quando estiver com hiperglicemia"
+        ],
+        "correta": "Quando estiver com hipoglicemia"
+      }
+    },
+
+{
+      "questao": {
+        "enunciado": "O que é a insulina?",
+        "respostas": [
+          "É a injeção que vai fazer o açúcar do sangue ir para as células do corpo",
+          "É o que nós verificamos no medidor"
+        ],
+        "correta": "É a injeção que vai fazer o açúcar do sangue ir para as células do corpo"
+      }
+    },
+
+{
+      "questao": {
+        "enunciado": "Qual parte do corpo temos que ter muito cuidado?",
+        "respostas": [
+          "Mãos",
+          "Orelhas",
+          "Ombros",
+          "Pés"
+        ],
+        "correta": "Pés"
+      }
+    },
+    {
+      "questao": {
+        "enunciado": "O que você sente na HIPOglicemia?",
+        "respostas": [
+          "Tremedeira, fraqueza, moleza, fome",
+          "Agitação, empolgação",
+          "Nada",
+          "Ir muito ao banheiro, beber muita água"
+        ],
+        "correta": "Tremedeira, fraqueza, moleza, fome"
+      }
+    },
+    {
+      "questao": {
+        "enunciado": "O que você sente na HIPERglicemia?",
+        "respostas": [
+          "Sono",
+          "Nada",
+          "Vontade de beber água, ir muito ao banheiro, dor de cabeça",
+          "Tremedeira, fraqueza, moleza, fome"
+        ],
+        "correta": "Vontade de beber água, ir muito ao banheiro, dor de cabeça"
+      }
+    },
+    {
+      "questao": {
+        "enunciado": "Quais são os sintomas da diabetes?",
+        "respostas": [
+          "Perda de peso, beber muita água, ir muito ao banheiro e comer muito",
+          "Tremedeira, suor frio e preguiça",
+          "Agitação",
+          "Dormir muito"
+        ],
+        "correta": "Perda de peso, beber muita água, ir muito ao banheiro e comer muito"
+      }
+    },
+    
+    {
+      "questao": {
+        "enunciado": "O que é a diabetes tipo 1?",
+        "respostas": [
+          "Nosso corpo produz muita insulina",
+          "Nosso corpo produz muito açúcar no sangue",
+          "Nosso corpo não produz açúcar",
+          "Nosso corpo não produz insulina por isso que temos que tomar injeção"
+        ],
+        "correta": "Nosso corpo não produz insulina por isso que temos que tomar injeção"
+      }
+    },
+    
+    {
+      "questao": {
+        "enunciado": "O que é a diabetes tipo 2?",
+        "respostas": [
+          "Nosso corpo produz muito açúcar no sangue. Acontece só em bebês.",
+          "O corpo produz pouca insulina, então a pessoa tem que tomar remédio. Só acontece em adulto!",
+          "Nosso corpo não produz açúcar. Acontece em todas as idades",
+          "O corpo faz muita insulina. Acontece em todo mundo."
+        ],
+        "correta": "O corpo produz pouca insulina, então a pessoa tem que tomar remédio. Só acontece em adulto!"
+      }
+    },
+    
+    {
+      "questao": {
+        "enunciado": "Quando você sair de casa, não pode esquecer:",
+        "respostas": [
+          "O medidor, a insulina e glicose para se tiver hipoglicemia",
+          "Insulina ",
+          "Medidor de glicose",
+          "Doce"
+        ],
+        "correta": "O medidor, a insulina e glicose para se tiver hipoglicemia"
+      }
+    },
+    
+    {
+      "questao": {
+        "enunciado": "Seu amiguinho pode pegar diabetes de você?",
+        "respostas": [
+          "Sim, mas é fácil controlar.",
+          "Não, mas não pode tocar no sangue.",
+          "De jeito nenhum!",
+          "Sim, não pode encostar nas pessoas"
+        ],
+        "correta": "De jeito nenhum!"
+      }
+    },
+    
+    {
+      "questao": {
+        "enunciado": "Quando você tem que medir a glicose?",
+        "respostas": [
+          "Antes e depois de comer.",
+          "Quando estiver passando mal.",
+          "Quando sentir vontade.",
+          "Ao acordar, antes de comer, depois de comer e antes de dormir."
+        ],
+        "correta": "Ao acordar, antes de comer, depois de comer e antes de dormir."
+      }
+    },
+    
+    {
+      "questao": {
+        "enunciado": "Como é o tratamento da diabetes 1?",
+        "respostas": [
+          "Dieta e remédio",
+          "Medir a glicose, Dieta, Insulina, Exercício físico",
+          "Dieta, doce, dormir bem, insulina",
+          "Comer muito e dormir bem."
+        ],
+        "correta": "Medir a glicose, Dieta, Insulina, Exercício físico"
+      }
+    },
+    {
+      "questao": {
+        "enunciado": "Onde joga fora as agulhas?",
+        "respostas": [
+          "Não joga fora",
+          "Na privada",
+          "Garrafa de refrigerante ou caixinha de hospital.",
+          "No lixo"
+        ],
+        "correta": "Garrafa de refrigerante ou caixinha de hospital."
+      }
+    },
+    {
+      "questao": {
+        "enunciado": "Quantas vezes ao ano tem que ir ao médico da diabete ?",
+        "respostas": [
+          "3",
+          "1",
+          "Nenhuma",
+          "2"
+        ],
+        "correta": "2"
+      }
+    },
+    {
+      "questao": {
+        "enunciado": "Você pode emprestar sua insulina?",
+        "respostas": [
+          "Só quando for nova",
+          "Sim",
+          "Só se a pessoa precisar muito",
+          "Não mesmo!"
+        ],
+        "correta": "Não mesmo!"
+      }
+    }
+    ]
+}

@@ -1,0 +1,401 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Assets/Sprites/girlGameSprites/girlGameScene.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Sprites/girlGameSprites/pauseButton.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/girlGameScene.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Fonts/design.graffiti.SNAP____.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Assets/Sprites/girlGameSprites/insulinButton.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/girlGameSprites/exerciseButton.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/girlGameSprites/qtePanel.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/girlQuizSprites/answerButton.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sprites/girlGameSprites/transparentPanel.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Sprites/girlGameSprites/glucoseMeter.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Sprites/girlGameSprites/girl.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Sprites/girlGameSprites/hipoMessage.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Sprites/girlGameSprites/panelGame.png" type="Texture" id=13]
+
+[sub_resource type="DynamicFont" id=1]
+size = 11
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 15
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 9
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 110
+font_data = ExtResource( 4 )
+
+[sub_resource type="Animation" id=5]
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("warningMessage:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "blinkWarningExercise"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("exerciseButton:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "warningLabel"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("layer/glucoseLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 0, 0, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[node name="Root" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 71.0561, 128 )
+scale = Vector2( 0.067, 0.067 )
+z_index = -1
+texture = ExtResource( 1 )
+
+[node name="candiesTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="fruitsTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="glucoseTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="FruitPosition" type="Position2D" parent="."]
+position = Vector2( 72.4455, 13.2377 )
+
+[node name="CandiePosition" type="Position2D" parent="."]
+position = Vector2( 72.4455, 13.2377 )
+
+[node name="qtePopup" type="Sprite" parent="."]
+visible = false
+position = Vector2( 72.6883, 134.023 )
+scale = Vector2( 0.0661417, 0.07 )
+texture = ExtResource( 7 )
+
+[node name="exerciseButtonScene" type="Button" parent="."]
+visible = false
+margin_left = 17.6148
+margin_top = 118.163
+margin_right = 128.615
+margin_bottom = 138.163
+rect_pivot_offset = Vector2( 52.6901, 10.5922 )
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="spriteLabel" type="Sprite" parent="exerciseButtonScene"]
+self_modulate = Color( 1, 1, 1, 0.705882 )
+position = Vector2( 55.3, 10.288 )
+scale = Vector2( 0.095, 0.09 )
+texture = ExtResource( 8 )
+
+[node name="exerciseLabel" type="Label" parent="exerciseButtonScene"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -56.2673
+margin_top = -8.5
+margin_right = 57.7325
+margin_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+rect_pivot_offset = Vector2( 60.3738, 8.13174 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Fazer exercícios"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="insulinButtonScene" type="Button" parent="."]
+visible = false
+margin_left = 17.6148
+margin_top = 142.163
+margin_right = 128.615
+margin_bottom = 162.163
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="spriteLabel" type="Sprite" parent="insulinButtonScene"]
+self_modulate = Color( 1, 1, 1, 0.705882 )
+position = Vector2( 55.3, 10.147 )
+scale = Vector2( 0.0953815, 0.0903228 )
+texture = ExtResource( 8 )
+
+[node name="insulinLabel" type="Label" parent="insulinButtonScene"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -49.4692
+margin_top = -8.5
+margin_right = 52.5305
+margin_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Tomar Insulina"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="doNothingButtonScene" type="Button" parent="."]
+visible = false
+margin_left = 17.6148
+margin_top = 166.163
+margin_right = 128.615
+margin_bottom = 186.163
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="spriteLabel" type="Sprite" parent="doNothingButtonScene"]
+self_modulate = Color( 1, 1, 1, 0.705882 )
+position = Vector2( 55.3, 9.25 )
+scale = Vector2( 0.095, 0.09 )
+texture = ExtResource( 8 )
+
+[node name="nothingLabel" type="Label" parent="doNothingButtonScene"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -18.7061
+margin_top = -8.5
+margin_right = 21.2939
+margin_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Nada"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="backgroundAux" type="Sprite" parent="."]
+position = Vector2( 72, 128 )
+scale = Vector2( 0.067, 0.067 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="girlSprite" type="Sprite" parent="."]
+position = Vector2( 71.2063, 128 )
+scale = Vector2( 0.067, 0.067 )
+z_index = 1
+texture = ExtResource( 11 )
+
+[node name="glucoseMeter" type="Sprite" parent="."]
+position = Vector2( 72, 128 )
+scale = Vector2( 0.067, 0.067 )
+z_index = 1
+texture = ExtResource( 10 )
+
+[node name="insulinButton" type="Button" parent="."]
+margin_left = 60.0
+margin_top = 218.0
+margin_right = 80.0
+margin_bottom = 238.0
+rect_scale = Vector2( 0.9, 0.9 )
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="insulinSprite" type="Sprite" parent="insulinButton"]
+position = Vector2( 11.1487, -92.8408 )
+scale = Vector2( 0.07, 0.07 )
+z_index = 1
+texture = ExtResource( 5 )
+
+[node name="PauseButton" type="Button" parent="."]
+margin_left = 126.455
+margin_top = -0.397299
+margin_right = 138.455
+margin_bottom = 19.6027
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="PauseButton"]
+position = Vector2( -56.5519, 134.134 )
+scale = Vector2( 0.07, 0.07 )
+z_index = 1
+texture = ExtResource( 2 )
+
+[node name="exerciseButton" type="Button" parent="."]
+margin_left = 81.0
+margin_top = 233.0
+margin_right = 102.0
+margin_bottom = 253.0
+rect_scale = Vector2( 0.9, 0.9 )
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="exerciseSprite" type="Sprite" parent="exerciseButton"]
+position = Vector2( -9.2959, -111.087 )
+scale = Vector2( 0.07, 0.07 )
+z_index = 1
+texture = ExtResource( 6 )
+
+[node name="exerciseSpriteAux" type="Sprite" parent="."]
+position = Vector2( 72.6337, 133.022 )
+scale = Vector2( 0.063, 0.063 )
+z_index = 1
+texture = ExtResource( 6 )
+
+[node name="layer" type="Node2D" parent="."]
+z_index = 1
+
+[node name="pointsCountLabel" type="Label" parent="layer"]
+margin_left = 5.1565
+margin_top = -0.301133
+margin_right = 119.156
+margin_bottom = 21.6989
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0000"
+align = 2
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="glucoseLabel" type="Label" parent="layer"]
+modulate = Color( 0, 0, 0, 1 )
+light_mask = 0
+margin_left = 0.344067
+margin_top = 237.953
+margin_right = 30.3441
+margin_bottom = 252.953
+custom_fonts/font = SubResource( 8 )
+text = "70"
+align = 2
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resume" type="Button" parent="layer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 31.3577
+margin_top = 112.069
+margin_right = 1221.36
+margin_bottom = 321.069
+rect_scale = Vector2( 0.07, 0.07 )
+focus_mode = 0
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="resumeLabel" type="Label" parent="layer/Resume"]
+margin_left = 47.9605
+margin_top = 37.0
+margin_right = 1136.96
+margin_bottom = 179.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Despausar"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="panelAux" type="TextureRect" parent="layer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -14.2182
+margin_top = -49.3997
+margin_right = 2145.78
+margin_bottom = 4043.6
+rect_scale = Vector2( 0.08, 0.1 )
+mouse_filter = 2
+texture = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="animator" type="AnimationPlayer" parent="."]
+anims/blinkWarning = SubResource( 5 )
+anims/blinkWarningExercise = SubResource( 6 )
+
+[node name="warningAnimator" type="AnimationPlayer" parent="."]
+anims/warningLabel = SubResource( 7 )
+
+[node name="warningMessage" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 72, 128 )
+scale = Vector2( 0.06, 0.06 )
+z_index = 1
+texture = ExtResource( 12 )
+[connection signal="timeout" from="candiesTimer" to="." method="onCandieTimerTimeout"]
+[connection signal="timeout" from="fruitsTimer" to="." method="onFruitTimerTimeout"]
+[connection signal="timeout" from="glucoseTimer" to="." method="onGlucoseTimerTimeout"]
+[connection signal="pressed" from="exerciseButtonScene" to="." method="onDNothingButtonPressed"]
+[connection signal="pressed" from="doNothingButtonScene" to="." method="onDNothingButtonPressed"]

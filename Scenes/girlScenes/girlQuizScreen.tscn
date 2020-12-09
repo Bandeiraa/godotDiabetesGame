@@ -1,0 +1,159 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Scenes/boyScenes/boyQuizScreen.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Sprites/girlQuizSprites/1stButtonBonusPopup.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/girlQuizSprites/2ndButtonBonusPopup.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/girlQuizSprites/backButton.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/girlQuizSprites/bonusPopup.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/girlQuizSprites/quizNoButton.png" type="Texture" id=6]
+[ext_resource path="res://Scripts/girlQuizScreen.gd" type="Script" id=7]
+[ext_resource path="res://Assets/Sprites/girlQuizSprites/rightAnswer.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sprites/girlQuizSprites/wrongAnswer.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Fonts/design.graffiti.SNAP____.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://Assets/Sprites/girlQuizSprites/answerButton.png" type="Texture" id=11]
+
+[sub_resource type="DynamicFont" id=1]
+size = 8
+font_data = ExtResource( 10 )
+
+[sub_resource type="Animation" id=2]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Background:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ ExtResource( 6 ), ExtResource( 8 ), ExtResource( 6 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Background:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ ExtResource( 6 ), ExtResource( 9 ), ExtResource( 6 ) ]
+}
+
+[sub_resource type="DynamicFont" id=4]
+size = 4
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 7
+font_data = ExtResource( 10 )
+
+[node name="QuizScreen" instance=ExtResource( 1 )]
+script = ExtResource( 7 )
+
+[node name="Background" parent="." index="0"]
+texture = ExtResource( 6 )
+
+[node name="Question" parent="." index="1"]
+custom_fonts/font = SubResource( 1 )
+
+[node name="GirlAnimator" type="AnimationPlayer" parent="." index="5"]
+anims/rightAnswer = SubResource( 2 )
+anims/wrongAnswer = SubResource( 3 )
+
+[node name="VerticalBox" parent="." index="7"]
+visible = true
+margin_left = -56.7255
+margin_top = 21.071
+margin_right = 63.2746
+margin_bottom = 126.95
+
+[node name="firstButton" parent="VerticalBox" index="0"]
+margin_bottom = 26.0
+
+[node name="firstButtonSprite" parent="VerticalBox/firstButton" index="0"]
+scale = Vector2( 0.11, 0.11 )
+texture = ExtResource( 11 )
+
+[node name="firstItem" parent="VerticalBox/firstButton" index="1"]
+margin_left = -68.0
+margin_top = -10.0
+margin_right = 57.0
+custom_fonts/font = SubResource( 4 )
+
+[node name="secondButton" parent="VerticalBox" index="1"]
+margin_top = 26.0
+margin_bottom = 52.0
+
+[node name="secondButtonSprite" parent="VerticalBox/secondButton" index="0"]
+scale = Vector2( 0.11, 0.11 )
+texture = ExtResource( 11 )
+
+[node name="secondItem" parent="VerticalBox/secondButton" index="1"]
+margin_left = -68.0
+margin_top = -11.0
+margin_right = 57.0
+custom_fonts/font = SubResource( 4 )
+
+[node name="thirdButton" parent="VerticalBox" index="2"]
+margin_top = 52.0
+margin_bottom = 78.0
+
+[node name="thirdButtonSprite" parent="VerticalBox/thirdButton" index="0"]
+scale = Vector2( 0.11, 0.11 )
+texture = ExtResource( 11 )
+
+[node name="thirdItem" parent="VerticalBox/thirdButton" index="1"]
+margin_left = -68.0
+margin_top = -10.0
+margin_right = 57.0
+custom_fonts/font = SubResource( 4 )
+
+[node name="fourthButton" parent="VerticalBox" index="3"]
+margin_top = 78.0
+margin_bottom = 104.0
+
+[node name="fourthButtonSprite" parent="VerticalBox/fourthButton" index="0"]
+scale = Vector2( 0.11, 0.11 )
+texture = ExtResource( 11 )
+
+[node name="fourthItem" parent="VerticalBox/fourthButton" index="1"]
+margin_left = -68.0
+margin_top = -13.0
+margin_right = 57.0
+margin_bottom = 5.0
+custom_fonts/font = SubResource( 4 )
+
+[node name="SecondVerticalBox" parent="." index="8"]
+visible = false
+
+[node name="firstButtonSprite" parent="SecondVerticalBox/firstButton" index="0"]
+texture = ExtResource( 11 )
+
+[node name="firstItem" parent="SecondVerticalBox/firstButton" index="1"]
+custom_fonts/font = SubResource( 5 )
+
+[node name="secondButtonSprite" parent="SecondVerticalBox/secondButton" index="0"]
+texture = ExtResource( 11 )
+
+[node name="secondItem" parent="SecondVerticalBox/secondButton" index="1"]
+custom_fonts/font = SubResource( 5 )
+
+[node name="BackButton" parent="." index="9"]
+flat = true
+
+[node name="backToMainSprite" parent="BackButton" index="0"]
+texture = ExtResource( 4 )
+
+[node name="popupMenu" parent="." index="12"]
+texture = ExtResource( 5 )
+
+[node name="returnButton" parent="popupMenu/confirmButton" index="0"]
+texture = ExtResource( 3 )
+
+[node name="keepOnSceneButton" parent="popupMenu/refuseButton" index="0"]
+texture = ExtResource( 2 )

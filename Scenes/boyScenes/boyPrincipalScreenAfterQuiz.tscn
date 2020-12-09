@@ -1,0 +1,307 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Assets/Sprites/boyInitialScreenSprite/configButton.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Sprites/boyInitialScreenSprite/pointsLabel.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Fonts/FreePixel.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Scripts/principalScreenAfterQuiz.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Sprites/boyInitialScreenSprite/withoutButtonsInitialScreen.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/boyInitialScreenSprite/playButton.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/boyInitialScreenSprite/quizButton.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Fonts/design.graffiti.SNAP____.ttf" type="DynamicFontData" id=8]
+
+[sub_resource type="Animation" id=1]
+resource_name = "gearAnimation"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("ConfigButton/OptionsButton:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.5, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 40.0, -40.0, 0.0 ]
+}
+
+[sub_resource type="DynamicFont" id=2]
+size = 13
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 10
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 10
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 8
+font_data = ExtResource( 8 )
+
+[node name="principalScreen" type="Control"]
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -2.97302
+margin_top = -2.22976
+margin_right = 2013.03
+margin_bottom = 3581.77
+rect_scale = Vector2( 0.07, 0.068 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConfigButton" type="Button" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 126.371
+margin_top = 1.62996
+margin_right = 142.371
+margin_bottom = 21.63
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionsButton" type="Sprite" parent="ConfigButton"]
+position = Vector2( 6.25925, 9.0731 )
+scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 1 )
+offset = Vector2( -905.185, 1749.1 )
+
+[node name="Animator" type="AnimationPlayer" parent="."]
+anims/gearAnimation = SubResource( 1 )
+
+[node name="PlayButton" type="Button" parent="."]
+margin_left = 47.8457
+margin_top = 41.0
+margin_right = 109.846
+margin_bottom = 61.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="playSprite" type="Sprite" parent="PlayButton"]
+position = Vector2( 23.6552, 89.7914 )
+scale = Vector2( 0.07, 0.07 )
+texture = ExtResource( 6 )
+
+[node name="QuizButton" type="Button" parent="."]
+visible = false
+margin_left = 17.5517
+margin_top = 73.0
+margin_right = 86.5517
+margin_bottom = 93.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="quizSprite" type="Sprite" parent="QuizButton"]
+position = Vector2( 53.4881, 56 )
+scale = Vector2( 0.07, 0.07 )
+texture = ExtResource( 7 )
+
+[node name="QuizResultMenu" type="Sprite" parent="."]
+position = Vector2( 70.0036, 123.744 )
+scale = Vector2( 0.07, 0.07 )
+texture = ExtResource( 2 )
+
+[node name="Menu" type="PanelContainer" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 28.3991
+margin_top = 49.1867
+margin_right = 128.399
+margin_bottom = 209.187
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuOptionsBackground" type="ColorRect" parent="Menu"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 93.0
+margin_bottom = 153.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 93.0
+margin_bottom = 153.0
+
+[node name="MenuLabel" type="Label" parent="Menu/VBoxContainer"]
+margin_right = 86.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Menu:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Volume" type="HBoxContainer" parent="Menu/VBoxContainer"]
+margin_top = 18.0
+margin_right = 86.0
+margin_bottom = 34.0
+
+[node name="MusicLabel" type="Label" parent="Menu/VBoxContainer/Volume"]
+margin_top = 1.0
+margin_right = 56.0
+margin_bottom = 15.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Volume: "
+align = 1
+valign = 1
+
+[node name="VolumeSlider" type="HSlider" parent="Menu/VBoxContainer/Volume"]
+margin_left = 60.0
+margin_right = 76.0
+margin_bottom = 16.0
+
+[node name="Teste" type="HBoxContainer" parent="Menu/VBoxContainer"]
+margin_top = 38.0
+margin_right = 86.0
+margin_bottom = 54.0
+
+[node name="MusicLabel" type="Label" parent="Menu/VBoxContainer/Teste"]
+margin_top = 1.0
+margin_right = 49.0
+margin_bottom = 15.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Teste: "
+align = 1
+valign = 1
+
+[node name="VolumeSlider" type="HSlider" parent="Menu/VBoxContainer/Teste"]
+margin_left = 53.0
+margin_right = 69.0
+margin_bottom = 16.0
+
+[node name="Zzz" type="HBoxContainer" parent="Menu/VBoxContainer"]
+margin_top = 58.0
+margin_right = 86.0
+margin_bottom = 74.0
+
+[node name="MusicLabel" type="Label" parent="Menu/VBoxContainer/Zzz"]
+margin_top = 1.0
+margin_right = 28.0
+margin_bottom = 15.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Zzz:"
+align = 2
+valign = 1
+
+[node name="VolumeSlider" type="HSlider" parent="Menu/VBoxContainer/Zzz"]
+margin_left = 32.0
+margin_right = 48.0
+margin_bottom = 16.0
+
+[node name="BackButton" type="Button" parent="Menu/VBoxContainer"]
+margin_top = 78.0
+margin_right = 86.0
+margin_bottom = 98.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="BackLabel" type="Label" parent="Menu/VBoxContainer/BackButton"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -24.0
+margin_top = -8.0
+margin_right = 24.0
+margin_bottom = 8.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Voltar"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="totalPoints" type="Label" parent="."]
+margin_left = 77.7452
+margin_top = 145.602
+margin_right = 134.746
+margin_bottom = 161.602
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="correctAnswers" type="Label" parent="."]
+margin_left = 119.549
+margin_top = 165.892
+margin_right = 135.549
+margin_bottom = 181.892
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="wrongAnswers" type="Label" parent="."]
+margin_left = 120.334
+margin_top = 183.923
+margin_right = 136.334
+margin_bottom = 199.923
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="insulinAmount" type="Label" parent="."]
+margin_left = 121.2
+margin_top = 203.864
+margin_right = 137.2
+margin_bottom = 219.864
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="ConfigButton" to="." method="onGearPressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/BackButton" to="." method="onBackButtonPressed"]
