@@ -18,4 +18,8 @@ func onBackButtonPressed():
 	$Menu.set_visible(false)
 
 func onPlayButtonPressed():
+	InitialSong.stop()
+	MainGameSong.play()
+	Animator.play("blinkAnimation")
+	yield(get_tree().create_timer(0.7), "timeout")
 	_changeScene = get_tree().change_scene("res://Scenes/girlScenes/girlGameScene.tscn")

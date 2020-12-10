@@ -12,4 +12,6 @@ func onBackToSceneButtonPressed():
 	$Menu.set_visible(false)
 
 func onQuizButtonPressed():
+	principalSceneAnimator.play("blinkScreen")
+	yield(get_tree().create_timer(0.7), "timeout")
 	_changeScene = get_tree().change_scene("res://Scenes/boyScenes/boyQuizScreen.tscn")

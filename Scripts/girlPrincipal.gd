@@ -12,7 +12,16 @@ func onGearPressed():
 	$Menu.set_visible(true)
 
 func onQuizButtonPressed():
+	principalSceneAnimator.play("blinkScreen")
+	yield(get_tree().create_timer(0.7), "timeout")
 	_changeScene = get_tree().change_scene("res://Scenes/girlScenes/girlQuizScreen.tscn")
 
 func onBackToSceneButtonPressed():
 	$Menu.set_visible(false)
+
+func onPlayButtonPressed():
+	InitialSong.stop()
+	MainGameSong.play()
+	principalSceneAnimator.play("blinkScreen")
+	yield(get_tree().create_timer(0.7), "timeout")
+	_changeScene = get_tree().change_scene("res://Scenes/girlScenes/girlGameScene.tscn")

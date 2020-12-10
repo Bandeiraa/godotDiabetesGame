@@ -4,6 +4,7 @@ onready var menuAnimation = get_node("Animator")
 var _changeSceneTo
 
 func _ready():
+	InitialSong.play()
 	menuAnimation.play("BlinkANimation")
 
 func onBoyButtonPressed():

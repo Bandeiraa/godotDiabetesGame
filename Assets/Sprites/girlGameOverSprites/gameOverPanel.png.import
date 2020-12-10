@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GO2 - FRASE GAME OVER POR HIPERG E FAZER NADA.png-2fa1fcdbb7cd1c02479a521749b64c6e.stex"
+path="res://.import/gameOverPanel.png-ef08a8a8453bfd3ae496b84b90899acc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/girlGameOverSprites/GO2 - FRASE GAME OVER POR HIPERG E FAZER NADA.png"
-dest_files=[ "res://.import/GO2 - FRASE GAME OVER POR HIPERG E FAZER NADA.png-2fa1fcdbb7cd1c02479a521749b64c6e.stex" ]
+source_file="res://Assets/Sprites/girlGameOverSprites/gameOverPanel.png"
+dest_files=[ "res://.import/gameOverPanel.png-ef08a8a8453bfd3ae496b84b90899acc.stex" ]
 
 [params]
 

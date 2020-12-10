@@ -1,15 +1,15 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Assets/Fonts/design.graffiti.SNAP____.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Sprites/girlGameSprites/glucoseMeter.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sprites/girlGameSprites/panelGame.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sprites/girlGameSprites/pauseButton.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Sprites/girlQuizSprites/answerButton.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Sprites/girlGameOverSprites/BOTÃO TENTAR DE NOVO.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Sprites/girlGameOverSprites/MENINA GAME OVER.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/girlGameOverSprites/gameOverPanel.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/girlGameOverSprites/gameOverGirl.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Sprites/girlGameSprites/girlRoom.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Sprites/girlGameOverSprites/QUADRO GAME OVER.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Sprites/girlGameOverSprites/BOTÃO TELA INICIAL.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Sprites/girlGameOverSprites/tryAgainButton.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Sprites/girlGameOverSprites/initialScreenButton.png" type="Texture" id=10]
 [ext_resource path="res://Scripts/girlGameOver.gd" type="Script" id=11]
 [ext_resource path="res://Assets/Sprites/girlGameSprites/exerciseButton.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Sprites/girlGameSprites/insulinButton.png" type="Texture" id=13]
@@ -22,6 +22,21 @@ font_data = ExtResource( 1 )
 size = 15
 font_data = ExtResource( 1 )
 
+[sub_resource type="Animation" id=3]
+resource_name = "blinkAnim"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
 [node name="gameOverScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -33,7 +48,9 @@ __meta__ = {
 [node name="background" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_scale = Vector2( 0.067, 0.067 )
+margin_right = 396.0
+margin_bottom = 704.0
+rect_scale = Vector2( 0.267, 0.267 )
 texture = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -42,9 +59,9 @@ __meta__ = {
 [node name="panelEmpty" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 2016.0
-margin_bottom = 3584.0
-rect_scale = Vector2( 0.067, 0.067 )
+margin_right = 396.0
+margin_bottom = 704.0
+rect_scale = Vector2( 0.267, 0.267 )
 texture = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -53,9 +70,9 @@ __meta__ = {
 [node name="girlGameOver" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 2016.0
-margin_bottom = 3584.0
-rect_scale = Vector2( 0.067, 0.067 )
+margin_right = 396.0
+margin_bottom = 704.0
+rect_scale = Vector2( 0.267, 0.267 )
 texture = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -64,9 +81,9 @@ __meta__ = {
 [node name="glucoseMeter" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 2016.0
-margin_bottom = 3584.0
-rect_scale = Vector2( 0.067, 0.067 )
+margin_right = 396.0
+margin_bottom = 704.0
+rect_scale = Vector2( 0.267, 0.267 )
 texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -91,9 +108,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -3.6269
 margin_top = -3.05594
-margin_right = 2012.37
-margin_bottom = 3580.94
-rect_scale = Vector2( 0.067, 0.067 )
+margin_right = 392.373
+margin_bottom = 700.944
+rect_scale = Vector2( 0.267, 0.267 )
 texture = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -104,9 +121,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -3.6269
 margin_top = -3.05594
-margin_right = 2012.37
-margin_bottom = 3580.94
-rect_scale = Vector2( 0.067, 0.067 )
+margin_right = 392.373
+margin_bottom = 700.944
+rect_scale = Vector2( 0.267, 0.267 )
 texture = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -117,9 +134,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 0.152843
 margin_top = -0.384854
-margin_right = 2016.15
-margin_bottom = 3583.62
-rect_scale = Vector2( 0.067, 0.067 )
+margin_right = 396.153
+margin_bottom = 703.615
+rect_scale = Vector2( 0.267, 0.267 )
 texture = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -130,8 +147,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 0.152843
 margin_top = -0.384854
-margin_right = 2016.15
-margin_bottom = 3583.62
+margin_right = -143.847
+margin_bottom = -256.385
 rect_scale = Vector2( 0.067, 0.067 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -142,19 +159,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 0.152843
 margin_top = -0.384854
-margin_right = 2016.15
-margin_bottom = 3583.62
-rect_scale = Vector2( 0.067, 0.067 )
-texture = ExtResource( 9 )
+margin_right = 396.153
+margin_bottom = 703.615
+rect_scale = Vector2( 0.267, 0.267 )
+texture = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="tryAgainButton" type="Button" parent="gameOverPopup"]
-margin_left = 296.688
-margin_top = 1251.14
-margin_right = 1039.69
-margin_bottom = 1489.14
+margin_left = 85.0
+margin_top = 301.0
+margin_right = 260.0
+margin_bottom = 362.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -163,14 +180,14 @@ __meta__ = {
 }
 
 [node name="tryAgainSprite" type="Sprite" parent="gameOverPopup/tryAgainButton"]
-position = Vector2( 755.438, 721.855 )
-texture = ExtResource( 6 )
+position = Vector2( 182.95, 179.621 )
+texture = ExtResource( 9 )
 
 [node name="initialScreenButton" type="Button" parent="gameOverPopup"]
-margin_left = 1121.08
-margin_top = 1251.78
-margin_right = 1826.08
-margin_bottom = 1495.78
+margin_left = 281.0
+margin_top = 300.0
+margin_right = 457.0
+margin_bottom = 360.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -179,7 +196,7 @@ __meta__ = {
 }
 
 [node name="initialScreenSprite" type="Sprite" parent="gameOverPopup/initialScreenButton"]
-position = Vector2( -53.7404, 727.268 )
+position = Vector2( -10.657, 181.287 )
 texture = ExtResource( 10 )
 
 [node name="layer" type="Node2D" parent="."]
@@ -212,6 +229,18 @@ text = "0000"
 align = 2
 valign = 1
 autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/blinkAnim = SubResource( 3 )
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color( 0, 0, 0, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }

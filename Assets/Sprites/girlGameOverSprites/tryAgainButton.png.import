@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GO1- FRASE GAME OVER POR EXERCÍCIO COM GLICOSE ALTA.png-19f2697b3789c47c5c1e6d70e777b325.stex"
+path="res://.import/tryAgainButton.png-92fa10ffbb6640c5bf63c9d774cfd7fc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/girlGameOverSprites/GO1- FRASE GAME OVER POR EXERCÍCIO COM GLICOSE ALTA.png"
-dest_files=[ "res://.import/GO1- FRASE GAME OVER POR EXERCÍCIO COM GLICOSE ALTA.png-19f2697b3789c47c5c1e6d70e777b325.stex" ]
+source_file="res://Assets/Sprites/girlGameOverSprites/tryAgainButton.png"
+dest_files=[ "res://.import/tryAgainButton.png-92fa10ffbb6640c5bf63c9d774cfd7fc.stex" ]
 
 [params]
 

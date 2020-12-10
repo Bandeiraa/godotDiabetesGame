@@ -32,12 +32,12 @@ font_data = ExtResource( 3 )
 [sub_resource type="DynamicFont" id=3]
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=4]
 size = 10
 font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=4]
-size = 10
+[sub_resource type="DynamicFont" id=5]
+size = 8
 font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=6]
@@ -53,11 +53,9 @@ __meta__ = {
 [node name="Background" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -2.97302
-margin_top = -2.22976
-margin_right = 2013.03
-margin_bottom = 3581.77
-rect_scale = Vector2( 0.07, 0.068 )
+margin_right = 540.0
+margin_bottom = 960.0
+rect_scale = Vector2( 0.267, 0.267 )
 texture = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -66,10 +64,10 @@ __meta__ = {
 [node name="ConfigButton" type="Button" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = 126.371
-margin_top = 1.62996
-margin_right = 142.371
-margin_bottom = 21.63
+margin_left = 121.0
+margin_top = 2.0
+margin_right = 141.0
+margin_bottom = 22.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -78,19 +76,19 @@ __meta__ = {
 }
 
 [node name="OptionsButton" type="Sprite" parent="ConfigButton"]
-position = Vector2( 6.25925, 9.0731 )
-scale = Vector2( 0.05, 0.05 )
+position = Vector2( 10.3068, 8.81503 )
+scale = Vector2( 0.267, 0.267 )
 texture = ExtResource( 1 )
-offset = Vector2( -905.185, 1749.1 )
+offset = Vector2( -226.382, 438.111 )
 
 [node name="Animator" type="AnimationPlayer" parent="."]
 anims/gearAnimation = SubResource( 1 )
 
 [node name="PlayButton" type="Button" parent="."]
-margin_left = 47.8457
-margin_top = 41.0
-margin_right = 109.846
-margin_bottom = 61.0
+margin_left = 44.4262
+margin_top = 39.3125
+margin_right = 126.426
+margin_bottom = 63.3125
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -99,16 +97,16 @@ __meta__ = {
 }
 
 [node name="playSprite" type="Sprite" parent="PlayButton"]
-position = Vector2( 23.6552, 89.7914 )
-scale = Vector2( 0.07, 0.07 )
+position = Vector2( 33.1153, 91.0527 )
+scale = Vector2( 0.267, 0.267 )
 texture = ExtResource( 6 )
 
 [node name="QuizButton" type="Button" parent="."]
 visible = false
-margin_left = 17.5517
-margin_top = 73.0
-margin_right = 86.5517
-margin_bottom = 93.0
+margin_left = 9.50513
+margin_top = 75.8316
+margin_right = 91.5051
+margin_bottom = 95.8316
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -117,13 +115,13 @@ __meta__ = {
 }
 
 [node name="quizSprite" type="Sprite" parent="QuizButton"]
-position = Vector2( 53.4881, 56 )
-scale = Vector2( 0.07, 0.07 )
+position = Vector2( 59.4813, 54.689 )
+scale = Vector2( 0.267, 0.267 )
 texture = ExtResource( 7 )
 
 [node name="QuizResultMenu" type="Sprite" parent="."]
 position = Vector2( 70.0036, 123.744 )
-scale = Vector2( 0.07, 0.07 )
+scale = Vector2( 0.267, 0.267 )
 texture = ExtResource( 2 )
 
 [node name="Menu" type="PanelContainer" parent="."]
@@ -251,11 +249,11 @@ __meta__ = {
 }
 
 [node name="totalPoints" type="Label" parent="."]
-margin_left = 77.7452
-margin_top = 145.602
-margin_right = 134.746
-margin_bottom = 161.602
-custom_fonts/font = SubResource( 5 )
+margin_left = 76.8088
+margin_top = 144.478
+margin_right = 133.81
+margin_bottom = 160.478
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 align = 1
 valign = 1
@@ -265,11 +263,11 @@ __meta__ = {
 }
 
 [node name="correctAnswers" type="Label" parent="."]
-margin_left = 119.549
-margin_top = 165.892
-margin_right = 135.549
-margin_bottom = 181.892
-custom_fonts/font = SubResource( 4 )
+margin_left = 117.114
+margin_top = 162.146
+margin_right = 133.114
+margin_bottom = 178.146
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 align = 1
 valign = 1
@@ -278,10 +276,10 @@ __meta__ = {
 }
 
 [node name="wrongAnswers" type="Label" parent="."]
-margin_left = 120.334
-margin_top = 183.923
-margin_right = 136.334
-margin_bottom = 199.923
+margin_left = 117.525
+margin_top = 180.177
+margin_right = 133.525
+margin_bottom = 196.177
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 align = 1
@@ -291,11 +289,11 @@ __meta__ = {
 }
 
 [node name="insulinAmount" type="Label" parent="."]
-margin_left = 121.2
-margin_top = 203.864
-margin_right = 137.2
-margin_bottom = 219.864
-custom_fonts/font = SubResource( 4 )
+margin_left = 117.822
+margin_top = 198.238
+margin_right = 133.822
+margin_bottom = 214.238
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "1"
 align = 1

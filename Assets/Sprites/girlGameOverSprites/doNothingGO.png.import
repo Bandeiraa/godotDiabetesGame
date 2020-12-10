@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/QUADRO GAME OVER.png-63f08b94b588cc71b27d00fcfb2d0074.stex"
+path="res://.import/doNothingGO.png-bd28aa3fa47560563374a95c7f986002.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/girlGameOverSprites/QUADRO GAME OVER.png"
-dest_files=[ "res://.import/QUADRO GAME OVER.png-63f08b94b588cc71b27d00fcfb2d0074.stex" ]
+source_file="res://Assets/Sprites/girlGameOverSprites/doNothingGO.png"
+dest_files=[ "res://.import/doNothingGO.png-bd28aa3fa47560563374a95c7f986002.stex" ]
 
 [params]
 

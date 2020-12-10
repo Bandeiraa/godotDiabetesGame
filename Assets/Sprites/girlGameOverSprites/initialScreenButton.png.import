@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BOTÃO TENTAR DE NOVO.png-9d5780ebf5adde59ce4d94c7108062e8.stex"
+path="res://.import/initialScreenButton.png-deba5222188b264559daef6c8e71ef1a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/girlGameOverSprites/BOTÃO TENTAR DE NOVO.png"
-dest_files=[ "res://.import/BOTÃO TENTAR DE NOVO.png-9d5780ebf5adde59ce4d94c7108062e8.stex" ]
+source_file="res://Assets/Sprites/girlGameOverSprites/initialScreenButton.png"
+dest_files=[ "res://.import/initialScreenButton.png-deba5222188b264559daef6c8e71ef1a.stex" ]
 
 [params]
 

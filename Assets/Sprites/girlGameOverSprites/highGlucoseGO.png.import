@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BOTÃO TELA INICIAL.png-0c1bb50bf450b6235d65546d931c7985.stex"
+path="res://.import/highGlucoseGO.png-298a99ed462de115ed6712d162642c2a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/girlGameOverSprites/BOTÃO TELA INICIAL.png"
-dest_files=[ "res://.import/BOTÃO TELA INICIAL.png-0c1bb50bf450b6235d65546d931c7985.stex" ]
+source_file="res://Assets/Sprites/girlGameOverSprites/highGlucoseGO.png"
+dest_files=[ "res://.import/highGlucoseGO.png-298a99ed462de115ed6712d162642c2a.stex" ]
 
 [params]
 

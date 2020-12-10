@@ -22,6 +22,8 @@ config/icon="res://icon.png"
 [autoload]
 
 ProjectManager="*res://Scripts/ProjectManager.gd"
+InitialSong="*res://Scenes/initialSong.tscn"
+MainGameSong="*res://Scenes/mainGameSong.tscn"
 
 [display]
 

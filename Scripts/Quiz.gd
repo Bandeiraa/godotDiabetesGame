@@ -62,6 +62,8 @@ func removeQuestion():
 		ProjectManager.quizResult.correctAnswers = pointsCount
 		ProjectManager.quizResult.wrongAnswers = wrongAnswer
 		ProjectManager.save()
+		answerReaction.play("blinkScreen")
+		yield(get_tree().create_timer(0.7), "timeout")
 		_changeScene = get_tree().change_scene("res://Scenes/boyScenes/boyPrincipalScreenAfterQuiz.tscn")
 		return 
 	data.perguntas.remove(storedRandomNumber)
@@ -145,6 +147,8 @@ func onPointsAreIncreased():
 	pointsCountAux += 1
 
 func onBackButtonPressed():
+	answerReaction.play("blinkScreen")
+	yield(get_tree().create_timer(0.7), "timeout")
 	_changeScene = get_tree().change_scene("res://Scenes/boyScenes/boyPrincipal.tscn")
 
 func onTimerTimeout():
@@ -161,6 +165,8 @@ func onConfirmButtonPressed():
 	ProjectManager.quizResult.correctAnswers = pointsCount
 	ProjectManager.quizResult.wrongAnswers = wrongAnswer
 	ProjectManager.save()
+	answerReaction.play("blinkScreen")
+	yield(get_tree().create_timer(0.7), "timeout")
 	_changeScene = get_tree().change_scene("res://Scenes/boyScenes/boyPrincipalScreenAfterQuiz.tscn")
 
 func onRefuseButtonPressed():

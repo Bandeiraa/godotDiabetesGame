@@ -15,6 +15,7 @@ onready var fruitsTimer = $fruitsTimer
 onready var candiesTimer = $candiesTimer
 onready var blinkAnim = $animator
 onready var warningAnimator = $warningAnimator
+onready var fadeAnimation = $blinkScreenAnimator
 
 var storeData = 0
 var glucoseCalculus = 70
@@ -142,7 +143,9 @@ func _process(_delta):
 		ProjectManager.quizResult.glucoseAmout = str(glucoseCalculus)
 		ProjectManager.quizResult.totalScore = pointsCount
 		ProjectManager.save()
+		fadeAnimation.play("blinkScreen")
 		_changeScene = get_tree().change_scene("res://Scenes/girlScenes/hypoglycemiaGameOver.tscn")
+		
 	else:
 		$warningMessage.set_visible(false)
 		
@@ -150,4 +153,6 @@ func onDNothingButtonPressed():
 	ProjectManager.quizResult.glucoseAmout = str(glucoseCalculus)
 	ProjectManager.quizResult.totalScore = pointsCount
 	ProjectManager.save()
+	fadeAnimation.play("blinkScreen")
+	yield(get_tree().create_timer(0.7), "timeout")
 	_changeScene = get_tree().change_scene("res://Scenes/girlScenes/highGlucoseGameOver.tscn")

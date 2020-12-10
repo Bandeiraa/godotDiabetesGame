@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Sprites/boyInitialScreenSprite/configButton.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Principal.gd" type="Script" id=2]
@@ -6,6 +6,21 @@
 [ext_resource path="res://Assets/Sprites/boyInitialScreenSprite/withoutButtonsInitialScreen.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Sprites/boyInitialScreenSprite/playButton.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Sprites/boyInitialScreenSprite/quizButton.png" type="Texture" id=6]
+
+[sub_resource type="Animation" id=4]
+resource_name = "blinkScreen"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
 
 [sub_resource type="Animation" id=1]
 resource_name = "gearAnimation"
@@ -41,11 +56,9 @@ __meta__ = {
 [node name="Background" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -2.97302
-margin_top = -2.22976
-margin_right = 2013.03
-margin_bottom = 3581.77
-rect_scale = Vector2( 0.07, 0.068 )
+margin_right = 396.0
+margin_bottom = 704.0
+rect_scale = Vector2( 0.267, 0.267 )
 texture = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -54,9 +67,10 @@ __meta__ = {
 [node name="ConfigButton" type="Button" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -16.0
-margin_top = 1.0
-margin_bottom = 21.0
+margin_left = -21.9431
+margin_top = 1.21022
+margin_right = -2.94315
+margin_bottom = 21.2102
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -65,19 +79,20 @@ __meta__ = {
 }
 
 [node name="OptionsButton" type="Sprite" parent="ConfigButton"]
-position = Vector2( 6.25925, 9.0731 )
-scale = Vector2( 0.05, 0.05 )
+position = Vector2( 9.02312, 9.56247 )
+scale = Vector2( 0.267, 0.267 )
 texture = ExtResource( 1 )
-offset = Vector2( -905.185, 1749.1 )
+offset = Vector2( -226.05, 438.897 )
 
 [node name="Animator" type="AnimationPlayer" parent="."]
+anims/blinkScreen = SubResource( 4 )
 anims/gearAnimation = SubResource( 1 )
 
 [node name="PlayButton" type="Button" parent="."]
-margin_left = 47.8457
-margin_top = 41.0
-margin_right = 109.846
-margin_bottom = 61.0
+margin_left = 37.0866
+margin_top = 44.7701
+margin_right = 121.087
+margin_bottom = 65.7701
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -86,15 +101,15 @@ __meta__ = {
 }
 
 [node name="playSprite" type="Sprite" parent="PlayButton"]
-position = Vector2( 23.6552, 89.7914 )
-scale = Vector2( 0.07, 0.07 )
+position = Vector2( 34.3702, 87.8071 )
+scale = Vector2( 0.267, 0.267 )
 texture = ExtResource( 5 )
 
 [node name="QuizButton" type="Button" parent="."]
-margin_left = 17.5517
-margin_top = 73.0
-margin_right = 86.5517
-margin_bottom = 93.0
+margin_left = 19.1237
+margin_top = 76.4949
+margin_right = 105.124
+margin_bottom = 97.4949
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -103,8 +118,8 @@ __meta__ = {
 }
 
 [node name="quizSprite" type="Sprite" parent="QuizButton"]
-position = Vector2( 53.4881, 56 )
-scale = Vector2( 0.07, 0.07 )
+position = Vector2( 61.5415, 55.4381 )
+scale = Vector2( 0.267, 0.267 )
 texture = ExtResource( 6 )
 
 [node name="Menu" type="PanelContainer" parent="."]
@@ -230,6 +245,12 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color( 0, 0, 0, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
 [connection signal="pressed" from="ConfigButton" to="." method="onGearPressed"]
 [connection signal="pressed" from="QuizButton" to="." method="onQuizButtonPressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/BackButton" to="." method="onBackToSceneButtonPressed"]

@@ -3,6 +3,7 @@ extends Control
 var _changeScene
 var storePoints
 var storeGlucoseAmount
+onready var blinkAnim = get_node("AnimationPlayer")
 
 func _ready():
 	ProjectManager.loadData()
@@ -22,7 +23,13 @@ func onTryAgainButtonPressed():
 	ProjectManager.quizResult.totalScore = 0
 	ProjectManager.quizResult.glucoseAmout = "70"
 	ProjectManager.save()
+	blinkAnim.play("blinkAnim")
+	yield(get_tree().create_timer(0.7), "timeout")
 	_changeScene = get_tree().change_scene("res://Scenes/girlScenes/girlGameScene.tscn")
 
 func onInitialScreenButtonPressed():
+	MainGameSong.stop()
+	InitialSong.play()
+	blinkAnim.play("blinkAnim")
+	yield(get_tree().create_timer(0.7), "timeout")
 	_changeScene = get_tree().change_scene("res://Scenes/girlScenes/girlPrincipal.tscn")

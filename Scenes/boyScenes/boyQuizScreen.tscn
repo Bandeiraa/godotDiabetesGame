@@ -12,7 +12,7 @@
 [ext_resource path="res://Assets/Sprites/boyQuizSprites/bonusContinueButton.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Fonts/design.graffiti.SNAP____.ttf" type="DynamicFontData" id=12]
 
-[sub_resource type="DynamicFont" id=18]
+[sub_resource type="DynamicFont" id=1]
 size = 8
 font_data = ExtResource( 12 )
 
@@ -225,11 +225,11 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="DynamicFont" id=19]
+[sub_resource type="DynamicFont" id=13]
 size = 4
 font_data = ExtResource( 12 )
 
-[sub_resource type="DynamicFont" id=17]
+[sub_resource type="DynamicFont" id=14]
 size = 7
 font_data = ExtResource( 12 )
 
@@ -242,9 +242,9 @@ __meta__ = {
 }
 
 [node name="Background" type="TextureRect" parent="."]
-margin_right = 2160.0
-margin_bottom = 3840.0
-rect_scale = Vector2( 0.07, 0.07 )
+margin_right = 540.0
+margin_bottom = 960.0
+rect_scale = Vector2( 0.267, 0.267 )
 texture = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -257,7 +257,7 @@ margin_right = 72.1001
 margin_bottom = 141.243
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = SubResource( 18 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 align = 1
 autowrap = true
@@ -354,7 +354,7 @@ margin_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 100, 5 )
-custom_fonts/font = SubResource( 19 )
+custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 align = 1
 valign = 1
@@ -390,7 +390,7 @@ margin_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 100, 5 )
-custom_fonts/font = SubResource( 19 )
+custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 align = 1
 valign = 1
@@ -427,7 +427,7 @@ margin_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 100, 5 )
-custom_fonts/font = SubResource( 19 )
+custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 align = 1
 valign = 1
@@ -464,7 +464,7 @@ margin_bottom = 6.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 100, 5 )
-custom_fonts/font = SubResource( 19 )
+custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 align = 1
 valign = 1
@@ -514,7 +514,7 @@ margin_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 100, 5 )
-custom_fonts/font = SubResource( 17 )
+custom_fonts/font = SubResource( 14 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 align = 1
 valign = 1
@@ -550,7 +550,7 @@ margin_bottom = 23.005
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 100, 5 )
-custom_fonts/font = SubResource( 17 )
+custom_fonts/font = SubResource( 14 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 align = 1
 valign = 1
@@ -571,8 +571,8 @@ __meta__ = {
 }
 
 [node name="backToMainSprite" type="Sprite" parent="BackButton"]
-position = Vector2( 69.65, 130.108 )
-scale = Vector2( 0.07, 0.07 )
+position = Vector2( 68.0626, 123.758 )
+scale = Vector2( 0.267, 0.267 )
 texture = ExtResource( 8 )
 
 [node name="popupTimer" type="Timer" parent="."]
@@ -585,7 +585,7 @@ one_shot = true
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
-rect_scale = Vector2( 0.07, 0.07 )
+rect_scale = Vector2( 0.267, 0.267 )
 texture = ExtResource( 9 )
 
 [node name="confirmButton" type="Button" parent="popupMenu"]
@@ -593,10 +593,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 89.0
-margin_top = 318.385
-margin_right = 736.0
-margin_bottom = 482.385
+margin_left = 15.0
+margin_top = 69.8203
+margin_right = 184.0
+margin_bottom = 117.82
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -605,7 +605,7 @@ __meta__ = {
 }
 
 [node name="returnButton" type="Sprite" parent="popupMenu/confirmButton"]
-position = Vector2( -95, -328.385 )
+position = Vector2( -18.2209, -80.8104 )
 texture = ExtResource( 10 )
 
 [node name="refuseButton" type="Button" parent="popupMenu"]
@@ -613,10 +613,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -710.767
-margin_top = 318.385
-margin_right = -54.7671
-margin_bottom = 494.385
+margin_left = -179.375
+margin_top = 66.0001
+margin_right = -8.37506
+margin_bottom = 114.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -625,11 +625,10 @@ __meta__ = {
 }
 
 [node name="keepOnSceneButton" type="Sprite" parent="popupMenu/refuseButton"]
-position = Vector2( 704.767, -328.385 )
+position = Vector2( 177.785, -77.7335 )
 texture = ExtResource( 11 )
 
 [node name="blinkScreen" type="Panel" parent="."]
-visible = false
 modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0

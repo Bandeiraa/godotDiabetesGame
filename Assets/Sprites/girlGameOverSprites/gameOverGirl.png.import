@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/MENINA GAME OVER.png-f613edcd77ba0b6cd0b2a3182c7bcc85.stex"
+path="res://.import/gameOverGirl.png-c12352531a6ad1ce57edaacb89a4a75e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/girlGameOverSprites/MENINA GAME OVER.png"
-dest_files=[ "res://.import/MENINA GAME OVER.png-f613edcd77ba0b6cd0b2a3182c7bcc85.stex" ]
+source_file="res://Assets/Sprites/girlGameOverSprites/gameOverGirl.png"
+dest_files=[ "res://.import/gameOverGirl.png-c12352531a6ad1ce57edaacb89a4a75e.stex" ]
 
 [params]
 

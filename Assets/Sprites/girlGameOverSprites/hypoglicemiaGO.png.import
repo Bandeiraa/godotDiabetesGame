@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GO3 - FRASE GAME OVER POR HIPOGLICEMIA.png-e0c8583abee67b8b11c3183d88dcf3cc.stex"
+path="res://.import/hypoglicemiaGO.png-5bcfd785ac3b69d8ef34edba43df3ed5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/girlGameOverSprites/GO3 - FRASE GAME OVER POR HIPOGLICEMIA.png"
-dest_files=[ "res://.import/GO3 - FRASE GAME OVER POR HIPOGLICEMIA.png-e0c8583abee67b8b11c3183d88dcf3cc.stex" ]
+source_file="res://Assets/Sprites/girlGameOverSprites/hypoglicemiaGO.png"
+dest_files=[ "res://.import/hypoglicemiaGO.png-5bcfd785ac3b69d8ef34edba43df3ed5.stex" ]
 
 [params]
 
