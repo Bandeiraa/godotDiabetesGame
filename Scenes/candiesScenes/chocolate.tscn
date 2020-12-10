@@ -6,11 +6,11 @@
 [node name="unhealthyFoods" instance=ExtResource( 1 )]
 
 [node name="Sprite" parent="." index="0"]
-position = Vector2( -21.5815, 46.5771 )
+position = Vector2( -6.70135, 9.87285 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" parent="." index="1"]
-position = Vector2( -21.5815, 46.5771 )
+position = Vector2( -6.70135, 9.87285 )
 scale = Vector2( 0.5, 0.5 )
-polygon = PoolVector2Array( -325.354, -289.917, -20.2482, 270.239, 20.2738, 296.459, 380.204, 146.29, 22.6575, -471.074, 3.58838, -471.074, -320.587, -337.59 )
+polygon = PoolVector2Array( -82.0036, -80.282, -84.2306, -73.601, 4.8486, 76.7201, 96.1547, 36.6344, 2.62161, -117.027 )

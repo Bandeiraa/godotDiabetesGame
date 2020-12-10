@@ -4,13 +4,14 @@
 [ext_resource path="res://Assets/Sprites/candiesSprites/sugar.png" type="Texture" id=2]
 
 [node name="unhealthyFoods" instance=ExtResource( 1 )]
+position = Vector2( 72, 29.5281 )
 
 [node name="Sprite" parent="." index="0"]
-position = Vector2( -58.9921, 116.299 )
+position = Vector2( -11.4442, 19.5347 )
 scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" parent="." index="1"]
-position = Vector2( -58.9921, 116.299 )
+position = Vector2( -11.4442, 19.5347 )
 scale = Vector2( 0.7, 0.7 )
-polygon = PoolVector2Array( -125.243, 54.7127, 15.3733, 51.3379, 76.1194, -15.033, 126.741, -53.2805, 230.235, -70.1545, 261.733, -106.152, 259.483, -195.022, 162.739, -285.016, 89.6185, -323.264, 35.6219, -306.39, -10.5002, -228.77, -44.2481, -121.901, -134.242, -54.4055 )
+polygon = PoolVector2Array( -31.9641, -14.3265, -31.9641, 13.6779, 3.19037, 13.0821, 20.4697, -4.19724, 32.3865, -12.539, 55.0284, -16.114, 64.5618, -24.4558, 63.3701, -44.7143, 41.3241, -67.952, 21.6614, -79.8688, 10.3405, -75.1021, -0.384674, -57.8228, -2.17218, -30.4142, -11.1097, -32.7975 )
