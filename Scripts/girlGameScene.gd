@@ -30,6 +30,8 @@ var storedGlucoseValue
 var randomFruitPosition
 var randomCandiePosition
 var sum = 0
+var candie
+var fruit
 
 func _ready():
 	onBackToScene()
@@ -56,49 +58,29 @@ func spawnFruit():
 	randomize()
 	var randomTimerIndex = rand_range(0.3, 1.5)
 	fruitsTimer.set_wait_time(randomTimerIndex)
-	var fruit = respawnFruit(FRUITS).instance()
+	fruit = respawnFruit(FRUITS).instance()
 	fruitPosition = Vector2()
 	randomFruitPosition = int(rand_range(23, 125))
-	print("Valor random quando a distancia eh maior do que 40 ", randomFruitPosition)
-	#fruitPosition.x = randomFruitPosition
-	var distanceBtw = abs(randomFruitPosition - randomCandiePosition)
-	print("Distancia entre doce x fruta: ", distanceBtw)
-	#print("Distance between fruit x candy ", distanceBtw)
-	#print("Random Value outside If ", randomFruitPosition)
-	#print(distance)
-	if  distanceBtw <= 40:
-		randomize()
-		randomFruitPosition = int(rand_range(23, 125))
-		print("Valor random quando a distancia fica menor do que 40 ", randomFruitPosition)
-		#print("Random Value inside If ", randomFruitPosition)
-		#randomCandiePosition = int(rand_range(-58, 58))
+	if (fruit.get_overlapping_areas().empty() == true):
 		fruitPosition.x = randomFruitPosition
 		fruit.set_position(fruitPosition)
-		$FruitPosition.add_child(fruit)
-		#print("Entrou no if")
-		#print("Novo valor random ", randomFruitPosition)
-	else:
-		fruitPosition.x = randomFruitPosition
-		fruit.set_position(fruitPosition)
-		#print("Spawnou uma fruta na posicao: ", fruitPosition.x)
 		$FruitPosition.add_child(fruit)
 	fruit.connect("fruitDestroyed", self, "canIncreasePointsCount")
-		
+	
 func spawnCandie():
 	candiesTimer.start()
 	randomize()
-	var randomTimerIndex = rand_range(1.5, 3.0)
+	var randomTimerIndex = rand_range(1, 3)
 	candiesTimer.set_wait_time(randomTimerIndex)
-	var candie = respawnCandie(CANDIES).instance()
+	candie = respawnCandie(CANDIES).instance()
 	candiePosition = Vector2()
 	randomCandiePosition = int(rand_range(23, 125))
-	candiePosition.x = randomCandiePosition
-	#if randomCandiePosition - randomFruitPosition <= abs(50):
-	#	randomCandiePosition = int(rand_range(-58, 58))
-	#if candiePosition.x && fruitPosition.x:
-	candie.set_position(candiePosition)
-	#print("Spawnou um doce na posicao: ", candiePosition.x)
-	$CandiePosition.add_child(candie)
+	var randomCandieYPosition = int(rand_range(1, 10))
+	if(candie.get_overlapping_areas().empty() == true):
+		candiePosition.x = randomCandiePosition
+		candiePosition.y = randomCandieYPosition
+		candie.set_position(candiePosition)
+		$CandiePosition.add_child(candie)
 	candie.connect("candyDestroied", self, "canIncreaseGlucose")
 	
 func respawnFruit(choice):
@@ -225,10 +207,14 @@ func onExerciseButtonPressed():
 		_changeScene = get_tree().change_scene(storeScenePath)
 
 func onInsulinButtonPressed():
-	glucoseCalculus = glucoseCalculus - 100
-	glucoseValue.text = str(glucoseCalculus)
-	$glucoseTimer.start()
-	pass # Replace with function body.
+	ProjectManager.quizResult.glucoseAmount = str(glucoseCalculus)
+	ProjectManager.quizResult.totalScore = sum
+	ProjectManager.quizResult.candiesCount = candiesCount
+	ProjectManager.save()
+	_changeScene = get_tree().change_scene("res://Scenes/girlScenes/insulinScene.tscn")
+	#glucoseCalculus = glucoseCalculus - 100
+	#glucoseValue.text = str(glucoseCalculus)
+	#$glucoseTimer.start()
 
 func onBonusPressed():
 	$glucoseTimer.stop()
