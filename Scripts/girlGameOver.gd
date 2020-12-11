@@ -21,13 +21,17 @@ func _ready():
 	
 func onTryAgainButtonPressed():
 	ProjectManager.quizResult.totalScore = 0
-	ProjectManager.quizResult.glucoseAmout = "70"
+	ProjectManager.quizResult.glucoseAmount = "70"
 	ProjectManager.save()
+	#print(ProjectManager.quizResult.glucoseAmount)
 	blinkAnim.play("blinkAnim")
 	yield(get_tree().create_timer(0.7), "timeout")
 	_changeScene = get_tree().change_scene("res://Scenes/girlScenes/girlGameScene.tscn")
 
 func onInitialScreenButtonPressed():
+	ProjectManager.quizResult.totalScore = 0
+	ProjectManager.quizResult.glucoseAmount = "70"
+	ProjectManager.save()
 	MainGameSong.stop()
 	InitialSong.play()
 	blinkAnim.play("blinkAnim")

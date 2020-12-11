@@ -6,7 +6,7 @@ var quizResult = {
 	"totalPoints": "100/100",
 	"correctAnswers": 0,
 	"wrongAnswers": 0,
-	"glucoseAmout": "70",
+	"glucoseAmount": "70",
 	"totalScore": 0
 }
 

@@ -296,10 +296,10 @@ z_index = 1
 texture = ExtResource( 2 )
 
 [node name="exerciseButton" type="Button" parent="."]
-margin_left = 81.0
-margin_top = 233.0
-margin_right = 102.0
-margin_bottom = 253.0
+margin_left = 79.8864
+margin_top = 228.323
+margin_right = 100.886
+margin_bottom = 248.323
 rect_scale = Vector2( 0.9, 0.9 )
 focus_mode = 0
 enabled_focus_mode = 0
@@ -309,7 +309,7 @@ __meta__ = {
 }
 
 [node name="exerciseSprite" type="Sprite" parent="exerciseButton"]
-position = Vector2( -9.2959, -111.087 )
+position = Vector2( -9.04843, -105.395 )
 scale = Vector2( 0.267, 0.267 )
 z_index = 1
 texture = ExtResource( 6 )
@@ -426,3 +426,4 @@ texture = ExtResource( 12 )
 [connection signal="timeout" from="glucoseTimer" to="." method="onGlucoseTimerTimeout"]
 [connection signal="pressed" from="exerciseButtonScene" to="." method="onDNothingButtonPressed"]
 [connection signal="pressed" from="doNothingButtonScene" to="." method="onDNothingButtonPressed"]
+[connection signal="pressed" from="exerciseButton" to="." method="onExerciseButtonPressed"]

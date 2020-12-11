@@ -20,6 +20,9 @@ func onBackButtonPressed():
 func onPlayButtonPressed():
 	InitialSong.stop()
 	MainGameSong.play()
+	ProjectManager.quizResult.totalScore = 0
+	ProjectManager.quizResult.glucoseAmount = "70"
+	ProjectManager.save()
 	Animator.play("blinkAnimation")
 	yield(get_tree().create_timer(0.7), "timeout")
 	_changeScene = get_tree().change_scene("res://Scenes/girlScenes/girlGameScene.tscn")

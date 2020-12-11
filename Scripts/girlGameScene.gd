@@ -24,6 +24,22 @@ var pointsCount = 0
 var randomGlucoseValue; var storeValue = 0
 var aux = 0; var aux2 = 0
 var _changeScene; var isOutside = false
+var storedPointsValue
+var storedGlucoseValue
+var sum = 0
+
+func _ready():
+	onBackToScene()
+	
+func onBackToScene():
+	ProjectManager.loadData()
+	storedPointsValue = ProjectManager.quizResult.totalScore
+	$layer/pointsCountLabel.text = str(storedPointsValue)
+	storedGlucoseValue = str(ProjectManager.quizResult.glucoseAmount)
+	print(storedGlucoseValue)
+	glucoseCalculus = int(storedGlucoseValue)
+	glucoseValue.text = str(glucoseCalculus)
+	#print(glucoseValue.text)
 
 func spawnFruit():
 	fruitsTimer.start()
@@ -73,17 +89,21 @@ func canIncreasePointsCount():
 	randomize()
 	aux2 = int(rand_range(5, 20))
 	storeValue += aux2
-	glucoseCalculus = glucoseCalculus + storeValue
+	glucoseCalculus = glucoseCalculus + storeValue#int(storedGlucoseValue)  #int(storedGlucoseValue)
 	glucoseValue.text = str(glucoseCalculus)
 	pointsCount += 20
 	if pointsCount < 10:
-		$layer/pointsCountLabel.text = str("000", pointsCount)
+		sum = pointsCount
+		$layer/pointsCountLabel.text = str("000", sum)
 	elif pointsCount < 100:
-		$layer/pointsCountLabel.text = str("00", pointsCount)
+		sum = pointsCount + storedPointsValue
+		$layer/pointsCountLabel.text = str("00", sum)
 	elif pointsCount < 1000:
-		$layer/pointsCountLabel.text = str("0", pointsCount)
+		sum = pointsCount + storedPointsValue
+		$layer/pointsCountLabel.text = str("0", sum)
 	else:
-		$layer/pointsCountLabel.text = str(pointsCount)
+		sum = pointsCount + storedPointsValue
+		$layer/pointsCountLabel.text = str(sum)
 	storeValue = 0
 		
 func canIncreaseGlucose():
@@ -105,7 +125,8 @@ func onGlucoseTimerTimeout():
 	randomize()
 	randomGlucoseValue = int(rand_range(5, 15))
 	aux += randomGlucoseValue #+ glucoseCalculus
-	glucoseCalculus = glucoseCalculus - aux
+	glucoseCalculus = glucoseCalculus - aux #int(storedGlucoseValue)
+	print(glucoseCalculus) 
 	glucoseValue.text = str(glucoseCalculus)
 	aux = 0
 	
@@ -141,7 +162,7 @@ func _process(_delta):
 		#isOutside = true
 	elif glucoseCalculus <= 30:
 		ProjectManager.quizResult.glucoseAmout = str(glucoseCalculus)
-		ProjectManager.quizResult.totalScore = pointsCount
+		ProjectManager.quizResult.totalScore = sum
 		ProjectManager.save()
 		fadeAnimation.play("blinkScreen")
 		_changeScene = get_tree().change_scene("res://Scenes/girlScenes/hypoglycemiaGameOver.tscn")
@@ -156,3 +177,19 @@ func onDNothingButtonPressed():
 	fadeAnimation.play("blinkScreen")
 	yield(get_tree().create_timer(0.7), "timeout")
 	_changeScene = get_tree().change_scene("res://Scenes/girlScenes/highGlucoseGameOver.tscn")
+
+func onExerciseButtonPressed():
+	randomize()
+	var randomExercise
+	randomExercise = randi() % 2 + 1
+	if glucoseCalculus >= 160 && glucoseCalculus <= 189:
+		var randomGlucoseValueAux
+		randomGlucoseValueAux = int(rand_range(60, 80))
+		#print(randomGlucoseValueAux)
+		glucoseCalculus = glucoseCalculus - randomGlucoseValueAux
+		print(glucoseCalculus)
+		ProjectManager.quizResult.glucoseAmount = str(glucoseCalculus)
+		ProjectManager.quizResult.totalScore = sum
+		ProjectManager.save()
+		var storeScenePath = str("res://Scenes/girlScenes/girlExercise", str(randomExercise), ".tscn")
+		_changeScene = get_tree().change_scene(storeScenePath)
