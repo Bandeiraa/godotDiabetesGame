@@ -61,6 +61,7 @@ func removeQuestion():
 		ProjectManager.quizResult.totalPoints = totalPoints
 		ProjectManager.quizResult.correctAnswers = pointsCount
 		ProjectManager.quizResult.wrongAnswers = wrongAnswer
+		ProjectManager.quizResult.bonus = 1
 		ProjectManager.save()
 		answerReaction.play("fadeOut")
 		yield(get_tree().create_timer(0.7), "timeout")
@@ -165,6 +166,7 @@ func onConfirmButtonPressed():
 	ProjectManager.quizResult.totalPoints = totalPoints
 	ProjectManager.quizResult.correctAnswers = pointsCount
 	ProjectManager.quizResult.wrongAnswers = wrongAnswer
+	ProjectManager.quizResult.bonus = 1
 	ProjectManager.save()
 	answerReaction.play("fadeOut")
 	yield(get_tree().create_timer(0.7), "timeout")

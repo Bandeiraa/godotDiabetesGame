@@ -109,14 +109,17 @@ autostart = true
 [node name="fruitsTimer" type="Timer" parent="."]
 autostart = true
 
+[node name="bonusTimer" type="Timer" parent="."]
+wait_time = 5.0
+
 [node name="glucoseTimer" type="Timer" parent="."]
 autostart = true
 
 [node name="FruitPosition" type="Position2D" parent="."]
-position = Vector2( 72.4455, 13.2377 )
+position = Vector2( 8.16531, 10 )
 
 [node name="CandiePosition" type="Position2D" parent="."]
-position = Vector2( 72.4455, 13.2377 )
+position = Vector2( 8.16531, 10 )
 
 [node name="qtePopup" type="Sprite" parent="."]
 visible = false
@@ -167,7 +170,6 @@ __meta__ = {
 }
 
 [node name="insulinButtonScene" type="Button" parent="."]
-visible = false
 margin_left = 17.6148
 margin_top = 142.163
 margin_right = 128.615
@@ -258,7 +260,7 @@ scale = Vector2( 0.267, 0.267 )
 z_index = 1
 texture = ExtResource( 10 )
 
-[node name="insulinButton" type="Button" parent="."]
+[node name="bonusButton" type="Button" parent="."]
 margin_left = 60.0
 margin_top = 218.0
 margin_right = 80.0
@@ -271,7 +273,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="insulinSprite" type="Sprite" parent="insulinButton"]
+[node name="insulinSprite" type="Sprite" parent="bonusButton"]
 position = Vector2( 11.1487, -92.8408 )
 scale = Vector2( 0.267, 0.267 )
 z_index = 1
@@ -423,7 +425,10 @@ z_index = 1
 texture = ExtResource( 12 )
 [connection signal="timeout" from="candiesTimer" to="." method="onCandieTimerTimeout"]
 [connection signal="timeout" from="fruitsTimer" to="." method="onFruitTimerTimeout"]
+[connection signal="timeout" from="bonusTimer" to="." method="onBonusEnd"]
 [connection signal="timeout" from="glucoseTimer" to="." method="onGlucoseTimerTimeout"]
 [connection signal="pressed" from="exerciseButtonScene" to="." method="onDNothingButtonPressed"]
+[connection signal="pressed" from="insulinButtonScene" to="." method="onInsulinButtonPressed"]
 [connection signal="pressed" from="doNothingButtonScene" to="." method="onDNothingButtonPressed"]
+[connection signal="pressed" from="bonusButton" to="." method="onBonusPressed"]
 [connection signal="pressed" from="exerciseButton" to="." method="onExerciseButtonPressed"]
