@@ -7,7 +7,8 @@ var quizResult = {
 	"correctAnswers": 0,
 	"wrongAnswers": 0,
 	"glucoseAmount": "70",
-	"totalScore": 0
+	"totalScore": 0,
+	"candiesCount": 1
 }
 
 func save():

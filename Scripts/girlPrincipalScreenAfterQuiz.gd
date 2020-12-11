@@ -22,6 +22,7 @@ func onPlayButtonPressed():
 	MainGameSong.play()
 	ProjectManager.quizResult.totalScore = 0
 	ProjectManager.quizResult.glucoseAmount = "70"
+	ProjectManager.quizResult.candiesCount = 0
 	ProjectManager.save()
 	Animator.play("blinkAnimation")
 	yield(get_tree().create_timer(0.7), "timeout")

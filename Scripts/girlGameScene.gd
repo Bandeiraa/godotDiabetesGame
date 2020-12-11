@@ -36,9 +36,11 @@ func onBackToScene():
 	storedPointsValue = int(ProjectManager.quizResult.totalScore)
 	$layer/pointsCountLabel.text = str(storedPointsValue)
 	storedGlucoseValue = str(ProjectManager.quizResult.glucoseAmount)
-	print(storedGlucoseValue)
+	#print(storedGlucoseValue)
 	glucoseCalculus = int(storedGlucoseValue)
 	glucoseValue.text = str(glucoseCalculus)
+	candiesCount = int(ProjectManager.quizResult.candiesCount)
+	print(candiesCount)
 	#print(glucoseValue.text)
 
 func spawnFruit():
@@ -97,19 +99,12 @@ func canIncreasePointsCount():
 	storeValue = 0
 		
 func canIncreaseGlucose():
+	randomize()
 	candiesCount += 1
-	
-	if candiesCount >= 1 && candiesCount <= 5:
-		glucoseCalculus = 70 + (candiesCount * 16)
-		glucoseValue.text = str(glucoseCalculus)
-	elif candiesCount >= 6 && candiesCount <= 10:
-		glucoseCalculus = 162 + ((candiesCount - 6) * 7)
-		glucoseValue.text = str(glucoseCalculus)
-	elif candiesCount >= 11 && candiesCount <= 26:
-		glucoseCalculus = 189 + ((candiesCount - 10) * 7)
-		glucoseValue.text = str(glucoseCalculus)
-	else:
-		print("Hperglicemia até demais, se cuide")
+	var randomCandieValue = int(rand_range(5, candiesCount))
+	print(randomCandieValue)
+	glucoseCalculus = glucoseCalculus + randomCandieValue
+	glucoseValue.text = str(glucoseCalculus)
 
 func onGlucoseTimerTimeout():
 	randomize()
@@ -183,6 +178,8 @@ func onExerciseButtonPressed():
 			ProjectManager.quizResult.totalScore = str("0", sum)
 		else:
 			ProjectManager.quizResult.totalScore = sum
+		ProjectManager.quizResult.candiesCount = candiesCount
+		print(candiesCount)
 		ProjectManager.save()
 		var storeScenePath = str("res://Scenes/girlScenes/girlExercise", str(randomExercise), ".tscn")
 		_changeScene = get_tree().change_scene(storeScenePath)

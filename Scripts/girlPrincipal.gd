@@ -24,6 +24,7 @@ func onPlayButtonPressed():
 	MainGameSong.play()
 	ProjectManager.quizResult.totalScore = 0
 	ProjectManager.quizResult.glucoseAmount = "70"
+	ProjectManager.quizResult.candiesCount = 0
 	ProjectManager.save()
 	print(ProjectManager.quizResult.glucoseAmount)
 	principalSceneAnimator.play("blinkScreen")
