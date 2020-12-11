@@ -6,7 +6,7 @@ onready var exercisePopup = get_node("exercisePopup2")
 
 func _ready():
 	ProjectManager.loadData()
-	print(ProjectManager.quizResult.glucoseAmout)
+	print(ProjectManager.quizResult.glucoseAmount)
 	exerciseAnimator.play("exerciseAnimation")
 	
 func onBackToGameButtonPressed():

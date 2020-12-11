@@ -33,7 +33,7 @@ func _ready():
 	
 func onBackToScene():
 	ProjectManager.loadData()
-	storedPointsValue = ProjectManager.quizResult.totalScore
+	storedPointsValue = int(ProjectManager.quizResult.totalScore)
 	$layer/pointsCountLabel.text = str(storedPointsValue)
 	storedGlucoseValue = str(ProjectManager.quizResult.glucoseAmount)
 	print(storedGlucoseValue)
@@ -92,18 +92,8 @@ func canIncreasePointsCount():
 	glucoseCalculus = glucoseCalculus + storeValue#int(storedGlucoseValue)  #int(storedGlucoseValue)
 	glucoseValue.text = str(glucoseCalculus)
 	pointsCount += 20
-	if pointsCount < 10:
-		sum = pointsCount
-		$layer/pointsCountLabel.text = str("000", sum)
-	elif pointsCount < 100:
-		sum = pointsCount + storedPointsValue
-		$layer/pointsCountLabel.text = str("00", sum)
-	elif pointsCount < 1000:
-		sum = pointsCount + storedPointsValue
-		$layer/pointsCountLabel.text = str("0", sum)
-	else:
-		sum = pointsCount + storedPointsValue
-		$layer/pointsCountLabel.text = str(sum)
+	sum = pointsCount + storedPointsValue
+	$layer/pointsCountLabel.text = str(sum)
 	storeValue = 0
 		
 func canIncreaseGlucose():
@@ -161,7 +151,7 @@ func _process(_delta):
 		blinkAnim.play("blinkWarning")
 		#isOutside = true
 	elif glucoseCalculus <= 30:
-		ProjectManager.quizResult.glucoseAmout = str(glucoseCalculus)
+		ProjectManager.quizResult.glucoseAmount = str(glucoseCalculus)
 		ProjectManager.quizResult.totalScore = sum
 		ProjectManager.save()
 		fadeAnimation.play("blinkScreen")
@@ -189,7 +179,10 @@ func onExerciseButtonPressed():
 		glucoseCalculus = glucoseCalculus - randomGlucoseValueAux
 		print(glucoseCalculus)
 		ProjectManager.quizResult.glucoseAmount = str(glucoseCalculus)
-		ProjectManager.quizResult.totalScore = sum
+		if sum <= 1000:
+			ProjectManager.quizResult.totalScore = str("0", sum)
+		else:
+			ProjectManager.quizResult.totalScore = sum
 		ProjectManager.save()
 		var storeScenePath = str("res://Scenes/girlScenes/girlExercise", str(randomExercise), ".tscn")
 		_changeScene = get_tree().change_scene(storeScenePath)

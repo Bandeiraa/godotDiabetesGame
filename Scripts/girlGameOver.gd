@@ -8,7 +8,7 @@ onready var blinkAnim = get_node("AnimationPlayer")
 func _ready():
 	ProjectManager.loadData()
 	storePoints = ProjectManager.quizResult.totalScore
-	storeGlucoseAmount = ProjectManager.quizResult.glucoseAmout
+	storeGlucoseAmount = ProjectManager.quizResult.glucoseAmount
 	$layer/glucosePoints.text = storeGlucoseAmount 
 	if storePoints < 10:
 		$layer/totalPoints.text = str("000", storePoints)
