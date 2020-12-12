@@ -8,6 +8,7 @@ var CANDIES = [preload("res://Scenes/candiesScenes/frenchFries.tscn"), preload("
 			   preload("res://Scenes/candiesScenes/cake.tscn"), preload("res://Scenes/candiesScenes/brigadeiro.tscn"), preload("res://Scenes/candiesScenes/sandwich.tscn"),
 			   preload("res://Scenes/candiesScenes/sugar.tscn")]
 			
+
 onready var glucoseValue = $layer/glucoseLabel
 onready var fruitPosition = get_node("FruitPosition")
 onready var candiePosition = get_node("CandiePosition")
@@ -17,6 +18,7 @@ onready var blinkAnim = $animator
 onready var warningAnimator = $warningAnimator
 onready var fadeAnimation = $blinkScreenAnimator
 
+var pauseMenuScene
 var storeData = 0
 var canFreezeGlucose = false
 var glucoseCalculus = 70
@@ -35,6 +37,8 @@ var fruit
 
 func _ready():
 	onBackToScene()
+	
+	pauseMenuScene = preload("res://Scenes/girlScenes/girlMenu.tscn")
 	
 func onBackToScene():
 	ProjectManager.loadData()
@@ -225,3 +229,13 @@ func onBonusPressed():
 func onBonusEnd():
 	$glucoseTimer.start()
 	canFreezeGlucose = false
+
+func onPauseButtonPressed():
+	$spawnMenuPosition.show()
+	get_tree().paused = true
+	var menuInstanced = pauseMenuScene.instance()
+	$spawnMenuPosition.add_child(menuInstanced)
+	menuInstanced.connect("canHide", self, "canHideMenu")
+	
+func canHideMenu():
+	$spawnMenuPosition.hide()

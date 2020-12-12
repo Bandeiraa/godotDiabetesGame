@@ -22,3 +22,10 @@ margin_left = -159.75
 margin_top = -305.491
 margin_right = 167.25
 margin_bottom = -253.491
+
+[node name="blackBox" parent="exercisePopup2" index="1"]
+margin_left = -99.0
+margin_top = -52.0
+margin_right = 66.0
+margin_bottom = 50.0
+rect_scale = Vector2( 1.01, 1.01 )

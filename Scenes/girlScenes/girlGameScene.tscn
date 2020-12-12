@@ -423,6 +423,11 @@ position = Vector2( 72, 128 )
 scale = Vector2( 0.267, 0.267 )
 z_index = 1
 texture = ExtResource( 12 )
+
+[node name="spawnMenuPosition" type="Position2D" parent="."]
+visible = false
+position = Vector2( 72, 128 )
+z_index = 10
 [connection signal="timeout" from="candiesTimer" to="." method="onCandieTimerTimeout"]
 [connection signal="timeout" from="fruitsTimer" to="." method="onFruitTimerTimeout"]
 [connection signal="timeout" from="bonusTimer" to="." method="onBonusEnd"]
@@ -431,4 +436,5 @@ texture = ExtResource( 12 )
 [connection signal="pressed" from="insulinButtonScene" to="." method="onInsulinButtonPressed"]
 [connection signal="pressed" from="doNothingButtonScene" to="." method="onDNothingButtonPressed"]
 [connection signal="pressed" from="bonusButton" to="." method="onBonusPressed"]
+[connection signal="pressed" from="PauseButton" to="." method="onPauseButtonPressed"]
 [connection signal="pressed" from="exerciseButton" to="." method="onExerciseButtonPressed"]
