@@ -2,14 +2,18 @@ extends Control
 
 onready var principalSceneAnimator = get_node("Animator")
 var _changeScene
+var menuScene
 
 func _ready():
-	pass
+	menuScene = preload("res://Scenes/girlScenes/girlConfigMenu.tscn")
 
 func onGearPressed():
 	principalSceneAnimator.play("gearAnimation")
 	yield(get_tree().create_timer(0.5), "timeout")
-	$Menu.set_visible(true)
+	$menuSpawn.show()
+	var menuInstanced = menuScene.instance()
+	$menuSpawn.add_child(menuInstanced)
+	menuInstanced.connect("canHide", self, "canHideMenu")
 
 func onQuizButtonPressed():
 	principalSceneAnimator.play("blinkScreen")
@@ -31,3 +35,6 @@ func onPlayButtonPressed():
 	principalSceneAnimator.play("blinkScreen")
 	yield(get_tree().create_timer(0.7), "timeout")
 	_changeScene = get_tree().change_scene("res://Scenes/girlScenes/girlGameScene.tscn")
+	
+func canHideMenu():
+	$menuSpawn.hide()

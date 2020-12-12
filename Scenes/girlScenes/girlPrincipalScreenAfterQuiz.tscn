@@ -68,55 +68,37 @@ texture = ExtResource( 5 )
 [node name="QuizResultMenu" parent="." index="5"]
 texture = ExtResource( 5 )
 
-[node name="MenuLabel" parent="Menu/VBoxContainer" index="0"]
-margin_right = 85.0
-
-[node name="Volume" parent="Menu/VBoxContainer" index="1"]
-margin_right = 85.0
-
-[node name="Teste" parent="Menu/VBoxContainer" index="2"]
-margin_right = 85.0
-
-[node name="Zzz" parent="Menu/VBoxContainer" index="3"]
-margin_right = 85.0
-
-[node name="BackButton" parent="Menu/VBoxContainer" index="4"]
-margin_right = 85.0
-
-[node name="totalPoints" parent="." index="7"]
+[node name="totalPoints" parent="." index="6"]
 margin_left = 10.4944
 margin_top = 154.029
 margin_right = 67.4948
 margin_bottom = 171.029
 custom_fonts/font = SubResource( 2 )
 
-[node name="correctAnswers" parent="." index="8"]
+[node name="correctAnswers" parent="." index="7"]
 margin_left = 51.6342
 margin_top = 171.774
 margin_right = 67.6342
 margin_bottom = 188.774
 custom_fonts/font = SubResource( 3 )
 
-[node name="wrongAnswers" parent="." index="9"]
+[node name="wrongAnswers" parent="." index="8"]
 margin_left = 51.4114
 margin_top = 189.715
 margin_right = 67.4115
 margin_bottom = 206.715
 custom_fonts/font = SubResource( 4 )
 
-[node name="insulinAmount" parent="." index="10"]
+[node name="insulinAmount" parent="." index="9"]
 margin_left = 51.6185
 margin_top = 208.382
 margin_right = 67.6186
 margin_bottom = 225.382
 custom_fonts/font = SubResource( 5 )
 
-[node name="Panel" type="Panel" parent="." index="11"]
+[node name="Panel" parent="." index="11"]
 modulate = Color( 0, 0, 0, 0 )
+margin_left = 0.0
+margin_top = 0.0
 margin_right = 144.0
 margin_bottom = 256.0
-mouse_filter = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-[connection signal="pressed" from="PlayButton" to="." method="onPlayButtonPressed"]

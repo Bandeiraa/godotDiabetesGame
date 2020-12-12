@@ -41,4 +41,3 @@ margin_right = 99.0
 [node name="quizSprite" parent="QuizButton" index="0"]
 position = Vector2( 53.4881, 57.2374 )
 texture = ExtResource( 5 )
-[connection signal="pressed" from="PlayButton" to="." method="onPlayButtonPressed"]

@@ -1,0 +1,27 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/girlConfigMenu.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sprites/girlConfigSprites/soundLabel.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/girlConfigSprites/cancelButton.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/girlConfigSprites/characterSelection.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/girlConfigSprites/girlPanel.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/girlConfigSprites/aboutTheGame.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/boyScenes/boyConfigMenu.tscn" type="PackedScene" id=7]
+
+[node name="configMenu" instance=ExtResource( 7 )]
+script = ExtResource( 1 )
+
+[node name="panel" parent="." index="0"]
+texture = ExtResource( 5 )
+
+[node name="btnSprite" parent="panel/aboutButton" index="0"]
+texture = ExtResource( 6 )
+
+[node name="btnSprite" parent="panel/characterSelecBtn" index="0"]
+texture = ExtResource( 4 )
+
+[node name="btnSprite" parent="panel/cancelButton" index="0"]
+texture = ExtResource( 3 )
+
+[node name="soundLabel" parent="panel" index="3"]
+texture = ExtResource( 2 )
