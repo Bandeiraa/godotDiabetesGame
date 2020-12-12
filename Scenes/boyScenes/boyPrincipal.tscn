@@ -251,5 +251,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 [connection signal="pressed" from="ConfigButton" to="." method="onGearPressed"]
+[connection signal="pressed" from="PlayButton" to="." method="onPlayButtonPressed"]
 [connection signal="pressed" from="QuizButton" to="." method="onQuizButtonPressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/BackButton" to="." method="onBackToSceneButtonPressed"]

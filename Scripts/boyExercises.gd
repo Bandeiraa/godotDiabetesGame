@@ -12,7 +12,7 @@ func _ready():
 func onBackToGameButtonPressed():
 	exerciseAnimator.play("fadeAnimation")
 	yield(get_tree().create_timer(0.7), "timeout")
-	#_changeScene = get_tree().change_scene("res://Scenes/girlScenes/girlGameScene.tscn")
+	_changeScene = get_tree().change_scene("res://Scenes/boyScenes/boyGameScene.tscn")
 	
 func onAnimationFinished():
 	exercisePopup.set_visible(true)

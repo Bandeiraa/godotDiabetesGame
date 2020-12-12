@@ -1,0 +1,58 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Scripts/boyGameOver.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sprites/boyQuizSprites/answersPanel.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/boyGameSprites/pauseButton.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/boyGameSprites/glucoseMeter.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/boyGameSprites/insulinButton.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/boyGameSprites/exerciseButton.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/girlScenes/girlGameOverSample.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Sprites/boyGameOverSprites/boyGameOver.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sprites/boyGameOverSprites/gameOverPanel.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Sprites/boyGameOverSprites/boyRoom.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Sprites/boyGameSprites/panelGame.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Sprites/boyGameOverSprites/initialScreenButton.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Sprites/boyGameOverSprites/tryAgainButton.png" type="Texture" id=13]
+
+[node name="gameOverScreen" instance=ExtResource( 7 )]
+script = ExtResource( 1 )
+
+[node name="background" parent="." index="0"]
+texture = ExtResource( 10 )
+
+[node name="panelEmpty" parent="." index="1"]
+texture = ExtResource( 11 )
+
+[node name="girlGameOver" parent="." index="2"]
+texture = ExtResource( 8 )
+
+[node name="glucoseMeter" parent="." index="3"]
+texture = ExtResource( 4 )
+
+[node name="pointsPanel" parent="." index="4"]
+texture = ExtResource( 2 )
+
+[node name="exercisePanel" parent="." index="5"]
+texture = ExtResource( 6 )
+
+[node name="insulinPanel" parent="." index="6"]
+texture = ExtResource( 5 )
+
+[node name="pauseButton" parent="." index="7"]
+texture = ExtResource( 3 )
+
+[node name="gameOverMessage" parent="." index="8"]
+margin_left = 0.0
+margin_top = 0.0
+margin_right = -144.0
+margin_bottom = -256.0
+rect_scale = Vector2( 0.267, 0.267 )
+
+[node name="gameOverPopup" parent="." index="9"]
+texture = ExtResource( 9 )
+
+[node name="tryAgainSprite" parent="gameOverPopup/tryAgainButton" index="0"]
+texture = ExtResource( 13 )
+
+[node name="initialScreenSprite" parent="gameOverPopup/initialScreenButton" index="0"]
+texture = ExtResource( 12 )
