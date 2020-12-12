@@ -23,6 +23,8 @@ func onTryAgainButtonPressed():
 	ProjectManager.quizResult.totalScore = 0
 	ProjectManager.quizResult.glucoseAmount = "70"
 	ProjectManager.quizResult.candiesCount = 0
+	ProjectManager.quizResult.increasedSpawn = 0 
+	ProjectManager.quizResult.increasedGlucoseAmount = 0
 	ProjectManager.save()
 	#print(ProjectManager.quizResult.glucoseAmount)
 	blinkAnim.play("blinkAnim")
@@ -33,6 +35,8 @@ func onInitialScreenButtonPressed():
 	ProjectManager.quizResult.totalScore = 0
 	ProjectManager.quizResult.glucoseAmount = "70"
 	ProjectManager.quizResult.candiesCount = 0
+	ProjectManager.quizResult.increasedSpawn = 0 
+	ProjectManager.quizResult.increasedGlucoseAmount = 0
 	ProjectManager.save()
 	MainGameSong.stop()
 	InitialSong.play()

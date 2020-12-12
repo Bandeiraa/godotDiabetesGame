@@ -9,7 +9,9 @@ var quizResult = {
 	"glucoseAmount": "70",
 	"totalScore": 0,
 	"candiesCount": 1,
-	"bonus": 0
+	"bonus": 0,
+	"increasedSpawn": 0,
+	"increasedGlucoseAmount": 0
 }
 
 func save():

@@ -18,9 +18,11 @@ onready var blinkAnim = $animator
 onready var warningAnimator = $warningAnimator
 onready var fadeAnimation = $blinkScreenAnimator
 
+var spawnIncreaserValue = 0
+var increaseGlucoseDecreasedValue = 0
 var pauseMenuScene
 var storeData = 0
-var canFreezeGlucose = false
+var canFreezeGlucose = false; var key = true; var keyAux = true
 var glucoseCalculus = 70
 var candiesCount = 0
 var pointsCount = 0
@@ -37,8 +39,10 @@ var fruit
 
 func _ready():
 	onBackToScene()
-	
+	$dificultyTimer.start()
 	pauseMenuScene = preload("res://Scenes/girlScenes/girlMenu.tscn")
+	if increaseGlucoseDecreasedValue >= 20:
+		$dificultyTimer.stop()
 	
 func onBackToScene():
 	ProjectManager.loadData()
@@ -51,6 +55,8 @@ func onBackToScene():
 	candiesCount = int(ProjectManager.quizResult.candiesCount)
 	print(candiesCount)
 	print(ProjectManager.quizResult.bonus)
+	spawnIncreaserValue = ProjectManager.quizResult.increasedSpawn
+	increaseGlucoseDecreasedValue = ProjectManager.quizResult.increasedGlucoseAmount
 	if ProjectManager.quizResult.bonus == 1:
 		$bonusButton.set_visible(true)
 	else:
@@ -60,7 +66,7 @@ func onBackToScene():
 func spawnFruit():
 	fruitsTimer.start()
 	randomize()
-	var randomTimerIndex = rand_range(0.3, 1.5)
+	var randomTimerIndex = rand_range(1 - spawnIncreaserValue, 1.5 - spawnIncreaserValue)
 	fruitsTimer.set_wait_time(randomTimerIndex)
 	fruit = respawnFruit(FRUITS).instance()
 	fruitPosition = Vector2()
@@ -74,7 +80,7 @@ func spawnFruit():
 func spawnCandie():
 	candiesTimer.start()
 	randomize()
-	var randomTimerIndex = rand_range(1, 3)
+	var randomTimerIndex = rand_range(1 - spawnIncreaserValue, 3 - spawnIncreaserValue)
 	candiesTimer.set_wait_time(randomTimerIndex)
 	candie = respawnCandie(CANDIES).instance()
 	candiePosition = Vector2()
@@ -134,7 +140,7 @@ func canIncreaseGlucose():
 
 func onGlucoseTimerTimeout():
 	randomize()
-	randomGlucoseValue = int(rand_range(5, 15))
+	randomGlucoseValue = int(rand_range(1 + increaseGlucoseDecreasedValue, 5 + increaseGlucoseDecreasedValue))
 	aux += randomGlucoseValue #+ glucoseCalculus
 	glucoseCalculus = glucoseCalculus - aux #int(storedGlucoseValue)
 	#print(glucoseCalculus) 
@@ -206,6 +212,8 @@ func onExerciseButtonPressed():
 			ProjectManager.quizResult.totalScore = sum
 		ProjectManager.quizResult.candiesCount = candiesCount
 		print(candiesCount)
+		ProjectManager.quizResult.increasedSpawn = spawnIncreaserValue 
+		ProjectManager.quizResult.increasedGlucoseAmount = increaseGlucoseDecreasedValue
 		ProjectManager.save()
 		var storeScenePath = str("res://Scenes/girlScenes/girlExercise", str(randomExercise), ".tscn")
 		_changeScene = get_tree().change_scene(storeScenePath)
@@ -214,6 +222,8 @@ func onInsulinButtonPressed():
 	ProjectManager.quizResult.glucoseAmount = str(glucoseCalculus)
 	ProjectManager.quizResult.totalScore = sum
 	ProjectManager.quizResult.candiesCount = candiesCount
+	ProjectManager.quizResult.increasedSpawn = spawnIncreaserValue 
+	ProjectManager.quizResult.increasedGlucoseAmount = increaseGlucoseDecreasedValue
 	ProjectManager.save()
 	_changeScene = get_tree().change_scene("res://Scenes/girlScenes/insulinScene.tscn")
 	#glucoseCalculus = glucoseCalculus - 100
@@ -239,3 +249,17 @@ func onPauseButtonPressed():
 	
 func canHideMenu():
 	$spawnMenuPosition.hide()
+
+func onDificultyIncreased():
+	if key == true:
+		increaseGlucoseDecreasedValue += 2
+		print("Valor de Decremento da glicemia auxiliar: ", increaseGlucoseDecreasedValue)
+		if increaseGlucoseDecreasedValue >= 20:
+			key = false
+			$dificultyTimer.stop()
+	if keyAux == true:
+		spawnIncreaserValue += 0.1
+		print("Valor de Spawn auxiliar: ", spawnIncreaserValue)
+		if spawnIncreaserValue >= 0.7:
+			keyAux = false
+	
