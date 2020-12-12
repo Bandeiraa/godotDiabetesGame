@@ -7,7 +7,7 @@
 [ext_resource path="res://Assets/Sprites/boyInitialScreenSprite/playButton.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Sprites/boyInitialScreenSprite/quizButton.png" type="Texture" id=6]
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=1]
 resource_name = "blinkScreen"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Panel:modulate")
@@ -22,8 +22,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=1]
-resource_name = "gearAnimation"
+[sub_resource type="Animation" id=2]
 length = 0.7
 tracks/0/type = "value"
 tracks/0/path = NodePath("ConfigButton/OptionsButton:rotation_degrees")
@@ -38,11 +37,11 @@ tracks/0/keys = {
 "values": [ 0.0, 40.0, -40.0, 0.0 ]
 }
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 size = 13
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=4]
 font_data = ExtResource( 3 )
 
 [node name="principalScreen" type="Control"]
@@ -85,8 +84,8 @@ texture = ExtResource( 1 )
 offset = Vector2( -226.05, 438.897 )
 
 [node name="Animator" type="AnimationPlayer" parent="."]
-anims/blinkScreen = SubResource( 4 )
-anims/gearAnimation = SubResource( 1 )
+anims/blinkScreen = SubResource( 1 )
+anims/gearAnimation = SubResource( 2 )
 
 [node name="PlayButton" type="Button" parent="."]
 margin_left = 37.0866
@@ -151,7 +150,7 @@ margin_bottom = 153.0
 [node name="MenuLabel" type="Label" parent="Menu/VBoxContainer"]
 margin_right = 86.0
 margin_bottom = 14.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Menu:"
 align = 1
@@ -169,7 +168,7 @@ margin_bottom = 34.0
 margin_top = 1.0
 margin_right = 56.0
 margin_bottom = 15.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Volume: "
 align = 1
@@ -189,7 +188,7 @@ margin_bottom = 54.0
 margin_top = 1.0
 margin_right = 49.0
 margin_bottom = 15.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Teste: "
 align = 1
@@ -209,7 +208,7 @@ margin_bottom = 74.0
 margin_top = 1.0
 margin_right = 28.0
 margin_bottom = 15.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Zzz:"
 align = 2
@@ -237,7 +236,7 @@ margin_left = -24.0
 margin_top = -8.0
 margin_right = 24.0
 margin_bottom = 8.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Voltar"
 align = 1

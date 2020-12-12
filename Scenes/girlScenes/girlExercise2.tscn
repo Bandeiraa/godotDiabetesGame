@@ -17,7 +17,7 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 1, 1.1, 1.2, 1.7, 1.8, 2.3, 2.4, 2.9, 3, 3.5, 3.6, 4.1, 4.2, 4.7, 4.8, 5.3, 5.4, 5.9, 6 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ ExtResource( 2 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 4 ) ]
 }
 tracks/1/type = "method"
@@ -39,7 +39,7 @@ tracks/1/keys = {
 
 [node name="TextureRect" parent="." index="0"]
 rect_scale = Vector2( 0.267, 0.267 )
-texture = ExtResource( 4 )
+texture = ExtResource( 2 )
 
 [node name="exerciseAnimator" parent="." index="1"]
 anims/exerciseAnimation = SubResource( 1 )
