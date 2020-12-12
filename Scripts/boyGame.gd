@@ -225,7 +225,7 @@ func onInsulinButtonPressed():
 	ProjectManager.quizResult.increasedSpawn = spawnIncreaserValue 
 	ProjectManager.quizResult.increasedGlucoseAmount = increaseGlucoseDecreasedValue
 	ProjectManager.save()
-	_changeScene = get_tree().change_scene("res://Scenes/girlScenes/insulinScene.tscn")
+	_changeScene = get_tree().change_scene("res://Scenes/boyScenes/boyInsulin.tscn")
 	#glucoseCalculus = glucoseCalculus - 100
 	#glucoseValue.text = str(glucoseCalculus)
 	#$glucoseTimer.start()
