@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Sprites/characterSelectionSprites/initialScreen1.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/firstInitialScreen.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "blinkScreen"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
+[node name="initialScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="backGround" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 0.267, 0.267 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 22.0
+margin_top = 214.0
+margin_right = 113.0
+margin_bottom = 246.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color( 0, 0, 0, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="blinkAnimator" type="AnimationPlayer" parent="."]
+anims/blinkScreen = SubResource( 1 )
+[connection signal="pressed" from="Button" to="." method="onChangeScene"]

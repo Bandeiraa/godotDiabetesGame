@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/boySprite.png-99a1fbbae610e572b560ac745d5c67cd.stex"
+path="res://.import/phrase.png-8c501e2f1b797f6253ec006ca7565c9a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/characterSelectionSprites/boySprite.png"
-dest_files=[ "res://.import/boySprite.png-99a1fbbae610e572b560ac745d5c67cd.stex" ]
+source_file="res://Assets/Sprites/characterSelectionSprites/phrase.png"
+dest_files=[ "res://.import/phrase.png-8c501e2f1b797f6253ec006ca7565c9a.stex" ]
 
 [params]
 
