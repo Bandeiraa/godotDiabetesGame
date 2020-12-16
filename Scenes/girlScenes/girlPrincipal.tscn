@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/boyScenes/boyPrincipal.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Sprites/girlInitialScreenSprite/withoutButtons.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Assets/Sprites/girlInitialScreenSprite/playPrincipal.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Sprites/girlInitialScreenSprite/quizButton.png" type="Texture" id=5]
 [ext_resource path="res://Scripts/girlPrincipal.gd" type="Script" id=6]
+[ext_resource path="res://Assets/Sprites/girlInitialScreenSprite/rankingButton.png" type="Texture" id=7]
 
 [node name="principalScreen" instance=ExtResource( 1 )]
 script = ExtResource( 6 )
@@ -41,3 +42,11 @@ margin_right = 99.0
 [node name="quizSprite" parent="QuizButton" index="0"]
 position = Vector2( 53.4881, 57.2374 )
 texture = ExtResource( 5 )
+
+[node name="RankingButton" parent="." index="5"]
+margin_left = 6.31317
+margin_right = 92.3135
+
+[node name="quizSprite" parent="RankingButton" index="0"]
+position = Vector2( 66.304, -104.246 )
+texture = ExtResource( 7 )

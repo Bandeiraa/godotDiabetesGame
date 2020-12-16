@@ -11,7 +11,8 @@ var quizResult = {
 	"candiesCount": 1,
 	"bonus": 0,
 	"increasedSpawn": 0,
-	"increasedGlucoseAmount": 0
+	"increasedGlucoseAmount": 0,
+	"hasInternet": false
 }
 
 func save():

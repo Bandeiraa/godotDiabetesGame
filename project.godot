@@ -24,6 +24,8 @@ config/icon="res://icon.png"
 ProjectManager="*res://Scripts/ProjectManager.gd"
 InitialSong="*res://Scenes/initialSong.tscn"
 MainGameSong="*res://Scenes/mainGameSong.tscn"
+Firebase="*res://Scripts/firebase.gd"
+SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 
 [display]
 

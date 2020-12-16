@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Sprites/boyInitialScreenSprite/configButton.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Principal.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Sprites/boyInitialScreenSprite/rankingButton.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sprites/boyInitialScreenSprite/withoutButtonsInitialScreen.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Sprites/boyInitialScreenSprite/playButton.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Sprites/boyInitialScreenSprite/quizButton.png" type="Texture" id=6]
@@ -113,6 +114,23 @@ position = Vector2( 61.5415, 55.4381 )
 scale = Vector2( 0.267, 0.267 )
 texture = ExtResource( 6 )
 
+[node name="RankingButton" type="Button" parent="."]
+margin_left = 53.4566
+margin_top = 232.41
+margin_right = 139.457
+margin_bottom = 253.41
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="quizSprite" type="Sprite" parent="RankingButton"]
+position = Vector2( 18.5993, -104.246 )
+scale = Vector2( 0.267, 0.267 )
+texture = ExtResource( 3 )
+
 [node name="Panel" type="Panel" parent="."]
 modulate = Color( 0, 0, 0, 0 )
 anchor_right = 1.0
@@ -127,3 +145,4 @@ z_index = 10
 [connection signal="pressed" from="ConfigButton" to="." method="onGearPressed"]
 [connection signal="pressed" from="PlayButton" to="." method="onPlayButtonPressed"]
 [connection signal="pressed" from="QuizButton" to="." method="onQuizButtonPressed"]
+[connection signal="pressed" from="RankingButton" to="." method="onRankingButtonPressed"]

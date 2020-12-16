@@ -8,7 +8,7 @@
 [ext_resource path="res://Assets/Sprites/characterSelectionSprites/initialScreenBackground.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Sprites/characterSelectionSprites/phrase.png" type="Texture" id=7]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "BlinkANimation"
 length = 2.0
 loop = true
@@ -25,7 +25,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "BlinkScreen"
 tracks/0/type = "value"
 tracks/0/path = NodePath("BlinkScreen:modulate")
@@ -40,7 +40,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 0, 0, 0, 1 ), Color( 0.207843, 0.0352941, 0.0352941, 0 ) ]
 }
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=3]
 size = 10
 font_data = ExtResource( 2 )
 
@@ -129,8 +129,8 @@ __meta__ = {
 }
 
 [node name="Animator" type="AnimationPlayer" parent="."]
-anims/BlinkANimation = SubResource( 2 )
-anims/BlinkScreen = SubResource( 3 )
+anims/BlinkANimation = SubResource( 1 )
+anims/BlinkScreen = SubResource( 2 )
 
 [node name="BlinkScreen" type="Panel" parent="."]
 modulate = Color( 0.207843, 0.0352941, 0.0352941, 0 )
@@ -142,10 +142,11 @@ __meta__ = {
 }
 
 [node name="registerButton" type="Button" parent="."]
-visible = false
-margin_left = 3.5
-margin_right = 68.5
-margin_bottom = 20.0
+margin_left = 1.0908
+margin_top = 1.99692
+margin_right = 66.0908
+margin_bottom = 21.9969
+rect_scale = Vector2( 0.6, 0.6 )
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -162,17 +163,18 @@ texture = ExtResource( 5 )
 margin_top = 1.0
 margin_right = 65.0
 margin_bottom = 20.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 3 )
 text = "Registrar"
 align = 1
 valign = 1
 autowrap = true
 
 [node name="loginButton" type="Button" parent="."]
-visible = false
-margin_left = 74.332
-margin_right = 139.332
-margin_bottom = 20.0
+margin_left = 102.545
+margin_top = 1.99692
+margin_right = 167.545
+margin_bottom = 21.9969
+rect_scale = Vector2( 0.6, 0.6 )
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -189,12 +191,44 @@ texture = ExtResource( 5 )
 margin_top = 1.0
 margin_right = 65.0
 margin_bottom = 20.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 3 )
 text = "Entrar"
 align = 1
 valign = 1
 autowrap = true
+
+[node name="loginButton2" type="Button" parent="."]
+visible = false
+margin_left = 32.2324
+margin_top = 24.0
+margin_right = 106.232
+margin_bottom = 44.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="loginButton2"]
+position = Vector2( 36.5806, 10.7999 )
+scale = Vector2( 0.0612597, 0.10289 )
+texture = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="loginButton2"]
+margin_top = 1.0
+margin_right = 76.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 3 )
+text = "Leaderboard"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="BoyButton" to="." method="onBoyButtonPressed"]
 [connection signal="pressed" from="GirlButton" to="." method="onGirlButtonPressed"]
 [connection signal="pressed" from="registerButton" to="." method="onRegisterPressed"]
 [connection signal="pressed" from="loginButton" to="." method="onLoginPressed"]
+[connection signal="pressed" from="loginButton2" to="." method="onLeaderboardPressed"]

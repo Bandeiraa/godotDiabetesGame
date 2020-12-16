@@ -3,6 +3,7 @@ extends Control
 onready var principalSceneAnimator = get_node("Animator")
 var _changeScene
 var menuScene
+var canChangeScene = false
 
 func _ready():
 	menuScene = preload("res://Scenes/boyScenes/boyConfigMenu.tscn")
@@ -38,3 +39,10 @@ func onPlayButtonPressed():
 	
 func canHideMenu():
 	$menuSpawn.hide()
+
+func onRankingButtonPressed():
+	ProjectManager.loadData()
+	canChangeScene = ProjectManager.quizResult.hasInternet
+	print(canChangeScene)
+	if  canChangeScene == true:
+		_changeScene = get_tree().change_scene("res://addons/silent_wolf/Scores/Leaderboard.tscn")

@@ -96,7 +96,7 @@ margin_right = 67.6186
 margin_bottom = 225.382
 custom_fonts/font = SubResource( 5 )
 
-[node name="Panel" parent="." index="11"]
+[node name="Panel" parent="." index="10"]
 modulate = Color( 0, 0, 0, 0 )
 margin_left = 0.0
 margin_top = 0.0
