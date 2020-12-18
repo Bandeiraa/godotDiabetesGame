@@ -12,7 +12,10 @@ var quizResult = {
 	"bonus": 0,
 	"increasedSpawn": 0,
 	"increasedGlucoseAmount": 0,
-	"hasInternet": false
+	"hasInternet": false,
+	"gameOverHypo": false,
+	"gameOverDoNothing": false,
+	"gameOverHyper": false
 }
 
 func save():

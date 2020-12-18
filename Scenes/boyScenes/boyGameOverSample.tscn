@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/boyGameOver.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/boyQuizSprites/answersPanel.png" type="Texture" id=2]
@@ -6,13 +6,15 @@
 [ext_resource path="res://Assets/Sprites/boyGameSprites/glucoseMeter.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Sprites/boyGameSprites/insulinButton.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Sprites/boyGameSprites/exerciseButton.png" type="Texture" id=6]
-[ext_resource path="res://Scenes/girlScenes/girlGameOverSample.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/girlScenes/girlGameOver.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Sprites/boyGameOverSprites/boyGameOver.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Sprites/boyGameOverSprites/gameOverPanel.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Sprites/boyGameOverSprites/boyRoom.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Sprites/boyGameSprites/panelGame.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Sprites/boyGameOverSprites/initialScreenButton.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Sprites/boyGameOverSprites/tryAgainButton.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Sprites/boyInitialScreenSprite/configButton.png" type="Texture" id=14]
+
 
 [node name="gameOverScreen" instance=ExtResource( 7 )]
 script = ExtResource( 1 )
@@ -56,3 +58,14 @@ texture = ExtResource( 13 )
 
 [node name="initialScreenSprite" parent="gameOverPopup/initialScreenButton" index="0"]
 texture = ExtResource( 12 )
+
+[node name="pauseButton2" parent="." index="16"]
+margin_left = -64.3959
+margin_top = 135.61
+margin_right = 331.604
+margin_bottom = 839.61
+texture = ExtResource( 14 )
+
+[node name="Sprite" parent="Button" index="0"]
+texture = ExtResource( 2 )
+[connection signal="pressed" from="saveScoreButtonPressed" to="." method="_on_saveScoreButtonPressed_pressed"]

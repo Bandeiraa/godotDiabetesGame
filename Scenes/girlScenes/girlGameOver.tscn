@@ -1,0 +1,221 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scripts/girlGameOver.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sprites/girlGameOverSprites/gameOverBG.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/girlInitialScreenSprite/configButton.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/girlQuizSprites/answerButton.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Fonts/design.graffiti.SNAP____.ttf" type="DynamicFontData" id=14]
+
+[sub_resource type="DynamicFont" id=1]
+size = 9
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 15
+font_data = ExtResource( 14 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "blinkAnim"
+tracks/0/type = "value"
+tracks/0/path = NodePath("BlackPanel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
+[sub_resource type="DynamicFont" id=4]
+size = 8
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 12
+font_data = ExtResource( 14 )
+
+[node name="GameOverScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InterfaceContainer" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="InterfaceContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 396.0
+margin_bottom = 704.0
+rect_scale = Vector2( 0.267, 0.267 )
+mouse_filter = 2
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOverMessage" type="TextureRect" parent="InterfaceContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -144.0
+margin_bottom = -256.0
+rect_scale = Vector2( 0.267, 0.267 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TryAgainButton" type="Button" parent="InterfaceContainer"]
+margin_left = 22.8478
+margin_top = 79.9821
+margin_right = 197.848
+margin_bottom = 140.982
+rect_scale = Vector2( 0.267, 0.267 )
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InitialScreenButton" type="Button" parent="InterfaceContainer"]
+margin_left = 75.1798
+margin_top = 79.7151
+margin_right = 251.18
+margin_bottom = 139.715
+rect_scale = Vector2( 0.267, 0.267 )
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelLayer" type="Node2D" parent="."]
+
+[node name="GlucosePoints" type="Label" parent="LabelLayer"]
+margin_left = -3.84096
+margin_top = 238.26
+margin_right = 31.1591
+margin_bottom = 255.26
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "70"
+align = 2
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TotalPoints" type="Label" parent="LabelLayer"]
+margin_left = 3.40472
+margin_top = 2.38898
+margin_right = 117.405
+margin_bottom = 24.389
+grow_horizontal = 2
+grow_vertical = 2
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0000"
+align = 2
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BlinkScreenAnimator" type="AnimationPlayer" parent="."]
+anims/blinkAnim = SubResource( 3 )
+
+[node name="BlackPanel" type="Panel" parent="."]
+modulate = Color( 0, 0, 0, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SaveScoreButtonPressed" type="Button" parent="."]
+margin_left = 56.3646
+margin_top = 137.164
+margin_right = 77.3646
+margin_bottom = 157.164
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="LineEdit" type="LineEdit" parent="."]
+visible = false
+margin_left = 8.74695
+margin_top = 135.798
+margin_right = 54.747
+margin_bottom = 157.798
+custom_fonts/font = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseButton2" type="TextureRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -62.191
+margin_top = 134.665
+margin_right = 333.809
+margin_bottom = 838.665
+rect_scale = Vector2( 0.267, 0.267 )
+mouse_filter = 2
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+visible = false
+margin_left = 9.0
+margin_top = 113.0
+margin_right = 87.0
+margin_bottom = 133.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Button"]
+position = Vector2( 39.8934, 10.1038 )
+scale = Vector2( 0.067, 0.0997324 )
+texture = ExtResource( 11 )
+
+[node name="Label" type="Label" parent="Button"]
+margin_right = 79.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 5 )
+text = "Ranking"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="InterfaceContainer/TryAgainButton" to="." method="onTryAgainButtonPressed"]
+[connection signal="pressed" from="InterfaceContainer/InitialScreenButton" to="." method="onInitialScreenButtonPressed"]
+[connection signal="pressed" from="SaveScoreButtonPressed" to="." method="onSaveButtonPressed"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

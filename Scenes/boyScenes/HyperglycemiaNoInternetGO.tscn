@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/boyScenes/boyHyperglycemiaGO.tscn" type="PackedScene" id=1]
+
+[node name="gameOverScreen" instance=ExtResource( 1 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="gameOverMessage" parent="." index="8"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.65548
+margin_top = 11.7906
+margin_right = 394.345
+margin_bottom = 715.791
+
+[node name="LineEdit" parent="." index="15"]
+visible = false
+
+[node name="pauseButton2" parent="." index="16"]
+visible = false
+
+[node name="Button" parent="." index="17"]
+visible = false

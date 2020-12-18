@@ -436,7 +436,7 @@ z_index = 10
 [connection signal="timeout" from="bonusTimer" to="." method="onBonusEnd"]
 [connection signal="timeout" from="glucoseTimer" to="." method="onGlucoseTimerTimeout"]
 [connection signal="timeout" from="dificultyTimer" to="." method="onDificultyIncreased"]
-[connection signal="pressed" from="exerciseButtonScene" to="." method="onDNothingButtonPressed"]
+[connection signal="pressed" from="exerciseButtonScene" to="." method="onExerciseLabelPressed"]
 [connection signal="pressed" from="insulinButtonScene" to="." method="onInsulinButtonPressed"]
 [connection signal="pressed" from="doNothingButtonScene" to="." method="onDNothingButtonPressed"]
 [connection signal="pressed" from="bonusButton" to="." method="onBonusPressed"]

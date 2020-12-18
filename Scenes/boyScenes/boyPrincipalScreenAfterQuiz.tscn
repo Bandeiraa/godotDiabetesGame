@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/Sprites/boyInitialScreenSprite/configButton.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Sprites/boyInitialScreenSprite/pointsLabel.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/boyInitialScreenSprite/rankingButton.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/principalScreenAfterQuiz.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Sprites/boyInitialScreenSprite/withoutButtonsInitialScreen.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Sprites/boyInitialScreenSprite/playButton.png" type="Texture" id=6]
@@ -38,15 +39,15 @@ tracks/0/keys = {
 "values": [ 0.0, 40.0, -40.0, 0.0 ]
 }
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=3]
 size = 10
 font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=4]
 size = 8
 font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=5]
 size = 8
 font_data = ExtResource( 8 )
 
@@ -136,7 +137,7 @@ margin_left = 76.8088
 margin_top = 144.478
 margin_right = 133.81
 margin_bottom = 160.478
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 align = 1
 valign = 1
@@ -150,7 +151,7 @@ margin_left = 117.114
 margin_top = 162.146
 margin_right = 133.114
 margin_bottom = 178.146
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 align = 1
 valign = 1
@@ -163,7 +164,7 @@ margin_left = 117.525
 margin_top = 180.177
 margin_right = 133.525
 margin_bottom = 196.177
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 align = 1
 valign = 1
@@ -176,7 +177,7 @@ margin_left = 117.822
 margin_top = 198.238
 margin_right = 133.822
 margin_bottom = 214.238
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "1"
 align = 1
@@ -197,5 +198,23 @@ __meta__ = {
 }
 
 [node name="menuSpawn" type="Position2D" parent="."]
+
+[node name="quizButton" type="Button" parent="."]
+margin_left = 60.0
+margin_top = 232.0
+margin_right = 139.0
+margin_bottom = 252.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="buttonSprite" type="Sprite" parent="quizButton"]
+position = Vector2( 15.5598, -103.364 )
+scale = Vector2( 0.267, 0.267 )
+texture = ExtResource( 3 )
 [connection signal="pressed" from="ConfigButton" to="." method="onGearPressed"]
 [connection signal="pressed" from="PlayButton" to="." method="onPlayButtonPressed"]
+[connection signal="pressed" from="quizButton" to="." method="onRankButtonPressed"]

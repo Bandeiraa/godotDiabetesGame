@@ -43,3 +43,15 @@ func onInitialScreenButtonPressed():
 	blinkAnim.play("blinkAnim")
 	yield(get_tree().create_timer(0.7), "timeout")
 	_changeScene = get_tree().change_scene("res://Scenes/boyScenes/boyPrincipal.tscn")
+
+func _on_saveScoreButtonPressed_pressed():
+	var name = $"LineEdit".text
+	#SilentWolf.Scores.persist_score(name, storePoints)
+	SilentWolf.Scores.persist_score(name, storePoints)
+	SilentWolf.Scores.get_high_scores()
+
+func load_leaderboard_screen():
+	_changeScene = get_tree().change_scene("res://addons/silent_wolf/Scores/Leaderboard.tscn")
+	
+func _on_Button_pressed():
+	load_leaderboard_screen()

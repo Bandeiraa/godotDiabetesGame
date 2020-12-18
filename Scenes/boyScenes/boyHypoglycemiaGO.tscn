@@ -6,4 +6,8 @@
 [node name="gameOverScreen" instance=ExtResource( 1 )]
 
 [node name="gameOverMessage" parent="." index="8"]
+margin_left = 4.20923
+margin_top = 24.9734
+margin_right = 400.209
+margin_bottom = 728.973
 texture = ExtResource( 2 )

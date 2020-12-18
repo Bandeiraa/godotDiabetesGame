@@ -35,3 +35,6 @@ func onPlayButtonPressed():
 	
 func canHideMenu():
 	$menuSpawn.hide()
+
+func onRankingButtonPressed():
+	_changeScene = get_tree().change_scene("res://addons/silent_wolf/Scores/Leaderboard.tscn")

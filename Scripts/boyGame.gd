@@ -36,6 +36,7 @@ var randomCandiePosition
 var sum = 0
 var candie
 var fruit
+var hasInternetConection
 
 func _ready():
 	onBackToScene()
@@ -46,6 +47,7 @@ func _ready():
 	
 func onBackToScene():
 	ProjectManager.loadData()
+	hasInternetConection = ProjectManager.quizResult.hasInternet
 	storedPointsValue = int(ProjectManager.quizResult.totalScore)
 	$layer/pointsCountLabel.text = str(storedPointsValue)
 	storedGlucoseValue = str(ProjectManager.quizResult.glucoseAmount)
@@ -182,8 +184,11 @@ func _process(_delta):
 		ProjectManager.quizResult.totalScore = sum
 		ProjectManager.save()
 		fadeAnimation.play("blinkScreen")
-		_changeScene = get_tree().change_scene("res://Scenes/boyScenes/boyHypoglycemiaGO.tscn")
-		
+		if hasInternetConection == true:
+			_changeScene = get_tree().change_scene("res://Scenes/boyScenes/boyHighGlucoseGO.tscn")
+		else:
+			_changeScene = get_tree().change_scene("res://Scenes/boyScenes/HighGlucoseNoInternetGO.tscn")
+
 	else:
 		$warningMessage.set_visible(false)
 		
@@ -193,7 +198,10 @@ func onDNothingButtonPressed():
 	ProjectManager.save()
 	fadeAnimation.play("blinkScreen")
 	yield(get_tree().create_timer(0.7), "timeout")
-	_changeScene = get_tree().change_scene("res://Scenes/boyScenes/boyHighGlucoseGO.tscn")
+	if hasInternetConection == true:
+		_changeScene = get_tree().change_scene("res://Scenes/boyScenes/boyHyperglycemiaGO.tscn")
+	else:
+		_changeScene = get_tree().change_scene("res://Scenes/boyScenes/HyperglycemiaNoInternetGO.tscn")
 
 func onExerciseButtonPressed():
 	randomize()

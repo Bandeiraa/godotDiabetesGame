@@ -52,7 +52,6 @@ func onBackToScene():
 	storedPointsValue = int(ProjectManager.quizResult.totalScore)
 	$layer/pointsCountLabel.text = str(storedPointsValue)
 	storedGlucoseValue = str(ProjectManager.quizResult.glucoseAmount)
-	#print(storedGlucoseValue)
 	glucoseCalculus = int(storedGlucoseValue)
 	glucoseValue.text = str(glucoseCalculus)
 	candiesCount = int(ProjectManager.quizResult.candiesCount)
@@ -118,7 +117,7 @@ func canIncreasePointsCount():
 	if canFreezeGlucose == false:
 		aux2 = int(rand_range(5, 20))
 		storeValue += aux2
-		glucoseCalculus = glucoseCalculus + storeValue#int(storedGlucoseValue)  #int(storedGlucoseValue)
+		glucoseCalculus = glucoseCalculus + storeValue
 		glucoseValue.text = str(glucoseCalculus)
 		pointsCount += 20
 		sum = pointsCount + storedPointsValue
@@ -143,9 +142,8 @@ func canIncreaseGlucose():
 func onGlucoseTimerTimeout():
 	randomize()
 	randomGlucoseValue = int(rand_range(1 + increaseGlucoseDecreasedValue, 5 + increaseGlucoseDecreasedValue))
-	aux += randomGlucoseValue #+ glucoseCalculus
-	glucoseCalculus = glucoseCalculus - aux #int(storedGlucoseValue)
-	#print(glucoseCalculus) 
+	aux += randomGlucoseValue
+	glucoseCalculus = glucoseCalculus - aux 
 	glucoseValue.text = str(glucoseCalculus)
 	aux = 0
 	
@@ -156,7 +154,6 @@ func _process(_delta):
 		blinkAnim.play("blinkWarningExercise")
 		isOutside = true
 	else:
-		#glucoseValue.set("custom_colors/font_color", Color(1,1,1))
 		$exerciseSpriteAux.set_visible(true)
 		if isOutside == true:
 			$warningAnimator.seek(0)
@@ -183,11 +180,9 @@ func _process(_delta):
 		ProjectManager.quizResult.totalScore = sum
 		ProjectManager.save()
 		fadeAnimation.play("blinkScreen")
-		if hasInternetConection == true:
-			_changeScene = get_tree().change_scene("res://Scenes/girlScenes/hypoglycemiaInternetGameOver.tscn")
-		else:
-			_changeScene = get_tree().change_scene("res://Scenes/girlScenes/hypoglycemiaGameOver.tscn")
-		
+		ProjectManager.quizResult.gameOverHypo = true
+		ProjectManager.save()
+		_changeScene = get_tree().change_scene("res://Scenes/girlScenes/girlGameOver.tscn")
 	else:
 		$warningMessage.set_visible(false)
 		
@@ -197,11 +192,10 @@ func onDNothingButtonPressed():
 	ProjectManager.save()
 	fadeAnimation.play("blinkScreen")
 	yield(get_tree().create_timer(0.7), "timeout")
-	if hasInternetConection == true:
-		_changeScene = get_tree().change_scene("res://Scenes/girlScenes/highGlucoseInternetGameOver.tscn")
-	else:
-		_changeScene = get_tree().change_scene("res://Scenes/girlScenes/highGlucoseGameOver.tscn")
-
+	ProjectManager.quizResult.gameOverDoNothing = true
+	ProjectManager.save()
+	_changeScene = get_tree().change_scene("res://Scenes/girlScenes/girlGameOver.tscn")
+	
 func onExerciseButtonPressed():
 	randomize()
 	var randomExercise
@@ -209,7 +203,6 @@ func onExerciseButtonPressed():
 	if glucoseCalculus >= 160 && glucoseCalculus <= 189:
 		var randomGlucoseValueAux
 		randomGlucoseValueAux = int(rand_range(60, 80))
-		#print(randomGlucoseValueAux)
 		glucoseCalculus = glucoseCalculus - randomGlucoseValueAux
 		print(glucoseCalculus)
 		ProjectManager.quizResult.glucoseAmount = str(glucoseCalculus)
@@ -233,9 +226,6 @@ func onInsulinButtonPressed():
 	ProjectManager.quizResult.increasedGlucoseAmount = increaseGlucoseDecreasedValue
 	ProjectManager.save()
 	_changeScene = get_tree().change_scene("res://Scenes/girlScenes/insulinScene.tscn")
-	#glucoseCalculus = glucoseCalculus - 100
-	#glucoseValue.text = str(glucoseCalculus)
-	#$glucoseTimer.start()
 
 func onBonusPressed():
 	$glucoseTimer.stop()
@@ -269,4 +259,13 @@ func onDificultyIncreased():
 		print("Valor de Spawn auxiliar: ", spawnIncreaserValue)
 		if spawnIncreaserValue >= 0.7:
 			keyAux = false
-	
+
+func onExerciseLabelPressed():
+	ProjectManager.quizResult.glucoseAmout = str(glucoseCalculus)
+	ProjectManager.quizResult.totalScore = pointsCount
+	ProjectManager.save()
+	fadeAnimation.play("blinkScreen")
+	yield(get_tree().create_timer(0.7), "timeout")
+	ProjectManager.quizResult.gameOverHyper = true
+	ProjectManager.save()
+	_changeScene = get_tree().change_scene("res://Scenes/girlScenes/girlGameOver.tscn")
