@@ -3,6 +3,8 @@ extends Control
 var _changeScene
 signal canHide
 onready var blinkAnim = get_node("blinkAnimation")
+onready var checkedButton = get_node("panel/checkSoundButton/checked")
+var key = true
 
 func onAboutButtonPressed():
 	pass
@@ -18,3 +20,13 @@ func onBackToCharSelect():
 
 func onCancelButtonPressed():
 	emit_signal("canHide")
+
+func onCheckButtonPressed():
+	checkedButton.set_visible(false)
+	InitialSong.stop()
+	if checkedButton.is_visible() == false and key == true:
+		key = false
+	else:
+		checkedButton.set_visible(true)
+		InitialSong.play()
+		key = true

@@ -15,7 +15,8 @@ var quizResult = {
 	"hasInternet": false,
 	"gameOverHypo": false,
 	"gameOverDoNothing": false,
-	"gameOverHyper": false
+	"gameOverHyper": false,
+	"increaseFruitValue": 0
 }
 
 func save():

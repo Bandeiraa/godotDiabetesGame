@@ -5,9 +5,15 @@ var storePoints
 onready var blinkAnim = get_node("BlinkScreenAnimator")
 onready var points : Label = $LabelLayer/TotalPoints
 onready var glucoseStored : Label = $LabelLayer/GlucosePoints
-onready var nameLabel : LineEdit = $LineEdit
+onready var nameLabel : LineEdit = $SaveScorePopup/SaveScoreContainer/ScoreName
 onready var gameOverMessage : TextureRect = $InterfaceContainer/GameOverMessage
+onready var saveScoreContainer : TextureRect = $SaveScorePopup/SaveScoreContainer
+onready var saveScorePopup : TextureRect = $SaveScorePopup
 
+func _process(_delta):
+	var getSavedName = nameLabel.text
+	$SaveScorePopup/SaveScoreContainer/ScoreNameAux.text = getSavedName
+	
 func _ready():
 	ProjectManager.loadData()
 	storePoints = ProjectManager.quizResult.totalScore
@@ -17,6 +23,7 @@ func _ready():
 	#var gameOverDN = ProjectManager.quizResult.gameOverHyper
 	var hasInternet = ProjectManager.quizResult.hasInternet
 	if hasInternet == true:
+		saveScorePopup.set_visible(true)
 		if gameOverHypo == true:
 			gameOverMessage.texture = load("res://Assets/Sprites/girlGameOverSprites/hypoglicemiaGO.png")
 		elif gameOverHyper == true:
@@ -24,6 +31,7 @@ func _ready():
 		else:
 			gameOverMessage.texture = load("res://Assets/Sprites/girlGameOverSprites/doNothingGO.png")
 	else:
+		saveScorePopup.set_visible(false)
 		if gameOverHypo == true:
 			gameOverMessage.texture = load("res://Assets/Sprites/girlGameOverSprites/hypoglicemiaGO.png")
 		elif gameOverHyper == true:
@@ -60,10 +68,24 @@ func onInitialScreenButtonPressed():
 	_changeScene = get_tree().change_scene("res://Scenes/girlScenes/girlPrincipal.tscn")
 	
 func onSaveButtonPressed():
-	var name = $"LineEdit".text
+	var name = nameLabel.text
 	SilentWolf.Scores.persist_score(name, storePoints)
 	SilentWolf.Scores.get_high_scores()
-	pass
+	$SaveScorePopup/SaveScoreContainer.hide()
+	$SaveTimer.start()
 	
 func _on_Button_pressed():
 	_changeScene = get_tree().change_scene("res://addons/silent_wolf/Scores/Leaderboard.tscn")
+
+func onYesButtonPressed():
+	$SaveScorePopup/FirstPopup.hide()
+	saveScoreContainer.set_visible(true)
+
+func onNoButtonPressed():
+	saveScorePopup.set_visible(false)
+
+func onBackButtonPressed():
+	saveScorePopup.set_visible(false)
+
+func onSaveTimerTimeout():
+	$SaveScorePopup/AfterSaveScoreContainer.show()

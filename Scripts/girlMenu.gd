@@ -5,8 +5,8 @@ var _changeScene
 signal canHide
 
 func onTutorialButtonPressed():
-	get_tree().paused = false
-	#_changeScene = OS.shell_open("Vídeo tutorial do youtube")
+	#get_tree().paused = false
+	_changeScene = OS.shell_open("https://youtu.be/0maVvJVzRR4")
 	pass
 	
 func onReloadButtonPressed():

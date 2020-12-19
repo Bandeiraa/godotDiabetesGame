@@ -1,21 +1,52 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/girlGameOver.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sprites/girlGameOverSprites/gameOverPopup.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sprites/girlGameOverSprites/gameOverBG.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Sprites/girlInitialScreenSprite/configButton.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Sprites/girlQuizSprites/answerButton.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Fonts/design.graffiti.SNAP____.ttf" type="DynamicFontData" id=14]
 
 [sub_resource type="DynamicFont" id=1]
-size = 9
+size = 28
 font_data = ExtResource( 14 )
 
 [sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 25
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 26
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 28
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 18
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 18
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 23
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 9
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=8]
 size = 15
 font_data = ExtResource( 14 )
 
-[sub_resource type="Animation" id=3]
-resource_name = "blinkAnim"
+[sub_resource type="Animation" id=9]
 tracks/0/type = "value"
 tracks/0/path = NodePath("BlackPanel:modulate")
 tracks/0/interp = 1
@@ -28,14 +59,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
 }
-
-[sub_resource type="DynamicFont" id=4]
-size = 8
-font_data = ExtResource( 14 )
-
-[sub_resource type="DynamicFont" id=5]
-size = 12
-font_data = ExtResource( 14 )
 
 [node name="GameOverScreen" type="Control"]
 anchor_right = 1.0
@@ -101,6 +124,298 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="SaveScorePopup" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 28.6228
+margin_right = 396.0
+margin_bottom = 732.623
+rect_scale = Vector2( 0.267, 0.267 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FirstPopup" type="TextureRect" parent="SaveScorePopup"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SaveScoreLabel" type="Label" parent="SaveScorePopup/FirstPopup"]
+margin_left = 79.0578
+margin_top = 44.5396
+margin_right = 461.058
+margin_bottom = 121.54
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Você gostaria de salvar a sua pontuação?"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="YesButton" type="Button" parent="SaveScorePopup/FirstPopup"]
+margin_left = 78.0
+margin_top = 170.493
+margin_right = 255.0
+margin_bottom = 221.493
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="SaveScorePopup/FirstPopup/YesButton"]
+position = Vector2( 88.5316, 26.7465 )
+scale = Vector2( 0.153682, 0.277743 )
+texture = ExtResource( 11 )
+
+[node name="Label" type="Label" parent="SaveScorePopup/FirstPopup/YesButton"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -88.5
+margin_top = -25.5
+margin_right = 88.5
+margin_bottom = 25.5
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Sim"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NoButton" type="Button" parent="SaveScorePopup/FirstPopup"]
+margin_left = 293.245
+margin_top = 170.493
+margin_right = 470.245
+margin_bottom = 221.493
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="SaveScorePopup/FirstPopup/NoButton"]
+position = Vector2( 88.532, 26.747 )
+scale = Vector2( 0.154, 0.278 )
+texture = ExtResource( 11 )
+
+[node name="Label" type="Label" parent="SaveScorePopup/FirstPopup/NoButton"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -88.5
+margin_top = -25.5
+margin_right = 88.5
+margin_bottom = 25.5
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Não"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AfterSaveScoreContainer" type="TextureRect" parent="SaveScorePopup"]
+visible = false
+margin_top = -19.0
+margin_right = 538.0
+margin_bottom = 349.0
+
+[node name="LabelSavedMessage" type="Label" parent="SaveScorePopup/AfterSaveScoreContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -235.0
+margin_top = -114.423
+margin_right = 240.0
+margin_bottom = -45.4225
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Pontuação salva com sucesso!"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RankingButton" type="Button" parent="SaveScorePopup/AfterSaveScoreContainer"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 100.0
+margin_top = -1.64319
+margin_right = 245.0
+margin_bottom = 48.3568
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="SaveScorePopup/AfterSaveScoreContainer/RankingButton"]
+position = Vector2( 74.1648, 23.3455 )
+scale = Vector2( 0.124305, 0.267 )
+texture = ExtResource( 11 )
+
+[node name="Label" type="Label" parent="SaveScorePopup/AfterSaveScoreContainer/RankingButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Ranking"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" type="Button" parent="SaveScorePopup/AfterSaveScoreContainer"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -235.0
+margin_top = -1.64319
+margin_right = -100.0
+margin_bottom = 48.3568
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="SaveScorePopup/AfterSaveScoreContainer/BackButton"]
+position = Vector2( 69.1541, 23.3455 )
+scale = Vector2( 0.115884, 0.267 )
+texture = ExtResource( 11 )
+
+[node name="Label" type="Label" parent="SaveScorePopup/AfterSaveScoreContainer/BackButton"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -67.5
+margin_top = -25.0
+margin_right = 67.5
+margin_bottom = 25.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Voltar"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SaveScoreContainer" type="TextureRect" parent="SaveScorePopup"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SaveMessage" type="Label" parent="SaveScorePopup/SaveScoreContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -212.5
+margin_top = -438.454
+margin_right = 212.5
+margin_bottom = -321.454
+custom_fonts/font = SubResource( 11 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Por favor, informe o nome que você deseja ver no ranking"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreNameSprite" type="Sprite" parent="SaveScorePopup/SaveScoreContainer"]
+position = Vector2( 275.757, 192.855 )
+scale = Vector2( 0.336338, 0.195238 )
+texture = ExtResource( 11 )
+
+[node name="ScoreNameAux" type="Label" parent="SaveScorePopup/SaveScoreContainer"]
+margin_left = 83.0
+margin_top = 178.0
+margin_right = 468.0
+margin_bottom = 209.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreName" type="LineEdit" parent="SaveScorePopup/SaveScoreContainer"]
+modulate = Color( 1, 1, 1, 0.0117647 )
+margin_left = 79.0
+margin_top = 175.0
+margin_right = 471.0
+margin_bottom = 211.0
+custom_fonts/font = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SaveScoreButtonPressed" type="Button" parent="SaveScorePopup/SaveScoreContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -92.5
+margin_top = -240.951
+margin_right = 92.5
+margin_bottom = -188.951
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="SaveScorePopup/SaveScoreContainer/SaveScoreButtonPressed"]
+position = Vector2( 92.5864, 25.8869 )
+scale = Vector2( 0.15419, 0.261498 )
+texture = ExtResource( 11 )
+
+[node name="Label" type="Label" parent="SaveScorePopup/SaveScoreContainer/SaveScoreButtonPressed"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -46.0
+margin_top = -18.5
+margin_right = 46.0
+margin_bottom = 18.5
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Salvar"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="LabelLayer" type="Node2D" parent="."]
 
 [node name="GlucosePoints" type="Label" parent="LabelLayer"]
@@ -108,7 +423,7 @@ margin_left = -3.84096
 margin_top = 238.26
 margin_right = 31.1591
 margin_bottom = 255.26
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "70"
 align = 2
@@ -120,12 +435,12 @@ __meta__ = {
 
 [node name="TotalPoints" type="Label" parent="LabelLayer"]
 margin_left = 3.40472
-margin_top = 2.38898
+margin_top = 1.12764
 margin_right = 117.405
-margin_bottom = 24.389
+margin_bottom = 23.1277
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0000"
 align = 2
@@ -136,7 +451,7 @@ __meta__ = {
 }
 
 [node name="BlinkScreenAnimator" type="AnimationPlayer" parent="."]
-anims/blinkAnim = SubResource( 3 )
+anims/blinkAnim = SubResource( 9 )
 
 [node name="BlackPanel" type="Panel" parent="."]
 modulate = Color( 0, 0, 0, 0 )
@@ -147,75 +462,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SaveScoreButtonPressed" type="Button" parent="."]
-margin_left = 56.3646
-margin_top = 137.164
-margin_right = 77.3646
-margin_bottom = 157.164
-focus_mode = 0
-enabled_focus_mode = 0
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="HTTPRequest" type="HTTPRequest" parent="."]
-
-[node name="LineEdit" type="LineEdit" parent="."]
-visible = false
-margin_left = 8.74695
-margin_top = 135.798
-margin_right = 54.747
-margin_bottom = 157.798
-custom_fonts/font = SubResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="PauseButton2" type="TextureRect" parent="."]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -62.191
-margin_top = 134.665
-margin_right = 333.809
-margin_bottom = 838.665
-rect_scale = Vector2( 0.267, 0.267 )
-mouse_filter = 2
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Button" type="Button" parent="."]
-visible = false
-margin_left = 9.0
-margin_top = 113.0
-margin_right = 87.0
-margin_bottom = 133.0
-focus_mode = 0
-enabled_focus_mode = 0
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Sprite" type="Sprite" parent="Button"]
-position = Vector2( 39.8934, 10.1038 )
-scale = Vector2( 0.067, 0.0997324 )
-texture = ExtResource( 11 )
-
-[node name="Label" type="Label" parent="Button"]
-margin_right = 79.0
-margin_bottom = 20.0
-custom_fonts/font = SubResource( 5 )
-text = "Ranking"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="SaveTimer" type="Timer" parent="."]
+wait_time = 2.5
 [connection signal="pressed" from="InterfaceContainer/TryAgainButton" to="." method="onTryAgainButtonPressed"]
 [connection signal="pressed" from="InterfaceContainer/InitialScreenButton" to="." method="onInitialScreenButtonPressed"]
-[connection signal="pressed" from="SaveScoreButtonPressed" to="." method="onSaveButtonPressed"]
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="SaveScorePopup/FirstPopup/YesButton" to="." method="onYesButtonPressed"]
+[connection signal="pressed" from="SaveScorePopup/FirstPopup/NoButton" to="." method="onNoButtonPressed"]
+[connection signal="pressed" from="SaveScorePopup/AfterSaveScoreContainer/RankingButton" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="SaveScorePopup/AfterSaveScoreContainer/BackButton" to="." method="onBackButtonPressed"]
+[connection signal="pressed" from="SaveScorePopup/SaveScoreContainer/SaveScoreButtonPressed" to="." method="onSaveButtonPressed"]
+[connection signal="timeout" from="SaveTimer" to="." method="onSaveTimerTimeout"]
