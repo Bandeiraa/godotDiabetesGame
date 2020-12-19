@@ -15,4 +15,4 @@ func onChangeScene():
 	if ProjectManager.quizResult.hasInternet == true:
 		_changeScene = get_tree().change_scene("res://Scenes/InitialScreenLogged.tscn")
 	else:
-		_changeScene = get_tree().change_scene("res://Scenes/InitialScreen.tscn")
+		_changeScene = get_tree().change_scene("res://Scenes/InitialScenes/Initial/CharacterSelectScreen.tscn")

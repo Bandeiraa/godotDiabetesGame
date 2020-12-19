@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/configPanel.png-0e17ddd7d03df4071c3628000a08fbca.stex"
+path="res://.import/CheckButton.png-f86214b652893063db55366243efe184.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/boyConfigSprites/configPanel.png"
-dest_files=[ "res://.import/configPanel.png-0e17ddd7d03df4071c3628000a08fbca.stex" ]
+source_file="res://Assets/Sprites/InterfaceSprites/ConfigMenu/Boy/CheckButton.png"
+dest_files=[ "res://.import/CheckButton.png-f86214b652893063db55366243efe184.stex" ]
 
 [params]
 

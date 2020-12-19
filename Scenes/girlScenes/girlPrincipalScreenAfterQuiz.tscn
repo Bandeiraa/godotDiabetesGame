@@ -9,6 +9,8 @@
 [ext_resource path="res://Assets/Fonts/design.graffiti.SNAP____.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://Assets/Sprites/girlInitialScreenSprite/rankingButton.png" type="Texture" id=8]
 
+
+
 [sub_resource type="Animation" id=1]
 resource_name = "blinkAnimation"
 tracks/0/type = "value"

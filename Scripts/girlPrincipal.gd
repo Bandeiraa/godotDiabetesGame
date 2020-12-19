@@ -5,7 +5,7 @@ var _changeScene
 var menuScene
 
 func _ready():
-	menuScene = preload("res://Scenes/girlScenes/girlConfigMenu.tscn")
+	menuScene = preload("res://Scenes/InterfaceScenes/Girl/GirlConfigMenu.tscn")
 
 func onGearPressed():
 	principalSceneAnimator.play("gearAnimation")

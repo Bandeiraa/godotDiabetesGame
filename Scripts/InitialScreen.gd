@@ -6,10 +6,9 @@ var _changeSceneTo
 func _ready():
 	ProjectManager.loadData()
 	if ProjectManager.quizResult.hasInternet == true:
-		$registerButton.hide()
-		$loginButton.hide()
-		
-	menuAnimation.play("BlinkANimation")
+		$RegisterButton.hide()
+		$LoginButton.hide()
+
 	SilentWolf.configure({
 		"api_key": "jB8i3p4pfc3C1QGgSZqtS39J7TToMy4Y96UTv916",
 		"game_id": "Englicosados",
@@ -33,10 +32,7 @@ func onGirlButtonPressed():
 	_changeSceneTo = get_tree().change_scene("res://Scenes/girlScenes/girlPrincipal.tscn")
 
 func onRegisterPressed() -> void:
-	_changeSceneTo = get_tree().change_scene("res://Scenes/register.tscn")
+	_changeSceneTo = get_tree().change_scene("res://Scenes/InitialScenes/Authentication/Register.tscn")
 
 func onLoginPressed() -> void:
-	_changeSceneTo = get_tree().change_scene("res://Scenes/login.tscn")
-
-func onLeaderboardPressed():
-	_changeSceneTo = get_tree().change_scene("res://Scenes/leaderBoard.tscn")
+	_changeSceneTo = get_tree().change_scene("res://Scenes/InitialScenes/Authentication/Login.tscn")

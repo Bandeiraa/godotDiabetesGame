@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/checkButton.png-2bd2bd7134b95aca455b7678500a8769.stex"
+path="res://.import/characterSelect.png-df3ed5f007310299027a68b3ea2f5d13.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/girlConfigSprites/checkButton.png"
-dest_files=[ "res://.import/checkButton.png-2bd2bd7134b95aca455b7678500a8769.stex" ]
+source_file="res://Assets/Sprites/InitialSprites/InitialScreenSprites/characterSelect.png"
+dest_files=[ "res://.import/characterSelect.png-df3ed5f007310299027a68b3ea2f5d13.stex" ]
 
 [params]
 

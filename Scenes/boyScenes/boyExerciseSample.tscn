@@ -5,6 +5,8 @@
 [ext_resource path="res://Assets/Sprites/boyExerciseSprites/backToGameButton.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sprites/boyExerciseSprites/C1.png" type="Texture" id=4]
 
+
+
 [node name="girlExerciseSample" instance=ExtResource( 1 )]
 
 [node name="TextureRect" parent="." index="0"]

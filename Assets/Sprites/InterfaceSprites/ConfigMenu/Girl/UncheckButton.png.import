@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/registerButton.png-d4212abaaa37149fbc605aa0ab7b3353.stex"
+path="res://.import/UncheckButton.png-69bbe7b7710eb52799d80aa05fc8653a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/registerSprites/registerButton.png"
-dest_files=[ "res://.import/registerButton.png-d4212abaaa37149fbc605aa0ab7b3353.stex" ]
+source_file="res://Assets/Sprites/InterfaceSprites/ConfigMenu/Girl/UncheckButton.png"
+dest_files=[ "res://.import/UncheckButton.png-69bbe7b7710eb52799d80aa05fc8653a.stex" ]
 
 [params]
 

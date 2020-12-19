@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cancel.png-962bb73a10025b2e886956e9d9e51a10.stex"
+path="res://.import/initialScreen.png-7139fb64f455102d8a372f6ce13598d7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/boyConfigSprites/cancel.png"
-dest_files=[ "res://.import/cancel.png-962bb73a10025b2e886956e9d9e51a10.stex" ]
+source_file="res://Assets/Sprites/InitialSprites/InitialScreenSprites/initialScreen.png"
+dest_files=[ "res://.import/initialScreen.png-7139fb64f455102d8a372f6ce13598d7.stex" ]
 
 [params]
 

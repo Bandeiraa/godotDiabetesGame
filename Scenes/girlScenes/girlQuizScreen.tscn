@@ -12,6 +12,8 @@
 [ext_resource path="res://Assets/Fonts/design.graffiti.SNAP____.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://Assets/Sprites/girlQuizSprites/answerButton.png" type="Texture" id=11]
 
+
+
 [sub_resource type="DynamicFont" id=1]
 size = 8
 font_data = ExtResource( 10 )

@@ -8,6 +8,8 @@
 [ext_resource path="res://Assets/Sprites/boyInsulinSprites/insulin1.png" type="Texture" id=6]
 [ext_resource path="res://Scripts/boyInsulin.gd" type="Script" id=7]
 
+
+
 [sub_resource type="Animation" id=2]
 resource_name = "fadeAnimation"
 tracks/0/type = "value"

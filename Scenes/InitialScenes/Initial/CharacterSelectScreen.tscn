@@ -1,0 +1,144 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/InitialScreen.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sprites/InitialSprites/InitialScreenSprites/characterSelect.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/boyQuizSprites/answersPanel.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Fonts/design.graffiti.SNAP____.ttf" type="DynamicFontData" id=7]
+
+[sub_resource type="Animation" id=1]
+resource_name = "BlinkANimation"
+length = 2.0
+loop = true
+
+[sub_resource type="Animation" id=2]
+resource_name = "BlinkScreen"
+tracks/0/type = "value"
+tracks/0/path = NodePath("BlinkScreen:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 0, 0, 0, 1 ), Color( 0.207843, 0.0352941, 0.0352941, 0 ) ]
+}
+
+[sub_resource type="DynamicFont" id=3]
+size = 10
+font_data = ExtResource( 7 )
+
+[node name="InitialScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_scale = Vector2( 0.267, 0.267 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BoyButton" type="Button" parent="."]
+margin_left = 84.0
+margin_top = 61.0
+margin_right = 131.0
+margin_bottom = 200.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GirlButton" type="Button" parent="."]
+margin_left = 22.0
+margin_top = 61.0
+margin_right = 58.0
+margin_bottom = 197.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Animator" type="AnimationPlayer" parent="."]
+anims/BlinkANimation = SubResource( 1 )
+anims/BlinkScreen = SubResource( 2 )
+
+[node name="BlinkScreen" type="Panel" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RegisterButton" type="Button" parent="."]
+margin_left = 1.0908
+margin_top = 1.99692
+margin_right = 66.0908
+margin_bottom = 21.9969
+rect_scale = Vector2( 0.6, 0.6 )
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="RegisterButton"]
+position = Vector2( 32.8725, 10.7999 )
+scale = Vector2( 0.055064, 0.10289 )
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="RegisterButton"]
+margin_top = 1.0
+margin_right = 65.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 3 )
+text = "Registrar"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="LoginButton" type="Button" parent="."]
+margin_left = 102.545
+margin_top = 1.99692
+margin_right = 167.545
+margin_bottom = 21.9969
+rect_scale = Vector2( 0.6, 0.6 )
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="LoginButton"]
+position = Vector2( 32.8725, 10.7999 )
+scale = Vector2( 0.055064, 0.10289 )
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="LoginButton"]
+margin_top = 1.0
+margin_right = 65.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 3 )
+text = "Entrar"
+align = 1
+valign = 1
+autowrap = true
+[connection signal="pressed" from="BoyButton" to="." method="onBoyButtonPressed"]
+[connection signal="pressed" from="GirlButton" to="." method="onGirlButtonPressed"]
+[connection signal="pressed" from="RegisterButton" to="." method="onRegisterPressed"]
+[connection signal="pressed" from="LoginButton" to="." method="onLoginPressed"]

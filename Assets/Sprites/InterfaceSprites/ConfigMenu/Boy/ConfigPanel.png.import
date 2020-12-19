@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/registerScreen.png-c982aaf197ebd075d14e33c89a9f4c3a.stex"
+path="res://.import/ConfigPanel.png-7a4932deae4d06496692c6aa85025d18.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/registerSprites/registerScreen.png"
-dest_files=[ "res://.import/registerScreen.png-c982aaf197ebd075d14e33c89a9f4c3a.stex" ]
+source_file="res://Assets/Sprites/InterfaceSprites/ConfigMenu/Boy/ConfigPanel.png"
+dest_files=[ "res://.import/ConfigPanel.png-7a4932deae4d06496692c6aa85025d18.stex" ]
 
 [params]
 

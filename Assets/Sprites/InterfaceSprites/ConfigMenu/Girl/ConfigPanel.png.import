@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/aboutTheGame.png-cd979a9a8a5e283d4da371b3c6f7864b.stex"
+path="res://.import/ConfigPanel.png-554e2addb150d1450f77faf0c1b155d8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/boyConfigSprites/aboutTheGame.png"
-dest_files=[ "res://.import/aboutTheGame.png-cd979a9a8a5e283d4da371b3c6f7864b.stex" ]
+source_file="res://Assets/Sprites/InterfaceSprites/ConfigMenu/Girl/ConfigPanel.png"
+dest_files=[ "res://.import/ConfigPanel.png-554e2addb150d1450f77faf0c1b155d8.stex" ]
 
 [params]
 

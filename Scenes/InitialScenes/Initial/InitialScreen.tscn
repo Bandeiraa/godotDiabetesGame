@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/Sprites/characterSelectionSprites/initialScreen1.png" type="Texture" id=1]
-[ext_resource path="res://Scripts/firstInitialScreen.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/firstInitialScreen.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sprites/InitialSprites/InitialScreenSprites/initialScreen.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
 resource_name = "blinkScreen"
@@ -21,7 +21,7 @@ tracks/0/keys = {
 [node name="initialScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 2 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -30,7 +30,7 @@ __meta__ = {
 margin_right = 40.0
 margin_bottom = 40.0
 rect_scale = Vector2( 0.267, 0.267 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

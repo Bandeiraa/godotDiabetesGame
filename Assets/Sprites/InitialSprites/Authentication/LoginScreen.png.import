@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/checkButton.png-0380b16fce699a558d4b9ce275ba30dd.stex"
+path="res://.import/LoginScreen.png-9597c82468388267850dc9e493a3903a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/boyConfigSprites/checkButton.png"
-dest_files=[ "res://.import/checkButton.png-0380b16fce699a558d4b9ce275ba30dd.stex" ]
+source_file="res://Assets/Sprites/InitialSprites/Authentication/LoginScreen.png"
+dest_files=[ "res://.import/LoginScreen.png-9597c82468388267850dc9e493a3903a.stex" ]
 
 [params]
 

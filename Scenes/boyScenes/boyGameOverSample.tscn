@@ -16,6 +16,8 @@
 [ext_resource path="res://Assets/Sprites/boyInitialScreenSprite/configButton.png" type="Texture" id=14]
 
 
+
+
 [node name="gameOverScreen" instance=ExtResource( 7 )]
 script = ExtResource( 1 )
 

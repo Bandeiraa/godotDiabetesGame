@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sound.png-9cea50fae3a9c1c119276166dc002a19.stex"
+path="res://.import/UncheckButton.png-c8d448139354eee8cb25616f5ec890b4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/boyConfigSprites/sound.png"
-dest_files=[ "res://.import/sound.png-9cea50fae3a9c1c119276166dc002a19.stex" ]
+source_file="res://Assets/Sprites/InterfaceSprites/ConfigMenu/Boy/UncheckButton.png"
+dest_files=[ "res://.import/UncheckButton.png-c8d448139354eee8cb25616f5ec890b4.stex" ]
 
 [params]
 
