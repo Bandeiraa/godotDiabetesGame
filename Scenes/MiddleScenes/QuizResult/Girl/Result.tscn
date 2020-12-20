@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/MiddleScenes/QuizResult/Boy/Result.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Sprites/MiddleSprites/QuizResult/Girl/pointsPanel.png" type="Texture" id=2]
+
+[node name="QuizResult" instance=ExtResource( 1 )]
+
+[node name="PointsPanel" parent="Container" index="0"]
+texture = ExtResource( 2 )
+
+[node name="TotalPoints" parent="Container" index="1"]
+margin_left = 16.5275
+margin_top = 159.618
+margin_right = 63.5275
+margin_bottom = 173.618
+
+[node name="RightAnswers" parent="Container" index="2"]
+margin_left = 56.5113
+margin_top = 179.842
+margin_right = 66.5113
+margin_bottom = 188.842
+
+[node name="WrongAnswers" parent="Container" index="3"]
+margin_left = 56.5113
+margin_top = 197.697
+margin_right = 66.5113
+margin_bottom = 206.697
+
+[node name="InsulinBonus" parent="Container" index="4"]
+margin_left = 56.5113
+margin_top = 216.081
+margin_right = 66.5113
+margin_bottom = 225.081

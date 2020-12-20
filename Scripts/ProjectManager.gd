@@ -16,6 +16,7 @@ var quizResult = {
 	"gameOverHypo": false,
 	"gameOverDoNothing": false,
 	"gameOverHyper": false,
+	"quizDone": false,
 	"increaseFruitValue": 0
 }
 

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/FoodsScenes/FruitScene/HealthyFruits.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Sprites/fruitsSprites/orange.png" type="Texture" id=2]
+
+[node name="healthyFruits" instance=ExtResource( 1 )]
+
+[node name="fruitSprite" parent="." index="0"]
+position = Vector2( -50.8347, 15.612 )
+texture = ExtResource( 2 )
+
+[node name="fruitCollision" parent="." index="1"]
+position = Vector2( 0, 1.98625 )
+polygon = PoolVector2Array( -7.4899, -34.0817, -31.987, -21.5021, -38.2768, -11.2397, -42.2493, 1.67091, -40.9252, 11.2711, -33.9733, 20.5403, -21.3937, 27.8233, 8.06909, 30.4716, 19.6556, 29.1474, 35.2146, 16.8989, 40.8423, -0.977425, 35.8767, -18.8537, 51.1046, -32.0954, 40.8423, -40.7025, 34.8836, -43.0198, 38.525, -58.5788, 23.9592, -62.5513, 13.3658, -59.2409, 0.786194, -47.6544, -3.84842, -65.8618, -19.0764, -64.2065, -18.7453, -58.9099, -11.1313, -50.3028 )

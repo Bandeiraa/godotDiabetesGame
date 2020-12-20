@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/InitialScreen.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Sprites/InitialSprites/InitialScreenSprites/characterSelect.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/InitialSprites/InitialScreen/characterSelect.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sprites/boyQuizSprites/answersPanel.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Fonts/design.graffiti.SNAP____.ttf" type="DynamicFontData" id=7]
 

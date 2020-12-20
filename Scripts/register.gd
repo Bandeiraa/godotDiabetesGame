@@ -18,7 +18,6 @@ func _process(_delta):
 	
 func _on_HTTPRequest_request_completed(_result, response_code, _headers, body):
 	var _responseBody := JSON.parse(body.get_string_from_ascii())
-	
 	if response_code == 200:
 		notification.text = "Registrado com sucesso!"
 		notification.set("custom_colors/font_color",Color(0,1,0))

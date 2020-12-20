@@ -11,8 +11,4 @@ func _ready():
 func onChangeScene():
 	animation.play("blinkScreen")
 	yield(get_tree().create_timer(0.7), "timeout")
-	ProjectManager.loadData()
-	if ProjectManager.quizResult.hasInternet == true:
-		_changeScene = get_tree().change_scene("res://Scenes/InitialScreenLogged.tscn")
-	else:
-		_changeScene = get_tree().change_scene("res://Scenes/InitialScenes/Initial/CharacterSelectScreen.tscn")
+	_changeScene = get_tree().change_scene("res://Scenes/InitialScenes/Initial/CharacterSelectScreen.tscn")

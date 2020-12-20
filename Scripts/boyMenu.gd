@@ -17,9 +17,8 @@ func onReloadButtonPressed():
 	
 func onBackToMenuPressed():
 	get_tree().paused = false
-	_changeScene = get_tree().change_scene("res://Scenes/boyScenes/boyPrincipal.tscn")
+	_changeScene = get_tree().change_scene("res://Scenes/MiddleScenes/Main/Boy/Main.tscn")
 	
 func onBackToGameButtonPressed():
 	get_tree().paused = false
 	emit_signal("canHide")
-	pass

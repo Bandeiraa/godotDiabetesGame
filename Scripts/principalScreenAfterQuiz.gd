@@ -5,7 +5,7 @@ var _changeScene
 var menuScene
 
 func _ready():
-	menuScene = preload("res://Scenes/boyScenes/boyConfigMenu.tscn")
+	menuScene = preload("res://Scenes/boyScenes/ConfigMenu.tscn")
 	ProjectManager.loadData()
 	$totalPoints.text = ProjectManager.quizResult.totalPoints
 	$correctAnswers.text = str(ProjectManager.quizResult.correctAnswers)

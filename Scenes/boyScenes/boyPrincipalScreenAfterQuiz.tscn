@@ -1,13 +1,20 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://Assets/Sprites/boyInitialScreenSprite/configButton.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Sprites/boyInitialScreenSprite/pointsLabel.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Sprites/boyInitialScreenSprite/rankingButton.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/MiddleSprites/Main/Boy/ConfigButton.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Sprites/MiddleSprites/QuizResult/Boy/pointsLabel.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/MiddleSprites/Main/Boy/RankingButton.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/principalScreenAfterQuiz.gd" type="Script" id=4]
-[ext_resource path="res://Assets/Sprites/boyInitialScreenSprite/withoutButtonsInitialScreen.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Sprites/boyInitialScreenSprite/playButton.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Sprites/boyInitialScreenSprite/quizButton.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/MiddleSprites/Main/Boy/WithoutButtonsInitialScreen.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/MiddleSprites/Main/Boy/PlayButton.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/MiddleSprites/Main/Boy/QuizButton.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Fonts/design.graffiti.SNAP____.ttf" type="DynamicFontData" id=8]
+
+
+
+
+
+
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "blinkAnim"

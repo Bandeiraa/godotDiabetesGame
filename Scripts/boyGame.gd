@@ -1,12 +1,12 @@
 extends Node2D
 
-var FRUITS = [preload("res://Scenes/fruitsScenes/lettuce.tscn"), preload("res://Scenes/fruitsScenes/banana.tscn"), preload("res://Scenes/fruitsScenes/eggplant.tscn"), preload("res://Scenes/fruitsScenes/carrot.tscn"),
-			  preload("res://Scenes/fruitsScenes/orange.tscn"), preload("res://Scenes/fruitsScenes/pear.tscn"), preload("res://Scenes/fruitsScenes/bellPepper.tscn"), preload("res://Scenes/fruitsScenes/tomatoe.tscn"),
-			  preload("res://Scenes/fruitsScenes/strawberry.tscn")]
+var FRUITS = [preload("res://Scenes/FoodsScenes/FruitScene/Banana.tscn"), preload("res://Scenes/FoodsScenes/FruitScene/BellPepper.tscn"), preload("res://Scenes/FoodsScenes/FruitScene/Carrot.tscn"), preload("res://Scenes/FoodsScenes/FruitScene/Eggplant.tscn"),
+			  preload("res://Scenes/FoodsScenes/FruitScene/Pear.tscn"), preload("res://Scenes/FoodsScenes/FruitScene/Lettuce.tscn"), preload("res://Scenes/FoodsScenes/FruitScene/Orange.tscn"), preload("res://Scenes/FoodsScenes/FruitScene/Strawberry.tscn"),
+			  preload("res://Scenes/FoodsScenes/FruitScene/Tomatoe.tscn")]
 			
-var CANDIES = [preload("res://Scenes/candiesScenes/frenchFries.tscn"), preload("res://Scenes/candiesScenes/cookie.tscn"), preload("res://Scenes/candiesScenes/chocolate.tscn"),
-			   preload("res://Scenes/candiesScenes/cake.tscn"), preload("res://Scenes/candiesScenes/brigadeiro.tscn"), preload("res://Scenes/candiesScenes/sandwich.tscn"),
-			   preload("res://Scenes/candiesScenes/sugar.tscn")]
+var CANDIES = [preload("res://Scenes/FoodsScenes/CandieScene/Brigadeiro.tscn"), preload("res://Scenes/FoodsScenes/CandieScene/Cake.tscn"), preload("res://Scenes/FoodsScenes/CandieScene/Chocolate.tscn"),
+			   preload("res://Scenes/FoodsScenes/CandieScene/Cookie.tscn"), preload("res://Scenes/FoodsScenes/CandieScene/FrenchFries.tscn"), preload("res://Scenes/FoodsScenes/CandieScene/Sandwich.tscn"),
+			   preload("res://Scenes/FoodsScenes/CandieScene/Sugar.tscn")]
 			
 
 onready var glucoseValue = $layer/glucoseLabel

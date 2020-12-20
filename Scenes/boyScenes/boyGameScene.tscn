@@ -13,8 +13,6 @@
 [ext_resource path="res://Assets/Sprites/boyGameSprites/pauseButton.png" type="Texture" id=11]
 [ext_resource path="res://Scripts/boyGame.gd" type="Script" id=12]
 
-
-
 [node name="Root" instance=ExtResource( 10 )]
 script = ExtResource( 12 )
 

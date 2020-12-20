@@ -3,17 +3,36 @@ extends Control
 onready var principalSceneAnimator = get_node("Animator")
 var _changeScene
 var menuScene
+var resultScene
 var canChangeScene = false
+var menuInstanced
 
 func _ready():
-	menuScene = preload("res://Scenes/InterfaceScenes/Boy/BoyConfigMenu.tscn")
+	menuScene = preload("res://Scenes/InterfaceScenes/Boy/ConfigMenu.tscn")
+	resultScene = preload("res://Scenes/MiddleScenes/QuizResult/Boy/Result.tscn")
+	var quizResult = resultScene.instance()
+	ProjectManager.loadData()
+	if ProjectManager.quizResult.hasInternet == true:
+		$RankingButton.show()
+	else:
+		$RankingButton.hide()
+		
+	if ProjectManager.quizResult.quizDone == true:
+		$Spawn.show()
+		$Spawn.add_child(quizResult)
+		$Spawn/QuizResult/Container/TotalPoints.text = str(ProjectManager.quizResult.totalPoints)
+		$Spawn/QuizResult/Container/RightAnswers.text = str(ProjectManager.quizResult.correctAnswers)
+		$Spawn/QuizResult/Container/WrongAnswers.text = str(ProjectManager.quizResult.wrongAnswers)
+		$QuizButton.hide()
+	else:
+		$Spawn.hide()
 	
 func onGearPressed():
 	principalSceneAnimator.play("gearAnimation")
 	yield(get_tree().create_timer(0.5), "timeout")
-	$menuSpawn.show()
-	var menuInstanced = menuScene.instance()
-	$menuSpawn.add_child(menuInstanced)
+	$Spawn.show()
+	menuInstanced = menuScene.instance()
+	$Spawn.add_child(menuInstanced)
 	menuInstanced.connect("canHide", self, "canHideMenu")
 	
 func onBackToSceneButtonPressed():
@@ -22,7 +41,7 @@ func onBackToSceneButtonPressed():
 func onQuizButtonPressed():
 	principalSceneAnimator.play("blinkScreen")
 	yield(get_tree().create_timer(0.7), "timeout")
-	_changeScene = get_tree().change_scene("res://Scenes/boyScenes/boyQuizScreen.tscn")
+	_changeScene = get_tree().change_scene("res://Scenes/MiddleScenes/Quiz/Boy/QuizScreen.tscn")
 
 func onPlayButtonPressed():
 	InitialSong.stop()
@@ -38,7 +57,8 @@ func onPlayButtonPressed():
 	_changeScene = get_tree().change_scene("res://Scenes/boyScenes/boyGameScene.tscn")
 	
 func canHideMenu():
-	$menuSpawn.hide()
+	$Spawn/ConfigMenu.hide()
+	$Spawn.remove_child(menuInstanced)
 
 func onRankingButtonPressed():
 	ProjectManager.loadData()

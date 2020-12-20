@@ -10,7 +10,7 @@ onready var jsonFile = 'res://Assets/Questions/Quiz.json'
 onready var answerReaction = get_node("Animator")
 onready var buttonAnimator = get_node("ButtonAnimator")
 onready var timeWait = get_node("Timer")
-onready var timePopup = get_node("popupTimer")
+onready var timePopup = get_node("PopupTimer")
 
 var savePath = "user://save.dat"
 
@@ -62,10 +62,11 @@ func removeQuestion():
 		ProjectManager.quizResult.correctAnswers = pointsCount
 		ProjectManager.quizResult.wrongAnswers = wrongAnswer
 		ProjectManager.quizResult.bonus = 1
+		ProjectManager.quizResult.quizDone = true
 		ProjectManager.save()
 		answerReaction.play("blinkScreen")
 		yield(get_tree().create_timer(0.7), "timeout")
-		_changeScene = get_tree().change_scene("res://Scenes/boyScenes/boyPrincipalScreenAfterQuiz.tscn")
+		_changeScene = get_tree().change_scene("res://Scenes/MiddleScenes/Main/Boy/Main.tscn")
 		return 
 	data.perguntas.remove(storedRandomNumber)
 	storedRandomNumber = randi() % data.perguntas.size()
@@ -150,7 +151,7 @@ func onPointsAreIncreased():
 func onBackButtonPressed():
 	answerReaction.play("blinkScreen")
 	yield(get_tree().create_timer(0.7), "timeout")
-	_changeScene = get_tree().change_scene("res://Scenes/boyScenes/boyPrincipal.tscn")
+	_changeScene = get_tree().change_scene("res://Scenes/MiddleScenes/Main/Boy/Main.tscn")
 
 func onTimerTimeout():
 	print("Questoes Erradas: ", wrongAnswer)
@@ -166,13 +167,14 @@ func onConfirmButtonPressed():
 	ProjectManager.quizResult.correctAnswers = pointsCount
 	ProjectManager.quizResult.wrongAnswers = wrongAnswer
 	ProjectManager.quizResult.bonus = 1
+	ProjectManager.quizResult.quizDone = true
 	ProjectManager.save()
 	answerReaction.play("blinkScreen")
 	yield(get_tree().create_timer(0.7), "timeout")
-	_changeScene = get_tree().change_scene("res://Scenes/boyScenes/boyPrincipalScreenAfterQuiz.tscn")
+	_changeScene = get_tree().change_scene("res://Scenes/MiddleScenes/Main/Boy/Main.tscn")
 
 func onRefuseButtonPressed():
-	$popupMenu.set_visible(false)
+	$PopupMenu.set_visible(false)
 
 func onPopupTimeout():
-	$popupMenu.set_visible(true)
+	$PopupMenu.set_visible(true)

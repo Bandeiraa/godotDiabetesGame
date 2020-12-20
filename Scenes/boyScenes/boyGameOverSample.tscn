@@ -13,7 +13,9 @@
 [ext_resource path="res://Assets/Sprites/boyGameSprites/panelGame.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Sprites/boyGameOverSprites/initialScreenButton.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Sprites/boyGameOverSprites/tryAgainButton.png" type="Texture" id=13]
-[ext_resource path="res://Assets/Sprites/boyInitialScreenSprite/configButton.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Sprites/MiddleSprites/Main/Boy/ConfigButton.png" type="Texture" id=14]
+
+
 
 
 

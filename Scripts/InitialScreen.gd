@@ -15,21 +15,20 @@ func _ready():
 		"game_version": "1.0.0",
 		"log_level": 1
 	})
-
+	
 	SilentWolf.configure_scores({
-		"open_scene_on_close": "res://Scenes/InitialScreen.tscn"
+		"open_scene_on_close": "res://Scenes/InitialScenes/Initial/CharacterSelectScreen.tscn"
 	})
 	
-
 func onBoyButtonPressed():
 	menuAnimation.play("BlinkScreen")
 	yield(get_tree().create_timer(0.7), "timeout")
-	_changeSceneTo = get_tree().change_scene("res://Scenes/boyScenes/boyPrincipal.tscn")
+	_changeSceneTo = get_tree().change_scene("res://Scenes/MiddleScenes/Main/Boy/Main.tscn")
 
 func onGirlButtonPressed():
 	menuAnimation.play("BlinkScreen")
 	yield(get_tree().create_timer(0.7), "timeout")
-	_changeSceneTo = get_tree().change_scene("res://Scenes/girlScenes/girlPrincipal.tscn")
+	_changeSceneTo = get_tree().change_scene("res://Scenes/MiddleScenes/Main/Girl/Main.tscn")
 
 func onRegisterPressed() -> void:
 	_changeSceneTo = get_tree().change_scene("res://Scenes/InitialScenes/Authentication/Register.tscn")
