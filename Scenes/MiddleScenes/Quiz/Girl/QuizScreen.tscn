@@ -3,14 +3,15 @@
 [ext_resource path="res://Assets/Fonts/design.graffiti.SNAP____.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/girlQuizScreen.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/MiddleScenes/Quiz/Boy/QuizScreen.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Sprites/girlQuizSprites/backButton.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Sprites/girlQuizSprites/quizNoButton.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Sprites/girlQuizSprites/rightAnswer.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Sprites/girlQuizSprites/wrongAnswer.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Sprites/girlQuizSprites/answerButton.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Sprites/girlQuizSprites/bonusPopup.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Sprites/girlQuizSprites/2ndButtonBonusPopup.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Sprites/girlQuizSprites/1stButtonBonusPopup.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Sprites/MiddleSprites/Quiz/Girl/backButton.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/MiddleSprites/Quiz/Girl/quizNoButton.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/MiddleSprites/Quiz/Girl/rightAnswer.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/MiddleSprites/Quiz/Girl/wrongAnswer.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/MiddleSprites/Quiz/Girl/answerButton.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sprites/MiddleSprites/Quiz/Girl/bonusPopup.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Sprites/MiddleSprites/Quiz/Girl/2ndButtonBonusPopup.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Sprites/MiddleSprites/Quiz/Girl/1stButtonBonusPopup.png" type="Texture" id=11]
+
 
 [sub_resource type="DynamicFont" id=1]
 size = 8

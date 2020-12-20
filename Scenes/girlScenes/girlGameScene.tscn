@@ -7,12 +7,13 @@
 [ext_resource path="res://Assets/Sprites/girlGameSprites/insulinButton.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Sprites/girlGameSprites/exerciseButton.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Sprites/girlGameSprites/qtePanel.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Sprites/girlQuizSprites/answerButton.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sprites/MiddleSprites/Quiz/Girl/answerButton.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Sprites/girlGameSprites/transparentPanel.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Sprites/girlGameSprites/glucoseMeter.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Sprites/girlGameSprites/girl.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Sprites/girlGameSprites/hipoMessage.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Sprites/girlGameSprites/panelGame.png" type="Texture" id=13]
+
 
 [sub_resource type="DynamicFont" id=1]
 size = 11

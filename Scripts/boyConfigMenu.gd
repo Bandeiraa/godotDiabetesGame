@@ -2,7 +2,6 @@ extends Control
 
 var _changeScene
 signal canHide
-onready var blinkAnim = get_node("BlinkAnimation")
 onready var checkedButton = get_node("Container/CheckSoundButton/Checked")
 var key = true
 
@@ -10,7 +9,7 @@ func onAboutButtonPressed():
 	pass
 	
 func onBackToCharSelect():
-	blinkAnim.play("blinkAnimation")
+	BlinkAnimation.canPlay()
 	yield(get_tree().create_timer(0.7), "timeout")
 	_changeScene = get_tree().change_scene("res://Scenes/InitialScenes/Initial/CharacterSelectScreen.tscn")
 

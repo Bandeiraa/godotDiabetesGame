@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Assets/Sprites/boyQuizSprites/answersPanel.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Sprites/MiddleSprites/Quiz/Boy/answersPanel.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Sprites/boyGameSprites/glucoseMeter.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sprites/boyGameSprites/hipoMessage.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sprites/boyGameSprites/hyperglicemyaPanel.png" type="Texture" id=4]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Scenes/girlScenes/girlGameScene.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/Sprites/boyGameSprites/pauseButton.png" type="Texture" id=11]
 [ext_resource path="res://Scripts/boyGame.gd" type="Script" id=12]
+
 
 [node name="Root" instance=ExtResource( 10 )]
 script = ExtResource( 12 )

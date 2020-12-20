@@ -25,7 +25,8 @@ func _on_HTTPRequest_request_completed(_result, response_code, _headers, body):
 		ProjectManager.save()
 		notification.text = "Login feito com sucesso!"
 		notification.set("custom_colors/font_color",Color(0,1,0))
-		yield(get_tree().create_timer(2.0), "timeout")
+		BlinkAnimation.canPlay()
+		yield(get_tree().create_timer(0.7), "timeout")
 		_changeScene = get_tree().change_scene("res://Scenes/InitialScenes/Initial/CharacterSelectScreen.tscn")
 	else:
 		match (_responseBody.result.error.message.capitalize()):
@@ -38,3 +39,7 @@ func _on_HTTPRequest_request_completed(_result, response_code, _headers, body):
 				yield(get_tree().create_timer(2.0), "timeout")
 				notification.text = ""
 
+func onBackButtonPressed():
+	BlinkAnimation.canPlay()
+	yield(get_tree().create_timer(0.7), "timeout")
+	_changeScene = get_tree().change_scene("res://Scenes/InitialScenes/Initial/CharacterSelectScreen.tscn")

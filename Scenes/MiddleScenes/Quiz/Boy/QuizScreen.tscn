@@ -2,14 +2,14 @@
 
 [ext_resource path="res://Assets/Fonts/design.graffiti.SNAP____.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/Quiz.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Sprites/boyQuizSprites/popupBonus.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Sprites/boyQuizSprites/answerButton.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Sprites/boyQuizSprites/rightButton.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Sprites/boyQuizSprites/backToMainBonusButton.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Sprites/boyQuizSprites/wrongButton.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Sprites/boyQuizSprites/answersPanel.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Sprites/boyQuizSprites/backButton.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Sprites/boyQuizSprites/bonusContinueButton.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Sprites/MiddleSprites/Quiz/Boy/popupBonus.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/MiddleSprites/Quiz/Boy/answerButton.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/MiddleSprites/Quiz/Boy/rightButton.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/MiddleSprites/Quiz/Boy/backToMainBonusButton.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/MiddleSprites/Quiz/Boy/wrongButton.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/MiddleSprites/Quiz/Boy/answersPanel.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sprites/MiddleSprites/Quiz/Boy/backButton.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Sprites/MiddleSprites/Quiz/Boy/bonusContinueButton.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 8

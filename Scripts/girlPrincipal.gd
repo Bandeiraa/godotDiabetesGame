@@ -1,6 +1,5 @@
 extends Control
 
-onready var principalSceneAnimator = get_node("Animator")
 var _changeScene
 var menuScene
 var resultScene
@@ -28,15 +27,15 @@ func _ready():
 		$Spawn.hide()
 		
 func onGearPressed():
-	principalSceneAnimator.play("gearAnimation")
-	yield(get_tree().create_timer(0.5), "timeout")
+	BlinkAnimation.canGearGirlPlay()
+	yield(get_tree().create_timer(0.9), "timeout")
 	$Spawn.show()
 	menuInstanced = menuScene.instance()
 	$Spawn.add_child(menuInstanced)
 	menuInstanced.connect("canHide", self, "canHideMenu")
 
 func onQuizButtonPressed():
-	principalSceneAnimator.play("blinkScreen")
+	BlinkAnimation.canPlay()
 	yield(get_tree().create_timer(0.7), "timeout")
 	_changeScene = get_tree().change_scene("res://Scenes/MiddleScenes/Quiz/Girl/QuizScreen.tscn")
 
@@ -52,7 +51,7 @@ func onPlayButtonPressed():
 	ProjectManager.quizResult.bonus = 0
 	ProjectManager.save()
 	print(ProjectManager.quizResult.glucoseAmount)
-	principalSceneAnimator.play("blinkScreen")
+	BlinkAnimation.canPlay()
 	yield(get_tree().create_timer(0.7), "timeout")
 	_changeScene = get_tree().change_scene("res://Scenes/girlScenes/girlGameScene.tscn")
 	
@@ -63,4 +62,6 @@ func canHideMenu():
 func onRankingButtonPressed():
 	ProjectManager.loadData()
 	if ProjectManager.quizResult.hasInternet == true:
+		BlinkAnimation.canPlay()
+		yield(get_tree().create_timer(0.7), "timeout")
 		_changeScene = get_tree().change_scene("res://addons/silent_wolf/Scores/Leaderboard.tscn")

@@ -1,24 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/boyConfigMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/InterfaceSprites/ConfigMenu/Boy/UncheckButton.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sprites/InterfaceSprites/ConfigMenu/Boy/CheckButton.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sprites/InterfaceSprites/ConfigMenu/Boy/ConfigPanel.png" type="Texture" id=4]
-
-[sub_resource type="Animation" id=1]
-resource_name = "blinkAnimation"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Panel:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.7, 1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 0 ) ]
-}
 
 [node name="ConfigMenu" type="Control"]
 anchor_right = 1.0
@@ -91,18 +76,6 @@ margin_bottom = 685.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="BlinkAnimation" type="AnimationPlayer" parent="."]
-anims/blinkAnimation = SubResource( 1 )
-
-[node name="Panel" type="Panel" parent="."]
-modulate = Color( 1, 1, 1, 0 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -26,6 +26,7 @@ InitialSong="*res://Scenes/InitialScenes/Sounds/InitialSong.tscn"
 MainGameSong="*res://Scenes/InitialScenes/Sounds/GameSong.tscn"
 Firebase="*res://Scripts/firebase.gd"
 SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
+BlinkAnimation="*res://Scenes/InterfaceScenes/BlinkAnimation.tscn"
 
 [display]
 

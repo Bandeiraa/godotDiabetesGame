@@ -25,7 +25,7 @@ position = Vector2( 9.5851, 9.84647 )
 texture = ExtResource( 3 )
 offset = Vector2( -213.149, 436.096 )
 
-[node name="PlayButton" parent="." index="3"]
+[node name="PlayButton" parent="." index="2"]
 margin_left = 44.0
 margin_top = 44.0
 margin_right = 126.0
@@ -35,7 +35,7 @@ margin_bottom = 64.0
 position = Vector2( 31.7005, 88.4745 )
 texture = ExtResource( 7 )
 
-[node name="QuizButton" parent="." index="4"]
+[node name="QuizButton" parent="." index="3"]
 margin_left = 18.0
 margin_right = 99.0
 
@@ -43,7 +43,7 @@ margin_right = 99.0
 position = Vector2( 54.8673, 58.1078 )
 texture = ExtResource( 6 )
 
-[node name="RankingButton" parent="." index="5"]
+[node name="RankingButton" parent="." index="4"]
 margin_left = 6.31317
 margin_right = 92.3135
 

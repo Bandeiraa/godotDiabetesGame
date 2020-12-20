@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/boyGameOver.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Sprites/boyQuizSprites/answersPanel.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/MiddleSprites/Quiz/Boy/answersPanel.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sprites/boyGameSprites/pauseButton.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sprites/boyGameSprites/glucoseMeter.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Sprites/boyGameSprites/insulinButton.png" type="Texture" id=5]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Assets/Sprites/boyGameOverSprites/initialScreenButton.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Sprites/boyGameOverSprites/tryAgainButton.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Sprites/MiddleSprites/Main/Boy/ConfigButton.png" type="Texture" id=14]
+
 
 
 
