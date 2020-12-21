@@ -25,23 +25,24 @@ func _ready():
 	if hasInternet == true:
 		saveScorePopup.set_visible(true)
 		if gameOverHypo == true:
-			gameOverMessage.texture = load("res://Assets/Sprites/girlGameOverSprites/hypoglicemiaGO.png")
+			gameOverMessage.texture = load("res://Assets/Sprites/EndSprites/GameOver/Girl/hypoglicemiaGO.png")
 		elif gameOverHyper == true:
-			gameOverMessage.texture = load("res://Assets/Sprites/girlGameOverSprites/highGlucoseGO.png")
+			gameOverMessage.texture = load("res://Assets/Sprites/EndSprites/GameOver/Girl/highGlucoseGO.png")
 		else:
-			gameOverMessage.texture = load("res://Assets/Sprites/girlGameOverSprites/doNothingGO.png")
+			gameOverMessage.texture = load("res://Assets/Sprites/EndSprites/GameOver/Girl/doNothingGO.png")
 	else:
 		saveScorePopup.set_visible(false)
 		if gameOverHypo == true:
-			gameOverMessage.texture = load("res://Assets/Sprites/girlGameOverSprites/hypoglicemiaGO.png")
+			gameOverMessage.texture = load("res://Assets/Sprites/EndSprites/GameOver/Girl/hypoglicemiaGO.png")
 		elif gameOverHyper == true:
-			gameOverMessage.texture = load("res://Assets/Sprites/girlGameOverSprites/highGlucoseGO.png")
+			gameOverMessage.texture = load("res://Assets/Sprites/EndSprites/GameOver/Girl/highGlucoseGO.png")
 		else:
-			gameOverMessage.texture = load("res://Assets/Sprites/girlGameOverSprites/doNothingGO.png")
+			gameOverMessage.texture = load("res://Assets/Sprites/EndSprites/GameOver/Girl/doNothingGO.png")
 	glucoseStored.text = storeGlucoseAmount 
 	points.text = str(storePoints)
 	
 func onTryAgainButtonPressed():
+	ProjectManager.loadData()
 	ProjectManager.quizResult.totalScore = 0
 	ProjectManager.quizResult.glucoseAmount = "70"
 	ProjectManager.quizResult.candiesCount = 0
@@ -49,10 +50,14 @@ func onTryAgainButtonPressed():
 	ProjectManager.quizResult.increasedGlucoseAmount = 0
 	ProjectManager.quizResult.gameOverHyper = false
 	ProjectManager.quizResult.gameOverHypo = false
+	if ProjectManager.quizResult.bonus == 0:
+		ProjectManager.quizResult.bonus = 0
+	else:
+		ProjectManager.quizResult.bonus = 1
 	ProjectManager.save()
 	blinkAnim.play("blinkAnim")
 	yield(get_tree().create_timer(0.7), "timeout")
-	_changeScene = get_tree().change_scene("res://Scenes/girlScenes/girlGameScene.tscn")
+	_changeScene = get_tree().change_scene("res://Scenes/EndScenes/Game/Girl/GameScene.tscn")
 	
 func onInitialScreenButtonPressed():
 	ProjectManager.quizResult.totalScore = 0
@@ -60,12 +65,16 @@ func onInitialScreenButtonPressed():
 	ProjectManager.quizResult.candiesCount = 0
 	ProjectManager.quizResult.increasedSpawn = 0 
 	ProjectManager.quizResult.increasedGlucoseAmount = 0
+	if ProjectManager.quizResult.bonus == 1:
+		ProjectManager.quizResult.youLost = false
+	else:
+		ProjectManager.quizResult.youLost = true
 	ProjectManager.save()
 	MainGameSong.stop()
 	InitialSong.play()
 	blinkAnim.play("blinkAnim")
 	yield(get_tree().create_timer(0.7), "timeout")
-	_changeScene = get_tree().change_scene("res://Scenes/girlScenes/girlPrincipal.tscn")
+	_changeScene = get_tree().change_scene("res://Scenes/MiddleScenes/Main/Girl/Main.tscn")
 	
 func onSaveButtonPressed():
 	var name = nameLabel.text

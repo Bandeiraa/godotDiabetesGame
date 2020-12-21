@@ -12,7 +12,6 @@
 [ext_resource path="res://Assets/Sprites/MiddleSprites/Quiz/Girl/2ndButtonBonusPopup.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Sprites/MiddleSprites/Quiz/Girl/1stButtonBonusPopup.png" type="Texture" id=11]
 
-
 [sub_resource type="DynamicFont" id=1]
 size = 8
 font_data = ExtResource( 1 )

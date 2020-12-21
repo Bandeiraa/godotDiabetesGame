@@ -2,56 +2,99 @@ extends Control
 
 var _changeScene
 var storePoints
-var storeGlucoseAmount
-onready var blinkAnim = get_node("AnimationPlayer")
+onready var blinkAnim = get_node("BlinkScreenAnimator")
+onready var points : Label = $LabelLayer/TotalPoints
+onready var glucoseStored : Label = $LabelLayer/GlucosePoints
+onready var nameLabel : LineEdit = $SaveScorePopup/SaveScoreContainer/ScoreName
+onready var gameOverMessage : TextureRect = $InterfaceContainer/GameOverMessage
+onready var saveScoreContainer : TextureRect = $SaveScorePopup/SaveScoreContainer
+onready var saveScorePopup : TextureRect = $SaveScorePopup
 
+func _process(_delta):
+	var getSavedName = nameLabel.text
+	$SaveScorePopup/SaveScoreContainer/ScoreNameAux.text = getSavedName
+	
 func _ready():
 	ProjectManager.loadData()
 	storePoints = ProjectManager.quizResult.totalScore
-	storeGlucoseAmount = ProjectManager.quizResult.glucoseAmount
-	$layer/glucosePoints.text = storeGlucoseAmount 
-	if storePoints < 10:
-		$layer/totalPoints.text = str("000", storePoints)
-	elif storePoints < 100:
-		$layer/totalPoints.text = str("00", storePoints)
-	elif storePoints < 1000:
-		$layer/totalPoints.text = str("0", storePoints)
+	var storeGlucoseAmount = ProjectManager.quizResult.glucoseAmount
+	var gameOverHypo = ProjectManager.quizResult.gameOverHypo
+	var gameOverHyper = ProjectManager.quizResult.gameOverHyper
+	#var gameOverDN = ProjectManager.quizResult.gameOverHyper
+	var hasInternet = ProjectManager.quizResult.hasInternet
+	if hasInternet == true:
+		saveScorePopup.set_visible(true)
+		if gameOverHypo == true:
+			gameOverMessage.texture = load("res://Assets/Sprites/EndSprites/GameOver/Boy/hypoglicemiaGameOver.png")
+		elif gameOverHyper == true:
+			gameOverMessage.texture = load("res://Assets/Sprites/EndSprites/GameOver/Boy/exerciseGameOver.png")
+		else:
+			gameOverMessage.texture = load("res://Assets/Sprites/EndSprites/GameOver/Boy/doNothingGameOver.png")
 	else:
-		$layer/totalPoints.text = str(storePoints)
+		saveScorePopup.set_visible(false)
+		if gameOverHypo == true:
+			gameOverMessage.texture = load("res://Assets/Sprites/EndSprites/GameOver/Boy/hypoglicemiaGameOver.png")
+		elif gameOverHyper == true:
+			gameOverMessage.texture = load("res://Assets/Sprites/EndSprites/GameOver/Boy/exerciseGameOver.png")
+		else:
+			gameOverMessage.texture = load("res://Assets/Sprites/EndSprites/GameOver/Boy/doNothingGameOver.png")
+	glucoseStored.text = storeGlucoseAmount 
+	points.text = str(storePoints)
 	
 func onTryAgainButtonPressed():
+	ProjectManager.loadData()
 	ProjectManager.quizResult.totalScore = 0
 	ProjectManager.quizResult.glucoseAmount = "70"
 	ProjectManager.quizResult.candiesCount = 0
 	ProjectManager.quizResult.increasedSpawn = 0 
 	ProjectManager.quizResult.increasedGlucoseAmount = 0
+	ProjectManager.quizResult.gameOverHyper = false
+	ProjectManager.quizResult.gameOverHypo = false
+	if ProjectManager.quizResult.bonus == 0:
+		ProjectManager.quizResult.bonus = 0
+	else:
+		ProjectManager.quizResult.bonus = 1
 	ProjectManager.save()
-	#print(ProjectManager.quizResult.glucoseAmount)
 	blinkAnim.play("blinkAnim")
 	yield(get_tree().create_timer(0.7), "timeout")
-	_changeScene = get_tree().change_scene("res://Scenes/boyScenes/boyGameScene.tscn")
-
+	_changeScene = get_tree().change_scene("res://Scenes/EndScenes/Game/Boy/GameScene.tscn")
+	
 func onInitialScreenButtonPressed():
 	ProjectManager.quizResult.totalScore = 0
 	ProjectManager.quizResult.glucoseAmount = "70"
 	ProjectManager.quizResult.candiesCount = 0
 	ProjectManager.quizResult.increasedSpawn = 0 
 	ProjectManager.quizResult.increasedGlucoseAmount = 0
+	if ProjectManager.quizResult.bonus == 1:
+		ProjectManager.quizResult.youLost = false
+	else:
+		ProjectManager.quizResult.youLost = true
 	ProjectManager.save()
 	MainGameSong.stop()
 	InitialSong.play()
 	blinkAnim.play("blinkAnim")
 	yield(get_tree().create_timer(0.7), "timeout")
-	_changeScene = get_tree().change_scene("res://Scenes/boyScenes/boyPrincipal.tscn")
-
-func _on_saveScoreButtonPressed_pressed():
-	var name = $"LineEdit".text
-	#SilentWolf.Scores.persist_score(name, storePoints)
+	_changeScene = get_tree().change_scene("res://Scenes/MiddleScenes/Main/Boy/Main.tscn")
+	
+func onSaveButtonPressed():
+	var name = nameLabel.text
 	SilentWolf.Scores.persist_score(name, storePoints)
 	SilentWolf.Scores.get_high_scores()
-
-func load_leaderboard_screen():
-	_changeScene = get_tree().change_scene("res://addons/silent_wolf/Scores/Leaderboard.tscn")
+	$SaveScorePopup/SaveScoreContainer.hide()
+	$SaveTimer.start()
 	
 func _on_Button_pressed():
-	load_leaderboard_screen()
+	_changeScene = get_tree().change_scene("res://addons/silent_wolf/Scores/Leaderboard.tscn")
+
+func onYesButtonPressed():
+	$SaveScorePopup/FirstPopup.hide()
+	saveScoreContainer.set_visible(true)
+
+func onNoButtonPressed():
+	saveScorePopup.set_visible(false)
+
+func onBackButtonPressed():
+	saveScorePopup.set_visible(false)
+
+func onSaveTimerTimeout():
+	$SaveScorePopup/AfterSaveScoreContainer.show()

@@ -17,7 +17,8 @@ var quizResult = {
 	"gameOverDoNothing": false,
 	"gameOverHyper": false,
 	"quizDone": false,
-	"increaseFruitValue": 0
+	"increaseFruitValue": 0,
+	"youLost": false
 }
 
 func save():

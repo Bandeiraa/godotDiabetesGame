@@ -1,0 +1,76 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scenes/EndScenes/Insulin/Girl/Insulin.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Sprites/EndSprites/Insulin/Boy/insulin4.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/EndSprites/Insulin/Boy/backButton.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/EndSprites/Insulin/Boy/insulin2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/EndSprites/Insulin/Boy/insulin3.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/EndSprites/Insulin/Boy/insulin1.png" type="Texture" id=6]
+[ext_resource path="res://Scripts/boyInsulin.gd" type="Script" id=7]
+
+
+
+
+
+[sub_resource type="Animation" id=2]
+resource_name = "fadeAnimation"
+tracks/0/type = "value"
+tracks/0/path = NodePath("exercisePopup2/blackBox:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "insulinAnimator"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 6 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 2 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "canChangeScene"
+} ]
+}
+
+[node name="girlExerciseSample" instance=ExtResource( 1 )]
+script = ExtResource( 7 )
+
+[node name="TextureRect" parent="." index="0"]
+texture = ExtResource( 6 )
+
+[node name="buttonSprite" parent="exercisePopup2/backToGameButton" index="0"]
+position = Vector2( 158.354, 297.979 )
+texture = ExtResource( 3 )
+
+[node name="blackBox" parent="exercisePopup2" index="1"]
+anchor_top = 0.0024577
+anchor_bottom = 1.00246
+
+[node name="insulinAnimator" type="AnimationPlayer" parent="." index="3"]
+anims/fadeAnimation = SubResource( 2 )
+anims/insulinAnimator = SubResource( 1 )

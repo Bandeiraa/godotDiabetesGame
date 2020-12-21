@@ -4,8 +4,9 @@
 [ext_resource path="res://addons/silent_wolf/Scores/assets/fonts/Comfortaa-Bold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/fonts/Comfortaa-Bold.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://addons/silent_wolf/common/SWButton.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/Sprites/registerSprites/backButton.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Sprites/registerSprites/rankingScreen.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/InitialSprites/Authentication/backButton.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/InitialSprites/Authentication/rankingScreen.png" type="Texture" id=6]
+
 
 [sub_resource type="DynamicFont" id=1]
 size = 76

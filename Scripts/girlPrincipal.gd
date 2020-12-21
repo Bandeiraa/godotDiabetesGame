@@ -25,6 +25,9 @@ func _ready():
 		$QuizButton.hide()
 	else:
 		$Spawn.hide()
+	if ProjectManager.quizResult.youLost == true:
+		ProjectManager.quizResult.bonus = 0
+		ProjectManager.save()
 		
 func onGearPressed():
 	BlinkAnimation.canGearGirlPlay()
@@ -48,12 +51,11 @@ func onPlayButtonPressed():
 	ProjectManager.quizResult.totalScore = 0
 	ProjectManager.quizResult.glucoseAmount = "70"
 	ProjectManager.quizResult.candiesCount = 0
-	ProjectManager.quizResult.bonus = 0
 	ProjectManager.save()
 	print(ProjectManager.quizResult.glucoseAmount)
 	BlinkAnimation.canPlay()
 	yield(get_tree().create_timer(0.7), "timeout")
-	_changeScene = get_tree().change_scene("res://Scenes/girlScenes/girlGameScene.tscn")
+	_changeScene = get_tree().change_scene("res://Scenes/EndScenes/Game/Girl/GameScene.tscn")
 	
 func canHideMenu():
 	$Spawn/ConfigMenu.hide()

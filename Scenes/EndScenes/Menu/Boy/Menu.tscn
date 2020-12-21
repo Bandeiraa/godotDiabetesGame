@@ -1,0 +1,27 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/EndScenes/Menu/Girl/Menu.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/boyMenu.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Sprites/EndSprites/Menu/Boy/reloadButton.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/EndSprites/Menu/Boy/backToMenu.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/EndSprites/Menu/Boy/tutorialButton.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/EndSprites/Menu/Boy/backToGame.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/EndSprites/Menu/Boy/pausePanel.png" type="Texture" id=7]
+
+[node name="girlExerciseSample" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="exercisePopup2" parent="." index="2"]
+texture = ExtResource( 7 )
+
+[node name="buttonSprite" parent="exercisePopup2/tutorialButton" index="0"]
+texture = ExtResource( 5 )
+
+[node name="buttonSprite" parent="exercisePopup2/reloadButton" index="0"]
+texture = ExtResource( 3 )
+
+[node name="buttonSprite" parent="exercisePopup2/backToMenu" index="0"]
+texture = ExtResource( 4 )
+
+[node name="buttonSprite" parent="exercisePopup2/backToGameButton" index="0"]
+texture = ExtResource( 6 )

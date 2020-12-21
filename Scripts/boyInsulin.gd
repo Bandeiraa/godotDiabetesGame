@@ -19,4 +19,4 @@ func canChangeScene():
 func onBackToGameButtonPressed():
 	animator.play("fadeAnimation")
 	yield(get_tree().create_timer(0.7), "timeout")
-	_changeScene = get_tree().change_scene("res://Scenes/boyScenes/boyGameScene.tscn")
+	_changeScene = get_tree().change_scene("res://Scenes/EndScenes/Game/Boy/GameScene.tscn")
