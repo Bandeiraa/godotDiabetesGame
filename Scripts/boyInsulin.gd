@@ -17,6 +17,7 @@ func canChangeScene():
 	$exercisePopup2.set_visible(true)
 
 func onBackToGameButtonPressed():
+	PopupButton.play()
 	animator.play("fadeAnimation")
 	yield(get_tree().create_timer(0.7), "timeout")
 	_changeScene = get_tree().change_scene("res://Scenes/EndScenes/Game/Boy/GameScene.tscn")

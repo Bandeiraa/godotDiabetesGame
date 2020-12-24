@@ -384,6 +384,7 @@ autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="savePoints" from="." to="." method="onSavePoints"]
 [connection signal="timeout" from="CandiesTimer" to="." method="onCandieTimerTimeout"]
 [connection signal="timeout" from="FruitsTimer" to="." method="onFruitTimerTimeout"]
 [connection signal="timeout" from="BonusTimer" to="." method="onBonusEnd"]

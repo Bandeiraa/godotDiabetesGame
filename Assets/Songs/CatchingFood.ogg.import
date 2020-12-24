@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/CatchingFood.ogg-ee1d86e93f7ba7aa795dd73e119a2576.oggstr"
+
+[deps]
+
+source_file="res://Assets/Songs/CatchingFood.ogg"
+dest_files=[ "res://.import/CatchingFood.ogg-ee1d86e93f7ba7aa795dd73e119a2576.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

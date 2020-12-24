@@ -6,7 +6,8 @@ onready var checkedButton = get_node("Container/CheckSoundButton/Checked")
 var key = true
 
 func onAboutButtonPressed():
-	pass
+	$ContainerAux.show()
+	$Container.hide()
 	
 func onBackToCharSelect():
 	BlinkAnimation.canPlay()
@@ -25,3 +26,7 @@ func onCheckButtonPressed():
 		checkedButton.set_visible(true)
 		InitialSong.play()
 		key = true
+		
+func onBackButtonPressed():
+	$ContainerAux.hide()
+	$Container.show()

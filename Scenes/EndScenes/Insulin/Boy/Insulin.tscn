@@ -8,11 +8,7 @@
 [ext_resource path="res://Assets/Sprites/EndSprites/Insulin/Boy/insulin1.png" type="Texture" id=6]
 [ext_resource path="res://Scripts/boyInsulin.gd" type="Script" id=7]
 
-
-
-
-
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "fadeAnimation"
 tracks/0/type = "value"
 tracks/0/path = NodePath("exercisePopup2/blackBox:modulate")
@@ -27,8 +23,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=1]
-resource_name = "insulinAnimator"
+[sub_resource type="Animation" id=2]
 length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("TextureRect:texture")
@@ -72,5 +67,5 @@ anchor_top = 0.0024577
 anchor_bottom = 1.00246
 
 [node name="insulinAnimator" type="AnimationPlayer" parent="." index="3"]
-anims/fadeAnimation = SubResource( 2 )
-anims/insulinAnimator = SubResource( 1 )
+anims/fadeAnimation = SubResource( 1 )
+anims/insulinAnimator = SubResource( 2 )

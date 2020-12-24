@@ -16,7 +16,7 @@ func _process(_delta):
 	
 func _ready():
 	ProjectManager.loadData()
-	storePoints = ProjectManager.quizResult.totalScore
+	storePoints = int(ProjectManager.quizResult.totalScore)
 	var storeGlucoseAmount = ProjectManager.quizResult.glucoseAmount
 	var gameOverHypo = ProjectManager.quizResult.gameOverHypo
 	var gameOverHyper = ProjectManager.quizResult.gameOverHyper
@@ -42,6 +42,7 @@ func _ready():
 	points.text = str(storePoints)
 	
 func onTryAgainButtonPressed():
+	PopupButton.play()
 	ProjectManager.loadData()
 	ProjectManager.quizResult.totalScore = 0
 	ProjectManager.quizResult.glucoseAmount = "70"
@@ -60,6 +61,7 @@ func onTryAgainButtonPressed():
 	_changeScene = get_tree().change_scene("res://Scenes/EndScenes/Game/Boy/GameScene.tscn")
 	
 func onInitialScreenButtonPressed():
+	PopupButton.play()
 	ProjectManager.quizResult.totalScore = 0
 	ProjectManager.quizResult.glucoseAmount = "70"
 	ProjectManager.quizResult.candiesCount = 0

@@ -8,8 +8,6 @@
 [ext_resource path="res://Assets/Sprites/EndSprites/Insulin/Girl/insulin1.png" type="Texture" id=6]
 [ext_resource path="res://Scripts/girlExercises.gd" type="Script" id=7]
 
-
-
 [sub_resource type="Animation" id=1]
 resource_name = "exerciseAnimation"
 length = 3.0

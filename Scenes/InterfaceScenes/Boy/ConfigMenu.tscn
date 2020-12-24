@@ -1,9 +1,19 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/boyConfigMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/InterfaceSprites/ConfigMenu/Boy/UncheckButton.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sprites/InterfaceSprites/ConfigMenu/Boy/CheckButton.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sprites/InterfaceSprites/ConfigMenu/Boy/ConfigPanel.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Fonts/design.graffiti.SNAP____.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Assets/Sprites/EndSprites/Game/Boy/panelGame.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/MiddleSprites/Quiz/Boy/answersPanel.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 13
+font_data = ExtResource( 5 )
 
 [node name="ConfigMenu" type="Control"]
 anchor_right = 1.0
@@ -79,7 +89,97 @@ flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ContainerAux" type="TextureRect" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_top = -1.99999
+margin_right = 144.0
+margin_bottom = 254.0
+mouse_filter = 2
+
+[node name="PanelContainer" type="TextureRect" parent="ContainerAux"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -14.2544
+margin_right = 396.0
+margin_bottom = 689.746
+rect_scale = Vector2( 0.267, 0.267 )
+mouse_filter = 2
+texture = ExtResource( 6 )
+
+[node name="CreditsText" type="Label" parent="ContainerAux/PanelContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 23.0
+margin_top = -63.623
+margin_right = -18.0
+margin_bottom = -63.623
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Dissertação apresentada ao Programa de Pós-graduação em Saúde Coletiva da Universidade de Fortaleza como requisito para obtenção do Título de Mestre em Saúde Coletiva.
+
+Aluna: Caroline de Souza Almeida
+Orientadora: Profa. Dra. Mirna Albuquerque Frota
+Co-orientador: Prof. Dr. Daniel Valente de Macedo
+
+
+Desenvolvimento
+Daniel Valente de Macedo
+Francisco Davi Bandeira Falcão
+
+Ilustrações
+Caroline de Souza Almeida 
+Karen Palmer (https://www.behance.net/karen-palmer e https://www.artstation.com/koreilustra)
+Katarine Calado (www.behance.net/katarinecalado)
+
+Sonoplastia
+Ana Caroline Gomes da Silva
+Royalty Free Music from Bensound (www.bensound.com)
+"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="ContainerAux"]
+margin_left = 47.0
+margin_top = 176.0
+margin_right = 99.0
+margin_bottom = 196.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="ContainerAux/Button"]
+position = Vector2( 26.1628, 9.89941 )
+scale = Vector2( 0.05, 0.1 )
+texture = ExtResource( 7 )
+
+[node name="Label" type="Label" parent="ContainerAux/Button"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -23.5
+margin_top = -9.0
+margin_right = 23.5
+margin_bottom = 9.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Voltar"
+align = 1
+valign = 1
 [connection signal="pressed" from="Container/CheckSoundButton" to="." method="onCheckButtonPressed"]
 [connection signal="pressed" from="Container/AboutButton" to="." method="onAboutButtonPressed"]
 [connection signal="pressed" from="Container/CharacterSelecBtn" to="." method="onBackToCharSelect"]
 [connection signal="pressed" from="Container/CancelButton" to="." method="onCancelButtonPressed"]
+[connection signal="pressed" from="ContainerAux/Button" to="." method="onBackButtonPressed"]

@@ -5,11 +5,6 @@
 [ext_resource path="res://Assets/Sprites/EndSprites/Exercise/Girl/C2.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sprites/EndSprites/Exercise/Girl/C3.png" type="Texture" id=4]
 
-
-
-
-
-
 [sub_resource type="Animation" id=1]
 resource_name = "exerciseAnimation"
 length = 6.0

@@ -27,6 +27,12 @@ MainGameSong="*res://Scenes/InitialScenes/Sounds/GameSong.tscn"
 Firebase="*res://Scripts/firebase.gd"
 SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 BlinkAnimation="*res://Scenes/InterfaceScenes/BlinkAnimation.tscn"
+CatchingFruit="*res://Scenes/InitialScenes/Sounds/CatchingFruit.tscn"
+BonusPopup="*res://Scenes/InitialScenes/Sounds/BonusPopup.tscn"
+RightAnswer="*res://Scenes/InitialScenes/Sounds/RightAnswer.tscn"
+WrongAnswer="*res://Scenes/InitialScenes/Sounds/WrongAnswer.tscn"
+ConfigPopup="*res://Scenes/InitialScenes/Sounds/ConfigPopup.tscn"
+PopupButton="*res://Scenes/InitialScenes/Sounds/PopupButton.tscn"
 
 [display]
 

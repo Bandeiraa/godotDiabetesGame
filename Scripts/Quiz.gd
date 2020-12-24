@@ -121,12 +121,15 @@ func checkCorrectAnswer(button):
 			pointsCount += 1
 			print("Fez um total de: ", pointsCount)
 			answerReaction.play("RightAnswer")
+			RightAnswer.play()
 			emit_signal("canIncreasePoints")
 			if pointsCount == 5:
 				timePopup.start()
+				BonusPopup.play()
 			return true
 		else:
 			answerReaction.play("WrongAnswer")
+			WrongAnswer.play()
 			wrongAnswer += 1
 			
 func checkCorrectAnswerAux(button):
@@ -137,12 +140,15 @@ func checkCorrectAnswerAux(button):
 			pointsCount += 1
 			print("Qtde de acertos: ", pointsCount)
 			answerReaction.play("RightAnswer")
+			RightAnswer.play()
 			emit_signal("canIncreasePoints")
 			if pointsCount == 5:
 				timePopup.start()
+				BonusPopup.play()
 			return true
 		else:
 			answerReaction.play("WrongAnswer")
+			WrongAnswer.play()
 			wrongAnswer += 1
 			
 func onPointsAreIncreased():

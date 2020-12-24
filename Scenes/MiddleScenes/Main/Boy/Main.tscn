@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Principal.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/MiddleSprites/Main/Boy/WithoutButtonsInitialScreen.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Assets/Sprites/MiddleSprites/Main/Boy/QuizButton.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Sprites/MiddleSprites/Main/Boy/RankingButton.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Sprites/MiddleSprites/Main/Boy/ConfigButton.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/MiddleSprites/Main/Boy/TutorialButton.png" type="Texture" id=7]
 
 [node name="MainScreen" type="Control"]
 anchor_right = 1.0
@@ -80,6 +81,23 @@ position = Vector2( 61.5415, 55.4381 )
 scale = Vector2( 0.267, 0.267 )
 texture = ExtResource( 4 )
 
+[node name="TutorialButton" type="Button" parent="."]
+margin_left = 95.0
+margin_top = 109.0
+margin_right = 142.0
+margin_bottom = 129.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TutorialSprite" type="Sprite" parent="TutorialButton"]
+position = Vector2( -24.9685, 24.1816 )
+scale = Vector2( 0.267, 0.267 )
+texture = ExtResource( 7 )
+
 [node name="RankingButton" type="Button" parent="."]
 margin_left = 53.4566
 margin_top = 232.41
@@ -102,4 +120,5 @@ z_index = 10
 [connection signal="pressed" from="ConfigButton" to="." method="onGearPressed"]
 [connection signal="pressed" from="PlayButton" to="." method="onPlayButtonPressed"]
 [connection signal="pressed" from="QuizButton" to="." method="onQuizButtonPressed"]
+[connection signal="pressed" from="TutorialButton" to="." method="_onTutorialButtonPressed"]
 [connection signal="pressed" from="RankingButton" to="." method="onRankingButtonPressed"]

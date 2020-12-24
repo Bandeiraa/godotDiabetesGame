@@ -4,11 +4,6 @@
 [ext_resource path="res://Scenes/EndScenes/Exercise/Girl/ExercisesSample.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/insulin.gd" type="Script" id=3]
 
-
-
-
-
-
 [node name="girlExerciseSample" instance=ExtResource( 2 )]
 script = ExtResource( 3 )
 

@@ -17,5 +17,6 @@ func _process(delta):
 func onFruitInputEvent(_viewport, event, _shapeidx):
 	if (event is InputEventMouseButton && event.pressed):
 		print("Fruit Consumed :D")
+		CatchingFruit.play()
 		emit_signal("fruitDestroyed")
 		queue_free()

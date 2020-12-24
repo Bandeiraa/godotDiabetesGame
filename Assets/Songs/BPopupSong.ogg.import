@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/BPopupSong.ogg-03602a9a8eb3e283ddf3b5d32a04ff51.oggstr"
+
+[deps]
+
+source_file="res://Assets/Songs/BPopupSong.ogg"
+dest_files=[ "res://.import/BPopupSong.ogg-03602a9a8eb3e283ddf3b5d32a04ff51.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

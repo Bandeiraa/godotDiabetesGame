@@ -10,6 +10,7 @@ func _ready():
 	exerciseAnimator.play("exerciseAnimation")
 	
 func onBackToGameButtonPressed():
+	PopupButton.play()
 	exerciseAnimator.play("fadeAnimation")
 	yield(get_tree().create_timer(0.7), "timeout")
 	_changeScene = get_tree().change_scene("res://Scenes/EndScenes/Game/Girl/GameScene.tscn")

@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/girlConfigMenu.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/InterfaceScenes/Boy/ConfigMenu.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Sprites/InterfaceSprites/ConfigMenu/Girl/ConfigPanel.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sprites/InterfaceSprites/ConfigMenu/Girl/UncheckButton.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Sprites/InterfaceSprites/ConfigMenu/Girl/CheckButton.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/EndSprites/Game/Girl/panelGame.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/MiddleSprites/Quiz/Girl/answerButton.png" type="Texture" id=7]
 
 [node name="ConfigMenu" instance=ExtResource( 2 )]
 script = ExtResource( 1 )
@@ -17,3 +19,9 @@ texture = ExtResource( 4 )
 
 [node name="Checked" parent="Container/CheckSoundButton" index="1"]
 texture = ExtResource( 5 )
+
+[node name="PanelContainer" parent="ContainerAux" index="0"]
+texture = ExtResource( 6 )
+
+[node name="Sprite" parent="ContainerAux/Button" index="0"]
+texture = ExtResource( 7 )

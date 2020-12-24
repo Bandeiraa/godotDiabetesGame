@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/RightAnswer.ogg-d4bc10be4b5bf3d11d248d6d49a99ae2.oggstr"
+
+[deps]
+
+source_file="res://Assets/Songs/RightAnswer.ogg"
+dest_files=[ "res://.import/RightAnswer.ogg-d4bc10be4b5bf3d11d248d6d49a99ae2.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -16,6 +16,8 @@ onready var candiesTimer = $CandiesTimer
 onready var blinkAnim = $Animator
 onready var warningAnimator = $WarningAnimator
 
+signal savePoints
+var glucoseKey = false
 var spawnIncreaserValue = 0
 var increaseGlucoseDecreasedValue = 0
 var increaseFruitValue = 0
@@ -39,9 +41,13 @@ var hasInternetConection
 
 func _ready():
 	onBackToScene()
-	$DificultyTimer.start()
+	ProjectManager.loadData()
+	if ProjectManager.quizResult.increaseFruitValue == 10:
+		pass
+	else:
+		$DificultyTimer.start()
 	pauseMenuScene = preload("res://Scenes/EndScenes/Menu/Girl/Menu.tscn")
-	if increaseGlucoseDecreasedValue >= 10:
+	if increaseGlucoseDecreasedValue == 10:
 		$DificultyTimer.stop()
 	
 func onBackToScene():
@@ -59,7 +65,8 @@ func onBackToScene():
 	print(ProjectManager.quizResult.bonus)
 	spawnIncreaserValue = ProjectManager.quizResult.increasedSpawn
 	increaseGlucoseDecreasedValue = ProjectManager.quizResult.increasedGlucoseAmount
-	increaseFruitValue = ProjectManager.quizResult.increaseFruitValue 
+	increaseFruitValue = ProjectManager.quizResult.increaseFruitValue
+	sum = storedPointsValue
 	if ProjectManager.quizResult.bonus == 1:
 		$SceneComponents/BonusButton.set_visible(true)
 	else:
@@ -170,16 +177,15 @@ func _process(_delta):
 		warningAnimator.play("warningLabel")
 		$WarningMessage.set_visible(true)
 		blinkAnim.play("blinkWarning")
-	elif glucoseCalculus <= 30:
-		ProjectManager.quizResult.glucoseAmount = str(glucoseCalculus)
-		ProjectManager.quizResult.totalScore = str(sum)
-		ProjectManager.quizResult.gameOverHypo = true
-		ProjectManager.save()
-		_changeScene = get_tree().change_scene("res://Scenes/EndScenes/GameOver/Girl/GameOver.tscn")
+	elif glucoseCalculus <= 30 and glucoseKey == false:
+		emit_signal("savePoints")
+		glucoseKey = true
+		
 	else:
 		$WarningMessage.set_visible(false)
 		
 func onDNothingButtonPressed():
+	PopupButton.play()
 	ProjectManager.quizResult.glucoseAmout = str(glucoseCalculus)
 	ProjectManager.quizResult.totalScore = pointsCount
 	ProjectManager.quizResult.gameOverDoNothing = true
@@ -208,10 +214,12 @@ func onExerciseButtonPressed():
 		ProjectManager.quizResult.increasedGlucoseAmount = increaseGlucoseDecreasedValue
 		ProjectManager.quizResult.increaseFruitValue = increaseFruitValue
 		ProjectManager.save()
+		PopupButton.play()
 		var storeScenePath = str("res://Scenes/EndScenes/Exercise/Girl/Exercise", str(randomExercise), ".tscn")
 		_changeScene = get_tree().change_scene(storeScenePath)
 
 func onInsulinButtonPressed():
+	PopupButton.play()
 	ProjectManager.quizResult.glucoseAmount = str(glucoseCalculus)
 	ProjectManager.quizResult.totalScore = sum
 	ProjectManager.quizResult.candiesCount = candiesCount
@@ -222,6 +230,7 @@ func onInsulinButtonPressed():
 	_changeScene = get_tree().change_scene("res://Scenes/EndScenes/Insulin/Girl/Insulin.tscn")
 
 func onBonusPressed():
+	PopupButton.play()
 	$GlucoseTimer.stop()
 	$BonusTimer.start()
 	canFreezeGlucose = true
@@ -234,6 +243,8 @@ func onBonusEnd():
 	canFreezeGlucose = false
 
 func onPauseButtonPressed():
+	ConfigPopup.play()
+	yield(get_tree().create_timer(0.3), "timeout")
 	$SpawnMenuPosition.show()
 	get_tree().paused = true
 	var menuInstanced = pauseMenuScene.instance()
@@ -249,16 +260,17 @@ func onDificultyIncreased():
 		increaseFruitValue += 0.5
 		print("Valor de Incremento da glicemia auxiliar: ", increaseFruitValue)
 		print("Valor de Decremento da glicemia auxiliar: ", increaseGlucoseDecreasedValue)
-		if increaseGlucoseDecreasedValue >= 10:
+		if increaseGlucoseDecreasedValue == 10:
 			key = false
 			$DificultyTimer.stop()
-	if keyAux == true:
-		spawnIncreaserValue += 0.1
-		print("Valor de Spawn auxiliar: ", spawnIncreaserValue)
-		if spawnIncreaserValue >= 0.5:
-			keyAux = false
+		if keyAux == true and spawnIncreaserValue <= 0.5:
+			spawnIncreaserValue += 0.1
+			print("Valor de Spawn auxiliar: ", spawnIncreaserValue)
+			if spawnIncreaserValue == 0.5:
+				keyAux = false
 
 func onExerciseLabelPressed():
+	PopupButton.play()
 	ProjectManager.quizResult.glucoseAmout = str(glucoseCalculus)
 	ProjectManager.quizResult.totalScore = pointsCount
 	ProjectManager.save()
@@ -266,4 +278,13 @@ func onExerciseLabelPressed():
 	yield(get_tree().create_timer(0.7), "timeout")
 	ProjectManager.quizResult.gameOverHyper = true
 	ProjectManager.save()
+	_changeScene = get_tree().change_scene("res://Scenes/EndScenes/GameOver/Girl/GameOver.tscn")
+
+func onSavePoints():
+	ProjectManager.quizResult.glucoseAmount = str(glucoseCalculus)
+	ProjectManager.quizResult.totalScore = str(sum)
+	ProjectManager.quizResult.gameOverHypo = true
+	ProjectManager.save()
+	BlinkAnimation.canPlay()
+	yield(get_tree().create_timer(0.7), "timeout")
 	_changeScene = get_tree().change_scene("res://Scenes/EndScenes/GameOver/Girl/GameOver.tscn")
